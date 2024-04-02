@@ -57,6 +57,37 @@ h1 {
   font-size: 26px;
   background-color: #E9EBED;
   cursor: pointer;
+  position: relative;
+}
+.tiles .tile::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #585858;
+  z-index: -1;
+  transition: all 0.2s;
+}
+.tiles .tile::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #585858;
+  z-index: -1;
+  transition: all 0.2s;
+}
+.tiles .tile:hover::before {
+  top: -8px;
+  left: -8px;
+}
+.tiles .tile:hover::after {
+  bottom: -8px;
+  right: -8px;
 }
 
 .buttons {
@@ -75,6 +106,7 @@ h1 {
   font-size: 18px;
   margin: 0 100px;
   cursor: pointer;
+  transition: all 0.1s;
 }
 .buttons .button.disable {
   visibility: hidden;
@@ -82,8 +114,16 @@ h1 {
 .buttons .button.prev {
   border: #E9EBED solid 6px;
 }
+.buttons .button.prev:hover {
+  background-color: #E9EBED;
+  border: #585858 solid 6px;
+}
 .buttons .button.next {
   border: #FFDD00 solid 6px;
+}
+.buttons .button.next:hover {
+  background-color: #FFDD00;
+  border: #585858 solid 6px;
 }
 
 .form-pages {

@@ -10,6 +10,7 @@
 $border-1: #FFDD00;
 $border-2: #DEDEDE;
 $border-3: #E9EBED;
+$border-4: #585858;
 
 $background-1: #FFDD00;
 $background-2: #48B059;
@@ -76,6 +77,42 @@ h1 {
         font-size: 26px;
         background-color: #E9EBED;
         cursor: pointer;
+        position: relative;
+
+        &::before {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: $background-6;
+            z-index: -1;
+            transition: all 0.2s;
+
+        }
+
+        &::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: $background-6;
+            z-index: -1;
+            transition: all 0.2s;
+        }
+
+        &:hover::before {
+            top: -8px;
+            left: -8px;
+        }
+
+        &:hover::after {
+            bottom: -8px;
+            right: -8px;
+        }
     }
 }
 
@@ -95,6 +132,7 @@ h1 {
         font-size: 18px;
         margin: 0 100px;
         cursor: pointer;
+        transition: all 0.1s;
 
         &.disable {
             visibility: hidden;
@@ -102,16 +140,25 @@ h1 {
 
         &.prev {
             border: $border-3 solid 6px;
+
+            &:hover {
+                background-color: $background-5;
+                border: $border-4 solid 6px;
+            }
         }
 
         &.next {
             border: $border-1 solid 6px;
+
+            &:hover {
+                background-color: $background-1;
+                border: $border-4 solid 6px;
+            }
         }
     }
 }
 
 .form-pages {
-    // border: green solid 1px;
     height: 100%;
     width: 100%;
     display: flex;
