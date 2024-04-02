@@ -44,12 +44,34 @@ html {
 }
 
 .container {
-    max-width: 1040px;
+    width: 1040px;
     margin: 0 auto;
     min-height: fit-content;
     height: 100vh; // change to 100% after put in iframe in Wordpress
     position: relative;
     overflow: hidden;
+}
+
+.form-pages {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    transition: left 0.5s ease-out;
+    top: 0;
+    left: 0;
+
+    .form-page {
+        border: rgba(0, 0, 0, 0.1) solid 1px;
+        width: 100%;
+        height: 100%;
+        padding: 100px 0;
+        display: flex;
+        flex-shrink: 0;
+        gap: 100px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 h1 {
@@ -78,6 +100,8 @@ h1 {
         background-color: #E9EBED;
         cursor: pointer;
         position: relative;
+        transition: all 0.05s;
+        outline: 0px solid $border-4;
 
         &::before {
             content: "";
@@ -112,6 +136,10 @@ h1 {
         &:hover::after {
             bottom: -8px;
             right: -8px;
+        }
+
+        &.active {
+            outline: 8px solid $border-4;
         }
     }
 }
@@ -155,28 +183,5 @@ h1 {
                 border: $border-4 solid 6px;
             }
         }
-    }
-}
-
-.form-pages {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    transition: left 0.5s ease-out;
-    top: 0;
-    left: 0;
-
-
-    .form-page {
-        border: rgba(0, 0, 0, 0.1) solid 1px;
-        width: 100%;
-        height: 100%;
-        padding: 100px 0;
-        display: flex;
-        flex-shrink: 0;
-        gap: 100px;
-        flex-direction: column;
-        justify-content: space-between;
     }
 }

@@ -1,11 +1,13 @@
 "use strict";
 
+// przewijanie stron
+
 const containerLoc = document.querySelector(".container")
 const formPagesLoc = document.querySelector(".form-pages")
-const buttonNextLoc = document.querySelectorAll(".button.next")
-const buttonPrevLoc = document.querySelectorAll(".button.prev")
+const buttonNextArrLoc = document.querySelectorAll(".button.next")
+const buttonPrevArrLoc = document.querySelectorAll(".button.prev")
 
-buttonNextLoc.forEach((elem) => {
+buttonNextArrLoc.forEach((elem) => {
     elem.addEventListener("click", ()=> {
         const actualPosition = Number(getComputedStyle(formPagesLoc).left.slice(0, getComputedStyle(formPagesLoc).left.length-2))
         const containerWidth = Number(getComputedStyle(containerLoc).width.slice(0, getComputedStyle(containerLoc).width.length-2))
@@ -22,7 +24,7 @@ buttonNextLoc.forEach((elem) => {
     })
 })
 
-buttonPrevLoc.forEach((elem) => {
+buttonPrevArrLoc.forEach((elem) => {
     elem.addEventListener("click", ()=> {
         const actualPosition = Number(getComputedStyle(formPagesLoc).left.slice(0, getComputedStyle(formPagesLoc).left.length-2))
         const containerWidth = Number(getComputedStyle(containerLoc).width.slice(0, getComputedStyle(containerLoc).width.length-2))
@@ -36,5 +38,24 @@ buttonPrevLoc.forEach((elem) => {
         const newLeftValue = actualPosition + containerWidthWithoutBorder
 
         formPagesLoc.style.left = newLeftValue + "px"
+    })
+})
+
+// zaznaczanie kafelków - strona 1
+
+const tileArrLoc = document.querySelectorAll(".tile")
+
+tileArrLoc.forEach((elem) => {
+    elem.addEventListener("click", (e)=> {
+        if (e.target.classList.contains("active")) {
+            console.log("kliknięty element był aktywny")
+            e.target.classList.remove("active")
+        } else {
+            console.log("kliknięty element był nieaktywny")
+            tileArrLoc.forEach((el) => {
+                el.classList.remove("active")
+            })
+            e.target.classList.add("active")
+        }
     })
 })
