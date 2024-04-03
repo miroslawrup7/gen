@@ -1,10 +1,14 @@
 @font-face {
   font-family: "Clarika Geo Regular";
-  src: url("../fonts/The Refinery  Clarika Geo Regular.otf");
+  src: url("../fonts/The Refinery Clarika Geo Regular.ttf");
+}
+@font-face {
   font-family: "Clarika Geo Medium";
-  src: url("../fonts/The Refinery  Clarika Geo Medium.otf");
+  src: url("../fonts/The Refinery Clarika Geo Medium.ttf");
+}
+@font-face {
   font-family: "Clarika Geo Bold";
-  src: url("../fonts/The Refinery  Clarika Geo Bold.otf");
+  src: url("../fonts/The Refinery Clarika Geo Bold.ttf");
 }
 * {
   margin: 0;
@@ -91,7 +95,7 @@ h1 {
   left: 0;
   background-color: #585858;
   z-index: -1;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 .tiles .tile::after {
   content: "";
@@ -102,7 +106,7 @@ h1 {
   right: 0;
   background-color: #585858;
   z-index: -1;
-  transition: all 0.2s;
+  transition: all 0.1s;
 }
 .tiles .tile:hover::before {
   top: -8px;
@@ -150,4 +154,170 @@ h1 {
 .buttons .button.next:hover {
   background-color: #FFDD00;
   border: #585858 solid 6px;
+}
+
+.content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content .list {
+  font-size: 24px;
+}
+.content .list ul li {
+  padding: 15px 0;
+}
+.content .annotations {
+  font-size: 18px;
+  margin-top: 80px;
+}
+
+.page3 .content {
+  display: flex;
+}
+.page3 .content .radios {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 24px;
+}
+.page3 .content .notice {
+  background-color: #E9EBED;
+  padding: 35px 50px;
+  font-size: 20px;
+  margin: 100px 0;
+  border-left: 8px solid #FFDD00;
+}
+.page3 .content .notice .notice-header {
+  font-family: "Clarika Geo Bold", sans-serif;
+  margin-bottom: 12px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+.checkbox-container .checkbox {
+  display: block;
+  position: relative;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a background color */
+  /* When the checkbox is checked, add a background */
+  /* When the checkbox is checked, add a background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.checkbox-container .checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+.checkbox-container .checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #999;
+  border-radius: 8px;
+}
+.checkbox-container .checkbox input:checked ~ .checkmark {
+  background-color: red;
+}
+.checkbox-container .checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkbox-container .checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.checkbox-container .checkbox .checkmark:after {
+  left: 10px;
+  top: 4px;
+  width: 10px;
+  height: 19px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  transform: rotate(40deg);
+}
+.checkbox-container .label-text {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 12px;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+}
+.radio-container .radio {
+  display: block;
+  position: relative;
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add a background color */
+  /* When the checkbox is checked, add a background */
+  /* When the checkbox is checked, add a background */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.radio-container .radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+.radio-container .radio .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 1px solid #E9EBED;
+}
+.radio-container .radio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radio-container .radio input:checked ~ .checkmark:after {
+  display: block;
+}
+.radio-container .radio .checkmark:after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background-color: #FFDD00;
+}
+.radio-container .label-text {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 12px;
 }
