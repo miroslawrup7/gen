@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1712156574279">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1712162680474">
     <link rel="shortcut icon" href="#">
 
     <title>Formularz</title>
@@ -80,7 +80,7 @@
                     <div class="radios">
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio1" name="radios" value="online">
+                                <input type="radio" id="radio1" name="radios" value="online" autocomplete="off" checked>
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio1">Online</label>
@@ -88,7 +88,7 @@
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio2" name="radios" value="dhl">
+                                <input type="radio" id="radio2" name="radios" value="dhl" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="radio2">Kurier DHL</label>
@@ -96,10 +96,16 @@
                     </div>
                     <div class="notice">
                         <p class="notice-header">UWAGA!</p>
-                        <p class="notice-content">
+                        <p class="notice-content online">
                             Wysyłamy na Twój adres e-mail umowę, którą w dowolnym momencie podpisujesz elektronicznie za
                             pomocą kodu SMS. Tryb on-line wymaga posiadania adresu mailowego i telefonu komórkowego dla
                             każdej z podpisujących osób.
+                        </p>
+                        <p class="notice-content dhl disable">
+                            Podczas wizyty kuriera wymagana jest obecność wszystkich Wnioskujących. O momencie nadania
+                            przesyłki zostaniesz powiadomiony za pośrednictwem wiadomości sms. Umowę podpisujesz podczas
+                            wizyty Kuriera. Jeden podpisany egzemplarz zostawiasz kurierowi w bezpiecznej kopercie. Ta
+                            usługa jest dla ciebie bezpłatna i wymaga podania numeru telefonu dla kuriera.
                         </p>
 
                     </div>
@@ -150,7 +156,7 @@
 
     </div>
 
-    <script src="./js/main.js?cache_bust=1712156574279"></script>
+    <script src="./js/main.js?cache_bust=1712162680474"></script>
 </body>
 
 </html>

@@ -236,6 +236,15 @@ h1 {
                 font-family: "Clarika Geo Bold", sans-serif;
                 margin-bottom: 12px;
             }
+
+            .notice-content {
+                display: flex;
+
+
+                &.disable {
+                    display: none;
+                }
+            }
         }
     }
 }

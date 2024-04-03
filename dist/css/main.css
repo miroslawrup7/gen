@@ -193,6 +193,12 @@ h1 {
   font-family: "Clarika Geo Bold", sans-serif;
   margin-bottom: 12px;
 }
+.page3 .content .notice .notice-content {
+  display: flex;
+}
+.page3 .content .notice .notice-content.disable {
+  display: none;
+}
 
 .checkbox-container {
   display: flex;

@@ -59,3 +59,22 @@ tileArrLoc.forEach((elem) => {
         }
     })
 })
+
+// podmiana tekstu UWAGA - strona 3
+
+const radioArrP3Loc = document.querySelectorAll(".page3 .radio input")
+const noticeContentArrP3Loc = document.querySelectorAll(".page3 .notice-content")
+
+console.log(radioArrP3Loc)
+
+radioArrP3Loc.forEach((elem) => {
+    elem.addEventListener("click", (e)=> {
+        console.log(e.target.value)
+        const noticeContentLoc = document.querySelector(`.notice-content.${e.target.value}`)
+        console.log(noticeContentLoc)
+        noticeContentArrP3Loc.forEach((el)=> {
+            el.classList.add("disable")
+        })
+        noticeContentLoc.classList.remove("disable")
+    })
+})
