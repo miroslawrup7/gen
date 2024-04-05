@@ -1,3 +1,7 @@
+:root {
+  --exclamation: url("") ;
+}
+
 @font-face {
   font-family: "Clarika Geo Regular";
   src: url("../fonts/The Refinery Clarika Geo Regular.ttf");
@@ -56,6 +60,33 @@ html {
   gap: 100px;
   flex-direction: column;
   justify-content: space-between;
+}
+.form-pages .form-page .error-message-box {
+  display: flex;
+  justify-content: center;
+  min-height: 40px;
+  align-items: center;
+}
+.form-pages .form-page .error-message-box .error-message {
+  position: relative;
+  padding-left: 40px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  color: #FF5050;
+  font-size: 18px;
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.form-pages .form-page .error-message-box .error-message::before {
+  content: var(--exclamation);
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  display: flex;
+  left: 0;
+  top: 0;
 }
 
 h1 {
@@ -188,15 +219,19 @@ h1 {
   font-size: 20px;
   margin: 100px 0;
   border-left: 8px solid #FFDD00;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.page3 .content .notice .notice-header {
+.page3 .content .notice-header {
   font-family: "Clarika Geo Bold", sans-serif;
   margin-bottom: 12px;
 }
-.page3 .content .notice .notice-content {
+.page3 .content .notice-content {
   display: flex;
 }
-.page3 .content .notice .notice-content.disable {
+.page3 .content .notice-content.disable {
   display: none;
 }
 
