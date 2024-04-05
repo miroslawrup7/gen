@@ -30,20 +30,20 @@ buttonNextArrLoc.forEach((elem) => {
         if (actualPage.classList.contains("page1")) {
 
             const errorMessageLoc = document.querySelector(".page1 .error-message")
-
-            if (page1SelectTile === 2) {
-                allowNext = true
-                errorMessageLoc.innerText = ""
-                document.documentElement.style.setProperty("--exclamation", "")
-                page2ListElemArrLoc[0].innerText = "nr warunków technicznych lub nr poprzedniej umowy kompleksowej, jeżeli była zawarta z G.EN.GAZ. ENERGIA, lub nr PPG"
-            }
             if (page1SelectTile === 1) {
                 allowNext = true
                 errorMessageLoc.innerText = ""
                 document.documentElement.style.setProperty("--exclamation", "")
-                page2ListElemArrLoc[0].innerText = "nr warunków technicznych"
+                page2ListElemArrLoc[0].innerText = "nr warunków technicznych lub nr poprzedniej umowy kompleksowej, jeżeli była zawarta z G.EN.GAZ. ENERGIA, lub nr PPG"
 
             }
+            if (page1SelectTile === 2) {
+                allowNext = true
+                errorMessageLoc.innerText = ""
+                document.documentElement.style.setProperty("--exclamation", "")
+                page2ListElemArrLoc[0].innerText = "nr warunków technicznych"
+            }
+            
             if (page1SelectTile === 0) {
                 errorMessageLoc.innerText = "Aby przejść dalej wybierz jedną z powyższych opcji."
                 document.documentElement.style.setProperty("--exclamation", "url('../img/icons/exclamation.svg')")
