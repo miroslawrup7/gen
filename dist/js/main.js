@@ -30,6 +30,10 @@ buttonNextArrLoc.forEach((elem) => {
         if (actualPage.classList.contains("page1")) {
 
             const errorMessageLoc = document.querySelector(".page1 .error-message")
+            if (page1SelectTile === 0) {
+                errorMessageLoc.innerText = "Aby przejść dalej wybierz jedną z powyższych opcji."
+                document.documentElement.style.setProperty("--exclamation", "url('../img/icons/exclamation.svg')")
+            }
             if (page1SelectTile === 1) {
                 allowNext = true
                 errorMessageLoc.innerText = ""
@@ -44,13 +48,13 @@ buttonNextArrLoc.forEach((elem) => {
                 page2ListElemArrLoc[0].innerText = "nr warunków technicznych"
             }
             
-            if (page1SelectTile === 0) {
-                errorMessageLoc.innerText = "Aby przejść dalej wybierz jedną z powyższych opcji."
-                document.documentElement.style.setProperty("--exclamation", "url('../img/icons/exclamation.svg')")
-            }
         }
 
         if (actualPage.classList.contains("page2")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page3")) {
             allowNext = true
         }
 

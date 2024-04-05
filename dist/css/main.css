@@ -18,7 +18,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  line-height: 1.4em;
+  line-height: 1.5;
   vertical-align: baseline;
   text-decoration: none;
   outline: 0;
@@ -155,7 +155,8 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-.buttons .button {
+
+.button {
   padding: 10px 50px;
   display: flex;
   width: -moz-fit-content;
@@ -169,22 +170,35 @@ h1 {
   cursor: pointer;
   transition: all 0.1s;
 }
-.buttons .button.disable {
+.button.disable {
   visibility: hidden;
 }
-.buttons .button.prev {
+.button.prev {
   border: #E9EBED solid 6px;
 }
-.buttons .button.prev:hover {
+.button.prev:hover {
   background-color: #E9EBED;
   border: #585858 solid 6px;
 }
-.buttons .button.next {
+.button.next {
   border: #FFDD00 solid 6px;
 }
-.buttons .button.next:hover {
+.button.next:hover {
   background-color: #FFDD00;
   border: #585858 solid 6px;
+}
+.button.add {
+  margin: 0 20px;
+  padding: 10px;
+  align-self: flex-end;
+  display: flex;
+  font-family: "Clarika Geo Regular", sans-serif;
+  color: #48B059;
+}
+.button.add img {
+  height: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
 }
 
 .content {
@@ -202,37 +216,6 @@ h1 {
 .content .annotations {
   font-size: 18px;
   margin-top: 80px;
-}
-
-.page3 .content {
-  display: flex;
-}
-.page3 .content .radios {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  font-size: 24px;
-}
-.page3 .content .notice {
-  background-color: #E9EBED;
-  padding: 35px 50px;
-  font-size: 20px;
-  margin: 100px 0;
-  border-left: 8px solid #FFDD00;
-  min-height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.page3 .content .notice-header {
-  font-family: "Clarika Geo Bold", sans-serif;
-  margin-bottom: 12px;
-}
-.page3 .content .notice-content {
-  display: flex;
-}
-.page3 .content .notice-content.disable {
-  display: none;
 }
 
 .checkbox-container {
@@ -361,4 +344,95 @@ h1 {
   display: inline-block;
   cursor: pointer;
   margin: 0 12px;
+}
+
+.page3 .content {
+  display: flex;
+}
+.page3 .content .radios {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  font-size: 24px;
+}
+.page3 .content .notice {
+  background-color: #E9EBED;
+  padding: 35px 50px;
+  font-size: 20px;
+  margin: 100px 0;
+  border-left: 8px solid #FFDD00;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page3 .content .notice-header {
+  font-family: "Clarika Geo Bold", sans-serif;
+  margin-bottom: 12px;
+}
+.page3 .content .notice-content {
+  display: flex;
+}
+.page3 .content .notice-content.disable {
+  display: none;
+}
+
+.page4 .applicant-form-box {
+  background-color: #E9EBED;
+  min-height: 400px;
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+.page4 .applicant-form-box form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
+}
+.page4 .applicant-form-box form .input-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 15px);
+}
+.page4 .applicant-form-box form .input-container label {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  text-transform: uppercase;
+  font-family: "Clarika Geo Bold";
+  font-size: 16px;
+}
+.page4 .applicant-form-box form .input-container label span {
+  color: #FF5050;
+  font-family: "Clarika Geo Bold";
+}
+.page4 .applicant-form-box form .input-container input {
+  background-color: #fff;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid rgba(88, 88, 88, 0.2);
+  border-radius: 3px;
+}
+.page4 .applicant-form-box form .input-container .select-input-container {
+  display: flex;
+}
+.page4 .applicant-form-box form .input-container .select-input-container select {
+  background-color: #fff;
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid rgba(88, 88, 88, 0.2);
+  border-radius: 3px;
+  width: 50%;
+}
+.page4 .applicant-form-box form .input-container .select-input-container select optgroup {
+  font-size: 18px;
+}
+.page4 .applicant-form-box form .input-container .select-input-container input {
+  width: 50%;
 }
