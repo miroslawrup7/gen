@@ -130,3 +130,21 @@ radioArrP3Loc.forEach((elem) => {
         noticeContentLoc.classList.remove("disable")
     })
 })
+
+// dodaj/usuń wnioskodawcę - strona 4
+
+const addApplicantBtnLoc = document.querySelector(".page4 .button.add")
+const removeApplicantBtnLoc = document.querySelector(".page4 .button.remove")
+const additionalApplicantLoc = document.querySelector(".applicant-form-box.additional")
+
+addApplicantBtnLoc.addEventListener("click", ()=> {
+    additionalApplicantLoc.style.display = "flex"
+})
+
+removeApplicantBtnLoc.addEventListener("click", ()=> {
+    additionalApplicantLoc.style.display = "none"
+})
+
+
+
+

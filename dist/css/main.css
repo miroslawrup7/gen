@@ -200,6 +200,19 @@ h1 {
   margin-right: 6px;
   margin-top: 2px;
 }
+.button.remove {
+  margin: 0 20px;
+  padding: 10px;
+  align-self: flex-end;
+  display: flex;
+  font-family: "Clarika Geo Regular", sans-serif;
+  color: #FF5050;
+}
+.button.remove img {
+  height: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+}
 
 .content {
   padding: 50px;
@@ -377,9 +390,11 @@ h1 {
   display: none;
 }
 
+.page4 {
+  overflow-y: auto;
+}
 .page4 .applicant-form-box {
   background-color: #E9EBED;
-  min-height: 400px;
   margin: 0 20px;
   display: flex;
   flex-direction: column;
@@ -435,4 +450,7 @@ h1 {
 }
 .page4 .applicant-form-box form .input-container .select-input-container input {
   width: 50%;
+}
+.page4 .applicant-form-box.additional {
+  display: none;
 }
