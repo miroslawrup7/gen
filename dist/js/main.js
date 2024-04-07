@@ -21,8 +21,6 @@ buttonNextArrLoc.forEach((elem) => {
         const containerWidthWithoutBorder = containerWidth - leftContainerBorder - rightContainerBorder - leftPagesBorder - rightPagesBorder
         const newLeftValue = actualPosition - containerWidthWithoutBorder
 
-       
-
         const actualPage = e.target.closest(".form-page")
 
         let allowNext = false
@@ -30,24 +28,23 @@ buttonNextArrLoc.forEach((elem) => {
         if (actualPage.classList.contains("page1")) {
 
             const errorMessageLoc = document.querySelector(".page1 .error-message")
-            if (page1SelectTile === 0) {
+            if (page1radios === 0) {
                 errorMessageLoc.innerText = "Aby przejść dalej wybierz jedną z powyższych opcji."
                 document.documentElement.style.setProperty("--exclamation", "url('../img/icons/exclamation.svg')")
             }
-            if (page1SelectTile === 1) {
+            if (page1radios === 1) {
                 allowNext = true
                 errorMessageLoc.innerText = ""
                 document.documentElement.style.setProperty("--exclamation", "")
                 page2ListElemArrLoc[0].innerText = "nr warunków technicznych lub nr poprzedniej umowy kompleksowej, jeżeli była zawarta z G.EN.GAZ. ENERGIA, lub nr PPG"
 
             }
-            if (page1SelectTile === 2) {
+            if (page1radios === 2) {
                 allowNext = true
                 errorMessageLoc.innerText = ""
                 document.documentElement.style.setProperty("--exclamation", "")
                 page2ListElemArrLoc[0].innerText = "nr warunków technicznych"
             }
-            
         }
 
         if (actualPage.classList.contains("page2")) {
@@ -63,6 +60,10 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page5")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page6")) {
             allowNext = true
         }
 
@@ -92,19 +93,19 @@ buttonPrevArrLoc.forEach((elem) => {
 
 // zaznaczanie kafelków - strona 1
 
-const tileArrLoc = document.querySelectorAll(".tile")
+const page1radioArrLoc = document.querySelectorAll(".tile")
 
-let page1SelectTile = 0
+let page1radios = 0
 
-tileArrLoc.forEach((elem) => {
+page1radioArrLoc.forEach((elem) => {
     elem.addEventListener("click", (e)=> {
         if (e.target.classList.contains("active")) {
             e.target.classList.remove("active")
-            page1SelectTile = 0
+            page1radios = 0
         } else {
-            tileArrLoc.forEach((el) => {
+            page1radioArrLoc.forEach((el) => {
                 el.classList.remove("active")
-                page1SelectTile = 0
+                page1radios = 0
             })
 
             e.target.classList.add("active")
@@ -112,11 +113,11 @@ tileArrLoc.forEach((elem) => {
             errorMessageLoc.innerText = ""
             document.documentElement.style.setProperty("--exclamation", "")
 
-            if (e.target.classList.contains("tile1")) {
-                page1SelectTile = 1
+            if (e.target.classList.contains("radio1")) {
+                page1radios = 1
             }
-            if (e.target.classList.contains("tile2")) {
-                page1SelectTile = 2
+            if (e.target.classList.contains("radio2")) {
+                page1radios = 2
             }
         }
     })
@@ -124,16 +125,28 @@ tileArrLoc.forEach((elem) => {
 
 // podmiana tekstu UWAGA - strona 3
 
-const radioArrP3Loc = document.querySelectorAll(".page3 .radio input")
-const noticeContentArrP3Loc = document.querySelectorAll(".page3 .notice-content")
+const page3radioArrLoc = document.querySelectorAll(".page3 .radios input")
+const page3noticeContentArrLoc = document.querySelectorAll(".page3 .notice-content")
 
-radioArrP3Loc.forEach((elem) => {
-    elem.addEventListener("click", (e)=> {
-        const noticeContentLoc = document.querySelector(`.notice-content.${e.target.value}`)
-        noticeContentArrP3Loc.forEach((el)=> {
-            el.classList.add("disable")
+let page3radios = 0
+
+page3radioArrLoc.forEach((elem) => {
+    
+    elem.addEventListener("change", (e)=> {
+        
+        page3noticeContentArrLoc.forEach((el) => {
+            el.classList.remove("active")
         })
-        noticeContentLoc.classList.remove("disable")
+
+        if (e.target.value === "radio3") {
+            page3radios = 1
+            page3noticeContentArrLoc[0].classList.add("active")
+        }
+        if (e.target.value === "radio4") {
+            page3radios = 2
+            page3noticeContentArrLoc[1].classList.add("active")
+        }
+        
     })
 })
 
@@ -141,51 +154,88 @@ radioArrP3Loc.forEach((elem) => {
 
 const addApplicantBtnLoc = document.querySelector(".page4 .button.add")
 const removeApplicantBtnLoc = document.querySelector(".page4 .button.remove")
-const additionalApplicantLoc = document.querySelector(".applicant-form-box.additional")
+const additionalApplicantLoc = document.querySelector(".page4 .form-box.additional")
+
+let page4boolean = false
 
 addApplicantBtnLoc.addEventListener("click", ()=> {
+    addApplicantBtnLoc.style.visibility = "hidden"
     additionalApplicantLoc.style.display = "flex"
+    page4boolean = true
 })
 
 removeApplicantBtnLoc.addEventListener("click", ()=> {
+    addApplicantBtnLoc.style.visibility = "visible"
     additionalApplicantLoc.style.display = "none"
+    page4boolean = false
 })
 
 // adres korespondencyjny inny niż zamieszkania - strona 5
 
-const theSameAddressRadioLoc = document.querySelector(".page5 #address-the-same")
-const otherAddressRadioLoc = document.querySelector(".page5 #address-other")
-const addressFormLoc = document.querySelector(".page5 .applicant-form-box")
+const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
+const page5formLoc = document.querySelector(".page5 .form-box")
 
+let page5radios = 0
 
-theSameAddressRadioLoc.addEventListener("click", ()=> {
-    if (theSameAddressRadioLoc.checked) {
-        addressFormLoc.style.visibility = "hidden"
-    }
-})
+page5radioArrLoc.forEach((elem) => {
+    
+    elem.addEventListener("change", (e)=> {
 
-otherAddressRadioLoc.addEventListener("click", ()=> {
-    if (otherAddressRadioLoc.checked) {
-        addressFormLoc.style.visibility = "visible"
-    }
+        if (e.target.value === "radio5") {
+            page5radios = 1
+            page5formLoc.style.visibility = "hidden"
+        }
+        if (e.target.value === "radio6") {
+            page5radios = 2
+            page5formLoc.style.visibility = "visible"
+        }
+    })
 })
 
 // kto podpisuje umowę - strona 6
-const personallyRadioLoc = document.querySelector(".page6 #personally")
-const proxyRadioLoc = document.querySelector(".page6 #proxy")
-const formContainerPage6Loc = document.querySelector(".page6 .applicant-form-box")
-const noticePage6Loc = document.querySelector(".page6 .notice")
+const page6radioArrLoc = document.querySelectorAll(".page6 .radios input")
+const page6formLoc = document.querySelector(".page6 .form-box")
+const page6noticeLoc = document.querySelector(".page6 .notice")
 
 
-personallyRadioLoc.addEventListener("change", ()=> {
-    formContainerPage6Loc.style.visibility = "hidden"
-    noticePage6Loc.style.visibility = "hidden"
+let page6radios = 0
+
+page6radioArrLoc.forEach((elem) => {
+    
+    elem.addEventListener("change", (e)=> {
+
+        if (e.target.value === "radio7") {
+            page6radios = 1
+            page6formLoc.style.visibility = "hidden"
+            page6noticeLoc.style.visibility = "hidden"
+        }
+        if (e.target.value === "radio8") {
+            page6radios = 2
+            page6formLoc.style.visibility = "visible"
+            page6noticeLoc.style.visibility = "visible"
+        }
+    })
 })
 
-proxyRadioLoc.addEventListener("change", ()=> {
-    formContainerPage6Loc.style.visibility = "visible"
-    noticePage6Loc.style.visibility = "visible"
+// adres korespondencyjny inny niż zamieszkania - strona 7
+
+const page7radioArrLoc = document.querySelectorAll(".page7 .radios input")
+const page7formLoc = document.querySelector(".page7 .form-box")
+
+let page7radios = 0
+
+page5radioArrLoc.forEach((elem) => {
+    
+    elem.addEventListener("change", (e)=> {
+
+        if (e.target.value === "radio9") {
+            page7radios = 1
+            page7formLoc.style.visibility = "hidden"
+        }
+        if (e.target.value === "radio10") {
+            page7radios = 2
+            page7formLoc.style.visibility = "visible"
+        }
+    })
 })
-
-
 

@@ -23,25 +23,17 @@
                 <h1>Wniosek online o zawarcie nowej umowy kompleksowej dla konsumenta</h1>
 
                 <div class="tiles">
-                    <div class="tile tile1">Nie mam licznika gazowego, został zdemontowany</div>
-                    <div class="tile tile2">Mam nową instalację gazową, ale nie mam jeszcze licznika gazowego</div>
+                    <div class="tile radio1">Nie mam licznika gazowego, został zdemontowany</div>
+                    <div class="tile radio2">Mam nową instalację gazową, ale nie mam jeszcze licznika gazowego</div>
                 </div>
 
                 <div class="error-message-box">
-                    <div class="error-message">
-
-                    </div>
+                    <div class="error-message"></div>
                 </div>
 
-
-
                 <div class="buttons">
-                    <div class="button prev disable">
-                        wstecz
-                    </div>
-                    <div class="button next">
-                        dalej
-                    </div>
+                    <div class="button prev disable">wstecz</div>
+                    <div class="button next">dalej</div>
                 </div>
 
             </div>
@@ -89,32 +81,33 @@
                     <div class="radios">
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio1" name="radios" value="online" autocomplete="off" checked>
+                                <input type="radio" id="radio3" name="radiosA" value="radio3" autocomplete="off"
+                                    checked>
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="label-text" for="radio1">Online</label>
+                            <label class="label-text" for="radio3">Online</label>
                         </div>
 
                         <div class="radio-container">
                             <label class="radio">
-                                <input type="radio" id="radio2" name="radios" value="dhl" autocomplete="off">
+                                <input type="radio" id="radio4" name="radiosA" value="radio4" autocomplete="off">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="label-text" for="radio2">Kurier DHL</label>
+                            <label class="label-text" for="radio4">Kurier DHL</label>
                         </div>
                     </div>
                     <div class="notice">
                         <p class="notice-header">UWAGA!</p>
-                        <p class="notice-content online">
+                        <p class="notice-content radio3 active">
                             Wysyłamy na Twój adres e-mail umowę, którą w dowolnym momencie podpisujesz elektronicznie za
                             pomocą kodu SMS. Tryb on-line wymaga posiadania adresu mailowego i telefonu komórkowego dla
                             każdej z podpisujących osób.
                         </p>
-                        <p class="notice-content dhl disable">
+                        <p class="notice-content radio4">
                             Podczas wizyty kuriera wymagana jest obecność wszystkich Wnioskujących. O momencie nadania
                             przesyłki zostaniesz powiadomiony za pośrednictwem wiadomości sms. Umowę podpisujesz podczas
                             wizyty Kuriera. Jeden podpisany egzemplarz zostawiasz kurierowi w bezpiecznej kopercie. Ta
-                            usługa jest dla ciebie bezpłatna i wymaga podania numeru telefonu dla kuriera.
+                            usługa jest dla ciebie bezpłatna i wymaga podania snumeru telefonu dla kuriera.
                         </p>
 
                     </div>
@@ -135,7 +128,7 @@
 
                 <h1>2. Twoje dane (dalej Wnioskujący)</h1>
 
-                <div class="applicant-form-box">
+                <div class="form-box">
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię<span> *</span></label>
@@ -188,7 +181,7 @@
                     </div>
                 </div>
 
-                <div class="applicant-form-box additional">
+                <div class="form-box additional">
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię<span> *</span></label>
@@ -258,24 +251,22 @@
                 <div class="radios">
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="address-the-same" name="radio-address" value="address-the-same"
-                                autocomplete="off" checked>
+                            <input type="radio" id="radio5" name="radiosB" value="radio5" autocomplete="off" checked>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="address-the-same">Taki sam jak zamieszkania</label>
+                        <label class="label-text" for="radio5">Taki sam jak zamieszkania</label>
                     </div>
 
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="address-other" name="radio-address" value="address-other"
-                                autocomplete="off">
+                            <input type="radio" id="radio6" name="radiosB" value="radio6" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="address-other">Inny niż zamieszkania</label>
+                        <label class="label-text" for="radio6">Inny niż zamieszkania</label>
                     </div>
                 </div>
 
-                <div class="applicant-form-box">
+                <div class="form-box">
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię i nazwisko lub pełna nazwa<span> *</span></label>
@@ -313,23 +304,22 @@
                 <div class="radios">
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="personally" name="sign-contract" value="personally"
-                                autocomplete="off" checked>
+                            <input type="radio" id="radio7" name="radiosC" value="radio7" autocomplete="off" checked>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="personally">Osobiście</label>
+                        <label class="label-text" for="radio7">Osobiście</label>
                     </div>
 
                     <div class="radio-container">
                         <label class="radio">
-                            <input type="radio" id="proxy" name="sign-contract" value="proxy" autocomplete="off">
+                            <input type="radio" id="radio8" name="radiosC" value="radio8" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="proxy">Za pośrednictwem pełnomocnika</label>
+                        <label class="label-text" for="radio8">Za pośrednictwem pełnomocnika</label>
                     </div>
                 </div>
 
-                <div class="applicant-form-box">
+                <div class="form-box">
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię i nazwisko<span> *</span></label>
@@ -353,6 +343,75 @@
                         pełnomocnictwa lub kopii potwierdzonej za zgodność. Wniosek będzie realizowany po otrzymaniu
                         przez G.EN. wspomnianego dokumentu.
                     </p>
+                </div>
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page7">
+
+                <h1>5. Dane miejsca odbioru paliwa</h1>
+                <div class="radios">
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio9" name="radiosD" value="radio9" autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio9">Mam nr warunków technicznych przyłączenia do
+                            sieci gazowej</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="radio10" name="radiosD" value="radio10" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="radio10">Nie mam nr warunków technicznych</label>
+                    </div>
+                </div>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label for="name">Nr warunków technicznych przyłączenia do sieci gazowej<span>
+                                    *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container w-100">
+                            <label for="name">Nr PPG<span>
+                                    *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Miejscowość<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Kod pocztowy<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container w-50">
+                            <label for="name">Ulica<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container w-25">
+                            <label for="name">Nr budynku / lokalu<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container w-25">
+                            <label for="name">Nr działki</label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+
+                    </form>
                 </div>
 
                 <div class="buttons">
