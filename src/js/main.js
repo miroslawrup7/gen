@@ -64,6 +64,19 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page6")) {
+
+            const page7radiosLoc = document.querySelector(".page7 .radios")
+            const page7PPGLoc = document.querySelector(".page7 .PPG")
+
+            if (page1radios === 1) {
+                page7radiosLoc.style.display = "none"
+                page7PPGLoc.style.display = "flex"
+            }
+            if (page1radios === 2) {
+                page7radiosLoc.style.display = "flex"
+                page7PPGLoc.style.display = "none"
+            }
+            
             allowNext = true
         }
 
