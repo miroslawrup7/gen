@@ -58,6 +58,14 @@ buttonNextArrLoc.forEach((elem) => {
             allowNext = true
         }
 
+        if (actualPage.classList.contains("page4")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page5")) {
+            allowNext = true
+        }
+
         if (allowNext) {
             formPagesLoc.style.left = newLeftValue + "px"
             allowNext = false
@@ -121,9 +129,7 @@ const noticeContentArrP3Loc = document.querySelectorAll(".page3 .notice-content"
 
 radioArrP3Loc.forEach((elem) => {
     elem.addEventListener("click", (e)=> {
-        console.log(e.target.value)
         const noticeContentLoc = document.querySelector(`.notice-content.${e.target.value}`)
-        console.log(noticeContentLoc)
         noticeContentArrP3Loc.forEach((el)=> {
             el.classList.add("disable")
         })
@@ -145,6 +151,41 @@ removeApplicantBtnLoc.addEventListener("click", ()=> {
     additionalApplicantLoc.style.display = "none"
 })
 
+// adres korespondencyjny inny niż zamieszkania - strona 5
+
+const theSameAddressRadioLoc = document.querySelector(".page5 #address-the-same")
+const otherAddressRadioLoc = document.querySelector(".page5 #address-other")
+const addressFormLoc = document.querySelector(".page5 .applicant-form-box")
+
+
+theSameAddressRadioLoc.addEventListener("click", ()=> {
+    if (theSameAddressRadioLoc.checked) {
+        addressFormLoc.style.visibility = "hidden"
+    }
+})
+
+otherAddressRadioLoc.addEventListener("click", ()=> {
+    if (otherAddressRadioLoc.checked) {
+        addressFormLoc.style.visibility = "visible"
+    }
+})
+
+// kto podpisuje umowę - strona 6
+const personallyRadioLoc = document.querySelector(".page6 #personally")
+const proxyRadioLoc = document.querySelector(".page6 #proxy")
+const formContainerPage6Loc = document.querySelector(".page6 .applicant-form-box")
+const noticePage6Loc = document.querySelector(".page6 .notice")
+
+
+personallyRadioLoc.addEventListener("change", ()=> {
+    formContainerPage6Loc.style.visibility = "hidden"
+    noticePage6Loc.style.visibility = "hidden"
+})
+
+proxyRadioLoc.addEventListener("change", ()=> {
+    formContainerPage6Loc.style.visibility = "visible"
+    noticePage6Loc.style.visibility = "visible"
+})
 
 
 

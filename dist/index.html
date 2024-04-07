@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1712411132981">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1712474029242">
     <link rel="shortcut icon" href="#">
 
     <title>Formularz</title>
@@ -241,7 +241,6 @@
                     </div>
                 </div>
 
-
                 <div class="buttons">
                     <div class="button prev">
                         wstecz
@@ -255,24 +254,121 @@
 
             <div class="form-page page5">
 
-                <h1>Strona 5 (ostatnia)</h1>
+                <h1>3. Adres korespondencyjny</h1>
+                <div class="radios">
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="address-the-same" name="radio-address" value="address-the-same"
+                                autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="address-the-same">Taki sam jak zamieszkania</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="address-other" name="radio-address" value="address-other"
+                                autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="address-other">Inny niż zamieszkania</label>
+                    </div>
+                </div>
+
+                <div class="applicant-form-box">
+                    <form action="">
+                        <div class="input-container">
+                            <label for="name">Imię i nazwisko lub pełna nazwa<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Adres korespondecyjny<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Kod pocztowy<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Miejscowość<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                    </form>
+                </div>
 
                 <div class="buttons">
                     <div class="button prev">
                         wstecz
                     </div>
-                    <div class="button next disable">
+                    <div class="button next">
                         dalej
                     </div>
                 </div>
 
             </div>
 
-        </div>
+            <div class="form-page page6">
 
+                <h1>4. Jak podpiszesz umowę?</h1>
+                <div class="radios">
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="personally" name="sign-contract" value="personally"
+                                autocomplete="off" checked>
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="personally">Osobiście</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <label class="radio">
+                            <input type="radio" id="proxy" name="sign-contract" value="proxy" autocomplete="off">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="label-text" for="proxy">Za pośrednictwem pełnomocnika</label>
+                    </div>
+                </div>
+
+                <div class="applicant-form-box">
+                    <form action="">
+                        <div class="input-container">
+                            <label for="name">Imię i nazwisko<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">PESEL<span> *</span></label>
+                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                        <div class="input-container">
+                            <label for="name">Data pełnomocnictwa<span> *</span></label>
+                            <input type="date" name="name" id="name" placeholder="Wpisz">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="notice">
+                    <p class="notice-header">UWAGA!</p>
+                    <p class="notice-content online">
+                        W przypadku podpisywania umowy przez pełnomocnika, niezbędne jest przesłanie oryginału
+                        pełnomocnictwa lub kopii potwierdzonej za zgodność. Wniosek będzie realizowany po otrzymaniu
+                        przez G.EN. wspomnianego dokumentu.
+                    </p>
+                </div>
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <script src="./js/main.js?cache_bust=1712411132981"></script>
+    <script src="./js/main.js?cache_bust=1712474029242"></script>
 </body>
 
 </html>
