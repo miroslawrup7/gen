@@ -367,14 +367,66 @@ h2 {
   cursor: pointer;
   margin: 0 12px;
 }
-.radio-container .label-text img {
-  height: 25px;
-  padding: 0 10px;
-  opacity: 0.5;
+.radio-container .label-text span.help {
+  position: relative;
 }
-.radio-container .label-text img:hover {
+.radio-container .label-text span.help img {
+  height: 22px;
+  padding: 0 8px;
+  opacity: 0.5;
+  position: relative;
+  display: inline-block;
+}
+.radio-container .label-text span.help img:hover {
   opacity: 1;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+.toogle-switch {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+.toogle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toogle-switch input:checked + .slider {
+  background-color: #FFDD00;
+  outline: 2px solid #FFDD00;
+}
+.toogle-switch input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: #fff;
+}
+.toogle-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background-color: #fff;
+  outline: 2px solid #E9EBED;
+  transition: 0.4s;
+}
+.toogle-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #E9EBED;
+  transition: 0.4s;
+}
+.toogle-switch .slider.round {
+  border-radius: 34px;
+}
+.toogle-switch .slider.round:before {
+  border-radius: 50%;
 }
 
 .page3 .content {
@@ -412,14 +464,16 @@ h2 {
 .page5,
 .page6,
 .page7,
-.page8 {
+.page8,
+.page9 {
   overflow-y: auto;
 }
 .page4 .radios,
 .page5 .radios,
 .page6 .radios,
 .page7 .radios,
-.page8 .radios {
+.page8 .radios,
+.page9 .radios {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -429,7 +483,8 @@ h2 {
 .page5 .form-box,
 .page6 .form-box,
 .page7 .form-box,
-.page8 .form-box {
+.page8 .form-box,
+.page9 .form-box {
   background-color: #E9EBED;
   margin: 20px;
   display: flex;
@@ -439,7 +494,8 @@ h2 {
 .page5 .form-box form,
 .page6 .form-box form,
 .page7 .form-box form,
-.page8 .form-box form {
+.page8 .form-box form,
+.page9 .form-box form {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -449,7 +505,8 @@ h2 {
 .page5 .form-box form .input-container,
 .page6 .form-box form .input-container,
 .page7 .form-box form .input-container,
-.page8 .form-box form .input-container {
+.page8 .form-box form .input-container,
+.page9 .form-box form .input-container {
   display: flex;
   flex-direction: column;
   width: calc(50% - 15px);
@@ -458,7 +515,8 @@ h2 {
 .page5 .form-box form .input-container label,
 .page6 .form-box form .input-container label,
 .page7 .form-box form .input-container label,
-.page8 .form-box form .input-container label {
+.page8 .form-box form .input-container label,
+.page9 .form-box form .input-container label {
   margin-bottom: 10px;
   margin-left: 5px;
   text-transform: uppercase;
@@ -469,7 +527,8 @@ h2 {
 .page5 .form-box form .input-container label span,
 .page6 .form-box form .input-container label span,
 .page7 .form-box form .input-container label span,
-.page8 .form-box form .input-container label span {
+.page8 .form-box form .input-container label span,
+.page9 .form-box form .input-container label span {
   color: #FF5050;
   font-family: "Clarika Geo Bold";
 }
@@ -477,7 +536,8 @@ h2 {
 .page5 .form-box form .input-container input,
 .page6 .form-box form .input-container input,
 .page7 .form-box form .input-container input,
-.page8 .form-box form .input-container input {
+.page8 .form-box form .input-container input,
+.page9 .form-box form .input-container input {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -491,14 +551,16 @@ h2 {
 .page5 .form-box form .input-container .select-input-container,
 .page6 .form-box form .input-container .select-input-container,
 .page7 .form-box form .input-container .select-input-container,
-.page8 .form-box form .input-container .select-input-container {
+.page8 .form-box form .input-container .select-input-container,
+.page9 .form-box form .input-container .select-input-container {
   display: flex;
 }
 .page4 .form-box form .input-container .select-input-container select,
 .page5 .form-box form .input-container .select-input-container select,
 .page6 .form-box form .input-container .select-input-container select,
 .page7 .form-box form .input-container .select-input-container select,
-.page8 .form-box form .input-container .select-input-container select {
+.page8 .form-box form .input-container .select-input-container select,
+.page9 .form-box form .input-container .select-input-container select {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -513,21 +575,24 @@ h2 {
 .page5 .form-box form .input-container .select-input-container select optgroup,
 .page6 .form-box form .input-container .select-input-container select optgroup,
 .page7 .form-box form .input-container .select-input-container select optgroup,
-.page8 .form-box form .input-container .select-input-container select optgroup {
+.page8 .form-box form .input-container .select-input-container select optgroup,
+.page9 .form-box form .input-container .select-input-container select optgroup {
   font-size: 18px;
 }
 .page4 .form-box form .input-container .select-input-container input,
 .page5 .form-box form .input-container .select-input-container input,
 .page6 .form-box form .input-container .select-input-container input,
 .page7 .form-box form .input-container .select-input-container input,
-.page8 .form-box form .input-container .select-input-container input {
+.page8 .form-box form .input-container .select-input-container input,
+.page9 .form-box form .input-container .select-input-container input {
   width: 50%;
 }
 .page4 .form-box.additional,
 .page5 .form-box.additional,
 .page6 .form-box.additional,
 .page7 .form-box.additional,
-.page8 .form-box.additional {
+.page8 .form-box.additional,
+.page9 .form-box.additional {
   display: none;
 }
 
@@ -571,4 +636,19 @@ h2 {
 }
 .page7 .form-box form .input-container.w-25 {
   width: calc(25% - 20px);
+}
+
+.page9 .equipment-box {
+  border: red solid 1px;
+}
+.page9 .equipment-box .equipment-row {
+  display: flex;
+  padding: 6px 0;
+  align-items: center;
+}
+.page9 .equipment-box .equipment-row .equipment-name {
+  font-family: "Clarika Geo Regular", sans-serif;
+  font-size: 24px;
+  margin-left: 20px;
+  margin-top: -4px;
 }
