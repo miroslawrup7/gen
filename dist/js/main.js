@@ -80,6 +80,14 @@ buttonNextArrLoc.forEach((elem) => {
             allowNext = true
         }
 
+        if (actualPage.classList.contains("page7")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page8")) {
+            allowNext = true
+        }
+
         if (allowNext) {
             formPagesLoc.style.left = newLeftValue + "px"
             allowNext = false
@@ -248,6 +256,25 @@ page5radioArrLoc.forEach((elem) => {
         if (e.target.value === "radio10") {
             page7radios = 2
             page7formLoc.style.visibility = "visible"
+        }
+    })
+})
+
+// czy znasz moc urządzeń - strona 8
+
+const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
+
+let page8radios = 0
+
+page5radioArrLoc.forEach((elem) => {
+    
+    elem.addEventListener("change", (e)=> {
+
+        if (e.target.value === "radio11") {
+            page8radios = 1
+        }
+        if (e.target.value === "radio12") {
+            page8radios = 2
         }
     })
 })
