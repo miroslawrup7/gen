@@ -85,7 +85,43 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page8")) {
+
+            const powerRowArrLoc = document.querySelectorAll(".page9 .power-row")
+
+            if (page8radios === 1) {
+                powerRowArrLoc.forEach((elx)=> {
+                    elx.innerHTML =  "Moc urządzenia: <input type='text'> kW"
+                })
+            }
+
+            if (page8radios === 2) {
+                powerRowArrLoc.forEach((elx, index)=> {
+                    if (index === 0 || index === 4) {
+                        elx.innerHTML =  "Średnia moc kuchenki to 7kW"
+                    }
+                    if (index === 1 || index === 5) {
+                        elx.innerHTML =  "Średnia moc kotła dwufunkcyjnego to ?kW"
+                    }
+                    if (index === 2 || index === 6) {
+                        elx.innerHTML =  "Średnia moc kotła jednofunkcyjnego to 21kW"
+                    } if (index === 3 || index === 7) {
+                        elx.innerHTML =  "Średnia moc podgrzewacza to ?kW"
+                    }
+                })
+            }
+
             allowNext = true
+        }
+
+        if (actualPage.classList.contains("page9")) {
+            console.log("page1radios", page1radios)
+            console.log("page3radios", page3radios)
+            console.log("page4boolean", page4boolean)
+            console.log("page5radios", page5radios)
+            console.log("page6radios", page6radios)
+            console.log("page7radios", page7radios)
+            console.log("page8radios", page8radios)
+
         }
 
         if (allowNext) {
@@ -151,7 +187,11 @@ const page3noticeContentArrLoc = document.querySelectorAll(".page3 .notice-conte
 
 let page3radios = 0
 
-page3radioArrLoc.forEach((elem) => {
+page3radioArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page3radios = index + 1
+    }
     
     elem.addEventListener("change", (e)=> {
         
@@ -198,7 +238,12 @@ const page5formLoc = document.querySelector(".page5 .form-box")
 
 let page5radios = 0
 
-page5radioArrLoc.forEach((elem) => {
+page5radioArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page5radios = index + 1
+    }
+    
     
     elem.addEventListener("change", (e)=> {
 
@@ -221,7 +266,11 @@ const page6noticeLoc = document.querySelector(".page6 .notice")
 
 let page6radios = 0
 
-page6radioArrLoc.forEach((elem) => {
+page6radioArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page6radios = index + 1
+    }
     
     elem.addEventListener("change", (e)=> {
 
@@ -245,7 +294,11 @@ const page7formLoc = document.querySelector(".page7 .form-box")
 
 let page7radios = 0
 
-page5radioArrLoc.forEach((elem) => {
+page5radioArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page7radios = index + 1
+    }
     
     elem.addEventListener("change", (e)=> {
 
@@ -266,7 +319,11 @@ const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
 
 let page8radios = 0
 
-page5radioArrLoc.forEach((elem) => {
+page8radioArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page8radios = index + 1
+    }
     
     elem.addEventListener("change", (e)=> {
 
@@ -277,5 +334,32 @@ page5radioArrLoc.forEach((elem) => {
             page8radios = 2
         }
     })
+})
+
+// dodawanie mocy urządzeń - strona 9
+
+const page9inputArrLoc = document.querySelectorAll(".page9 .equipment-row input")
+
+page9inputArrLoc.forEach((elem)=> {
+    elem.addEventListener("change", (e)=> {
+        if (e.target.checked) {
+            e.target.closest(".equipment-row").nextElementSibling.style.display = "flex"
+        } else {
+            e.target.closest(".equipment-row").nextElementSibling.style.display = "none"
+        }
+    })
+})
+
+// dodanie dodatkowych urządzeń - strona 9
+
+const page9eqBoxArrLoc = document.querySelectorAll(".page9 .equipment-box")
+const page9addBtnLoc = page9eqBoxArrLoc[0].querySelector(".page9 .equipment-box .button.add")
+const page9removeBtnLoc = page9eqBoxArrLoc[1].querySelector(".page9 .equipment-box .button.remove")
+
+page9addBtnLoc.addEventListener("click", ()=>{
+    page9eqBoxArrLoc[1].style.display = "block"
+})
+page9removeBtnLoc.addEventListener("click", ()=>{
+    page9eqBoxArrLoc[1].style.display = "none"
 })
 

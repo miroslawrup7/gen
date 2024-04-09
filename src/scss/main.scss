@@ -3,6 +3,12 @@
 }
 
 @font-face {
+    font-family: 'Clarika Geo Thin';
+    src: url("../fonts/The Refinery Clarika Geo Thin.ttf");
+}
+
+
+@font-face {
     font-family: 'Clarika Geo Regular';
     src: url("../fonts/The Refinery Clarika Geo Regular.ttf");
 }
@@ -477,8 +483,8 @@ h2 {
 .toogle-switch {
     position: relative;
     display: inline-block;
-    width: 64px;
-    height: 34px;
+    width: 56px;
+    height: 24px;
 
     input {
         opacity: 0;
@@ -514,10 +520,10 @@ h2 {
         &:before {
             position: absolute;
             content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
+            height: 20px;
+            width: 20px;
+            left: 3px;
+            bottom: 2px;
             background-color: $background-5;
             transition: .4s;
         }
@@ -723,8 +729,53 @@ h2 {
 }
 
 .page9 {
+    .summary-calculated-box {
+        border: 3px solid $border-1;
+        padding: 10px 20px;
+        border-radius: 20px;
+        width: 100%;
+
+        .calc-row {
+            font-family: "Clarika Geo Regular", sans-serif;
+            font-size: 24px;
+            margin-left: 20px;
+            display: flex;
+            position: relative;
+            margin-bottom: 3px;
+
+            &.sub {
+                padding-left: 30px;
+            }
+
+            .value {
+                position: absolute;
+                left: 450px;
+
+                .digit {
+                    font-family: "Clarika Geo Medium", sans-serif;
+                    background-color: rgba($background-1, 0.7);
+                    border-radius: 5px;
+                    display: inline-block;
+                    min-width: 100px;
+                    padding-right: 5px;
+                    text-align: right;
+                }
+
+
+                .unit {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+
+    }
+
     .equipment-box {
-        border: red solid 1px;
+        display: none;
+        border: 1px solid $border-3;
+        padding: 10px 20px;
+        border-radius: 20px;
 
         .equipment-row {
             display: flex;
@@ -737,7 +788,44 @@ h2 {
                 margin-left: 20px;
                 margin-top: -4px;
             }
+        }
 
+        .power-row {
+            font-family: "Clarika Geo Regular", sans-serif;
+            font-size: 22px;
+            color: $text-3;
+            margin-left: 80px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            display: none;
+
+            input {
+                height: 40px;
+                width: 75px;
+                border: solid 1px $border-5;
+                margin: 0 10px;
+                border-radius: 2px;
+                padding: 0 5px;
+                font-family: "Clarika Geo Medium", sans-serif;
+                font-size: 22px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                padding-bottom: 4px;
+
+                &:focus {
+                    border: $border-1 2px solid;
+                }
+            }
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        &.active {
+            display: block;
         }
     }
 }
