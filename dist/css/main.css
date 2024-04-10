@@ -106,6 +106,11 @@ h2 {
   text-align: center;
 }
 
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
 .tiles {
   display: flex;
   justify-content: center;
@@ -257,6 +262,7 @@ h2 {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  flex-shrink: 0;
   /* Hide the browser's default checkbox */
   /* Create a custom checkbox */
   /* On mouse-over, add a background color */
@@ -279,11 +285,13 @@ h2 {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #999;
+  background-color: #fff;
   border-radius: 8px;
+  border: 1px solid rgba(88, 88, 88, 0.2);
 }
 .checkbox-container .checkbox input:checked ~ .checkmark {
-  background-color: red;
+  background-color: #FFDD00;
+  border: 1px #FFDD00 solid;
 }
 .checkbox-container .checkbox .checkmark:after {
   content: "";
@@ -298,7 +306,7 @@ h2 {
   top: 4px;
   width: 10px;
   height: 19px;
-  border: solid white;
+  border: solid #585858;
   border-width: 0 4px 4px 0;
   transform: rotate(40deg);
 }
@@ -433,6 +441,42 @@ h2 {
   border-radius: 50%;
 }
 
+.file-upload-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.file-upload-container .file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Clarika Geo Regular";
+  font-size: 18px;
+  background-color: transparent;
+  border: 1px solid #E9EBED;
+  transition: all 0.1s ease-in-out;
+  min-width: 250px;
+  text-align: center;
+  width: 60%;
+}
+.file-upload-container .file-upload:hover {
+  background-color: #FFDD00;
+  border: solid 1px transparent;
+}
+.file-upload-container .file-upload input[type=file] {
+  display: none;
+}
+.file-upload-container #uploadedFileName {
+  width: 60%;
+  padding-right: 10px;
+  display: flex;
+  justify-content: right;
+  opacity: 0.5;
+  font-style: italic;
+}
+
 .page3 .content {
   display: flex;
 }
@@ -469,7 +513,8 @@ h2 {
 .page6,
 .page7,
 .page8,
-.page9 {
+.page9,
+.page10 {
   overflow-y: auto;
 }
 .page4 .radios,
@@ -477,7 +522,8 @@ h2 {
 .page6 .radios,
 .page7 .radios,
 .page8 .radios,
-.page9 .radios {
+.page9 .radios,
+.page10 .radios {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -488,7 +534,8 @@ h2 {
 .page6 .form-box,
 .page7 .form-box,
 .page8 .form-box,
-.page9 .form-box {
+.page9 .form-box,
+.page10 .form-box {
   background-color: #E9EBED;
   margin: 20px;
   display: flex;
@@ -499,7 +546,8 @@ h2 {
 .page6 .form-box form,
 .page7 .form-box form,
 .page8 .form-box form,
-.page9 .form-box form {
+.page9 .form-box form,
+.page10 .form-box form {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -510,7 +558,8 @@ h2 {
 .page6 .form-box form .input-container,
 .page7 .form-box form .input-container,
 .page8 .form-box form .input-container,
-.page9 .form-box form .input-container {
+.page9 .form-box form .input-container,
+.page10 .form-box form .input-container {
   display: flex;
   flex-direction: column;
   width: calc(50% - 15px);
@@ -520,7 +569,8 @@ h2 {
 .page6 .form-box form .input-container label,
 .page7 .form-box form .input-container label,
 .page8 .form-box form .input-container label,
-.page9 .form-box form .input-container label {
+.page9 .form-box form .input-container label,
+.page10 .form-box form .input-container label {
   margin-bottom: 10px;
   margin-left: 5px;
   text-transform: uppercase;
@@ -532,7 +582,8 @@ h2 {
 .page6 .form-box form .input-container label span,
 .page7 .form-box form .input-container label span,
 .page8 .form-box form .input-container label span,
-.page9 .form-box form .input-container label span {
+.page9 .form-box form .input-container label span,
+.page10 .form-box form .input-container label span {
   color: #FF5050;
   font-family: "Clarika Geo Bold";
 }
@@ -541,7 +592,8 @@ h2 {
 .page6 .form-box form .input-container input,
 .page7 .form-box form .input-container input,
 .page8 .form-box form .input-container input,
-.page9 .form-box form .input-container input {
+.page9 .form-box form .input-container input,
+.page10 .form-box form .input-container input {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -556,7 +608,8 @@ h2 {
 .page6 .form-box form .input-container .select-input-container,
 .page7 .form-box form .input-container .select-input-container,
 .page8 .form-box form .input-container .select-input-container,
-.page9 .form-box form .input-container .select-input-container {
+.page9 .form-box form .input-container .select-input-container,
+.page10 .form-box form .input-container .select-input-container {
   display: flex;
 }
 .page4 .form-box form .input-container .select-input-container select,
@@ -564,7 +617,8 @@ h2 {
 .page6 .form-box form .input-container .select-input-container select,
 .page7 .form-box form .input-container .select-input-container select,
 .page8 .form-box form .input-container .select-input-container select,
-.page9 .form-box form .input-container .select-input-container select {
+.page9 .form-box form .input-container .select-input-container select,
+.page10 .form-box form .input-container .select-input-container select {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -580,7 +634,8 @@ h2 {
 .page6 .form-box form .input-container .select-input-container select optgroup,
 .page7 .form-box form .input-container .select-input-container select optgroup,
 .page8 .form-box form .input-container .select-input-container select optgroup,
-.page9 .form-box form .input-container .select-input-container select optgroup {
+.page9 .form-box form .input-container .select-input-container select optgroup,
+.page10 .form-box form .input-container .select-input-container select optgroup {
   font-size: 18px;
 }
 .page4 .form-box form .input-container .select-input-container input,
@@ -588,7 +643,8 @@ h2 {
 .page6 .form-box form .input-container .select-input-container input,
 .page7 .form-box form .input-container .select-input-container input,
 .page8 .form-box form .input-container .select-input-container input,
-.page9 .form-box form .input-container .select-input-container input {
+.page9 .form-box form .input-container .select-input-container input,
+.page10 .form-box form .input-container .select-input-container input {
   width: 50%;
 }
 .page4 .form-box.additional,
@@ -596,7 +652,8 @@ h2 {
 .page6 .form-box.additional,
 .page7 .form-box.additional,
 .page8 .form-box.additional,
-.page9 .form-box.additional {
+.page9 .form-box.additional,
+.page10 .form-box.additional {
   display: none;
 }
 
@@ -724,4 +781,29 @@ h2 {
 }
 .page9 .equipment-box.active {
   display: block;
+}
+
+.page10 .form-box form .input-container.w-100 {
+  width: 100%;
+}
+.page10 .form-box form .input-container.w-50 {
+  width: calc(50% - 20px);
+}
+.page10 .form-box form .input-container.w-25 {
+  width: calc(25% - 20px);
+}
+.page10 .notice {
+  background-color: #E9EBED;
+  padding: 35px 50px;
+  font-size: 20px;
+  margin: 30px 0;
+  border-left: 8px solid #FFDD00;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.page10 .notice .notice-header {
+  font-family: "Clarika Geo Bold", sans-serif;
+  margin-bottom: 12px;
 }

@@ -114,6 +114,10 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page9")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page10")) {
             console.log("page1radios", page1radios)
             console.log("page3radios", page3radios)
             console.log("page4boolean", page4boolean)
@@ -363,3 +367,98 @@ page9removeBtnLoc.addEventListener("click", ()=>{
     page9eqBoxArrLoc[1].style.display = "none"
 })
 
+// okres obowiązywania umowy - strona 10
+
+const page10inputRadiosFArrLoc = document.querySelectorAll(".page10 .radiosF input")
+const page10contractPeriodFormLoc = document.querySelector(".page10 .contract-period")
+
+let page10radiosF = 0
+
+page10inputRadiosFArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page10radiosF = index + 1
+    }
+
+    if (page10radiosF === 2) {
+        page10contractPeriodFormLoc.style.display = "flex"
+    } else {
+        page10contractPeriodFormLoc.style.display = "none"
+    }
+    
+    elem.addEventListener("change", (e)=> {
+
+        if (e.target.value === "radio13") {
+            page10radiosF = 1
+            page10contractPeriodFormLoc.style.display = "none"
+        }
+        if (e.target.value === "radio14") {
+            page10radiosF = 2
+            page10contractPeriodFormLoc.style.display = "flex"
+        }
+    })
+})
+
+// wymuszenie zakresów dat na input:date - strona 10
+
+const page10date1Loc = document.querySelector(".page10 #date1")
+const page10date2Loc = document.querySelector(".page10 #date2")
+
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+if (month < 10) {
+    month = "0" + month
+}
+let year = date.getFullYear();
+
+let tommorow = `${year}-${month}-${day + 1}`;
+let nextYear = `${year + 1}-${month}-${day}`;
+
+page10date1Loc.setAttribute("min", nextYear);
+page10date2Loc.setAttribute("min", tommorow);
+
+// działanie customowego input:file - strona 10
+
+function getFile() {
+    document.getElementById("request").click();
+}
+  
+function sub(obj) {
+    let file = obj.value;
+    let fileName = file.split("\\");
+    document.getElementById("uploadedFileName").innerHTML = "Załączono plik: " + fileName[fileName.length - 1];
+}
+
+// sposób dostarczenia wniosku - strona 10
+
+const page10inputRadiosGArrLoc = document.querySelectorAll(".page10 .radiosG input")
+const page10fileUploadContainerLoc = document.querySelector(".page10 .file-upload-container")
+
+let page10radiosG = 0
+
+page10inputRadiosGArrLoc.forEach((elem, index) => {
+
+    if (elem.checked) {
+        page10radiosG = index + 1
+    }
+
+    if (page10radiosG === 2) {
+        page10fileUploadContainerLoc.style.display = "flex"
+    } else {
+        page10fileUploadContainerLoc.style.display = "none"
+    }
+    
+    elem.addEventListener("change", (e)=> {
+
+        if (e.target.value === "radio15") {
+            page10radiosG = 1
+            page10fileUploadContainerLoc.style.display = "none"
+        }
+        if (e.target.value === "radio16") {
+            page10radiosG = 2
+            page10fileUploadContainerLoc.style.display = "flex"
+        }
+    })
+})
