@@ -631,7 +631,8 @@ sup {
 .page7,
 .page8,
 .page9,
-.page10 {
+.page10,
+.page11 {
     overflow-y: auto;
 
     .radios {
@@ -915,5 +916,12 @@ sup {
             font-family: "Clarika Geo Bold", sans-serif;
             margin-bottom: 12px;
         }
+    }
+}
+
+.page11 {
+    .radios {
+        flex-direction: column;
+        gap: 20px;
     }
 }

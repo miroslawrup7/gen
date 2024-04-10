@@ -118,6 +118,10 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page10")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page11")) {
             console.log("page1radios", page1radios)
             console.log("page3radios", page3radios)
             console.log("page4boolean", page4boolean)
