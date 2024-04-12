@@ -122,14 +122,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page11")) {
-            console.log("page1radios", page1radios)
-            console.log("page3radios", page3radios)
-            console.log("page4boolean", page4boolean)
-            console.log("page5radios", page5radios)
-            console.log("page6radios", page6radios)
-            console.log("page7radios", page7radios)
-            console.log("page8radios", page8radios)
-
+            allowNext = true
         }
 
         if (allowNext) {
@@ -466,3 +459,37 @@ page10inputRadiosGArrLoc.forEach((elem, index) => {
         }
     })
 })
+
+// combo - input text or select
+
+const page12inputSelectContainerArrLoc = document.querySelectorAll(".page12 .input-select-container")
+const page12chevronArrLoc = document.querySelectorAll(".page12 .chevron")
+const page12customOptionArrLoc = document.querySelectorAll(".page12 .custom-select .custom-option")
+
+page12chevronArrLoc.forEach((elem)=>{
+    elem.addEventListener("click", ()=>{
+        if (getComputedStyle(elem.nextElementSibling).display === "block") {
+            elem.nextElementSibling.style.display = "none"
+            elem.previousElementSibling.style.borderBottomStyle = "solid"
+        } else {
+            elem.nextElementSibling.style.display = "block"
+            console.log(elem.previousElementSibling)
+            elem.previousElementSibling.style.borderBottomWidth = "none"
+        }
+    })
+})
+
+page12customOptionArrLoc.forEach((elem)=> {
+    elem.addEventListener("click", ()=>{
+        elem.parentElement.parentElement.querySelector("input").value = elem.innerText
+        elem.parentElement.style.display = "none"
+    })
+})
+
+page12inputSelectContainerArrLoc.forEach((elem)=>{
+    elem.addEventListener("mouseleave", ()=>{
+        elem.querySelector(".custom-select").style.display = "none"
+    })
+})
+
+
