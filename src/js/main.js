@@ -125,10 +125,27 @@ buttonNextArrLoc.forEach((elem) => {
             allowNext = true
         }
 
+        if (actualPage.classList.contains("page12")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page13")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page14")) {
+            allowNext = true
+        }
+
+        if (actualPage.classList.contains("page15")) {
+            allowNext = true
+        }
+
         if (allowNext) {
             formPagesLoc.style.left = newLeftValue + "px"
             allowNext = false
         }
+        
     })
 })
 
@@ -418,15 +435,35 @@ page10date2Loc.setAttribute("min", tommorow);
 
 // działanie customowego input:file - strona 10
 
-function getFile() {
-    document.getElementById("request").click();
-}
+// function getFile() {
+//     document.getElementById("request").click();
+// }
   
-function sub(obj) {
-    let file = obj.value;
-    let fileName = file.split("\\");
-    document.getElementById("uploadedFileName").innerHTML = "Załączono plik: " + fileName[fileName.length - 1];
-}
+// function sub(obj) {
+//     let file = obj.value;
+//     let fileName = file.split("\\");
+//     document.getElementById("uploadedFileName").innerHTML = "Załączono plik: " + fileName[fileName.length - 1];
+// }
+
+const fileUploadArrLoc = document.querySelectorAll(".file-upload")
+console.log(fileUploadArrLoc)
+
+fileUploadArrLoc.forEach((elem)=> {
+    elem.addEventListener("click", ()=>{
+        console.log(elem)
+        elem.querySelector(".appendix").click()
+    })
+})
+
+const inputAppendixArrLoc = document.querySelectorAll("input.appendix")
+
+inputAppendixArrLoc.forEach((elem)=> {
+    elem.addEventListener("change", (e)=>{
+        let file = e.target.value;
+        let fileName = file.split("\\");
+        e.target.parentElement.parentElement.querySelector(".uploadedFileName").innerHTML = "Załączono plik: " + fileName[fileName.length - 1];
+    })
+})
 
 // sposób dostarczenia wniosku - strona 10
 

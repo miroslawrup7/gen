@@ -633,7 +633,11 @@ sup {
 .page9,
 .page10,
 .page11,
-.page12 {
+.page12,
+.page13,
+.page14,
+.page15,
+.page16 {
     overflow-y: auto;
 
     .radios {
@@ -996,6 +1000,76 @@ sup {
                 z-index: 97;
                 min-width: 320px;
             }
+        }
+    }
+}
+
+.page13 {
+    .radios-container {
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+    }
+}
+
+.page14 {
+    h1 {
+        margin-bottom: 30px;
+    }
+
+    .radios-container {
+        flex-direction: column;
+        gap: 20px;
+
+        p {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    }
+}
+
+.page15 {
+    .ol-container {
+        padding: 0 20px;
+
+        ol {
+            font-size: 18px;
+
+            li {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+.page16 {
+    .form-box {
+        form {
+            .input-container {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+
+                textarea {
+                    width: 100%;
+                    background-color: #fff;
+                    min-height: 150px;
+                    font-size: 20px;
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    .file-upload-double-container {
+        display: flex;
+
+        .file-upload-container {
+            display: flex;
         }
     }
 }

@@ -516,7 +516,11 @@ sup {
 .page9,
 .page10,
 .page11,
-.page12 {
+.page12,
+.page13,
+.page14,
+.page15,
+.page16 {
   overflow-y: auto;
 }
 .page4 .radios,
@@ -527,7 +531,11 @@ sup {
 .page9 .radios,
 .page10 .radios,
 .page11 .radios,
-.page12 .radios {
+.page12 .radios,
+.page13 .radios,
+.page14 .radios,
+.page15 .radios,
+.page16 .radios {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -541,7 +549,11 @@ sup {
 .page9 .form-box,
 .page10 .form-box,
 .page11 .form-box,
-.page12 .form-box {
+.page12 .form-box,
+.page13 .form-box,
+.page14 .form-box,
+.page15 .form-box,
+.page16 .form-box {
   background-color: #E9EBED;
   margin: 20px;
   display: flex;
@@ -555,7 +567,11 @@ sup {
 .page9 .form-box form,
 .page10 .form-box form,
 .page11 .form-box form,
-.page12 .form-box form {
+.page12 .form-box form,
+.page13 .form-box form,
+.page14 .form-box form,
+.page15 .form-box form,
+.page16 .form-box form {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -569,7 +585,11 @@ sup {
 .page9 .form-box form .input-container,
 .page10 .form-box form .input-container,
 .page11 .form-box form .input-container,
-.page12 .form-box form .input-container {
+.page12 .form-box form .input-container,
+.page13 .form-box form .input-container,
+.page14 .form-box form .input-container,
+.page15 .form-box form .input-container,
+.page16 .form-box form .input-container {
   display: flex;
   flex-direction: column;
   width: calc(50% - 15px);
@@ -582,7 +602,11 @@ sup {
 .page9 .form-box form .input-container label,
 .page10 .form-box form .input-container label,
 .page11 .form-box form .input-container label,
-.page12 .form-box form .input-container label {
+.page12 .form-box form .input-container label,
+.page13 .form-box form .input-container label,
+.page14 .form-box form .input-container label,
+.page15 .form-box form .input-container label,
+.page16 .form-box form .input-container label {
   margin-bottom: 10px;
   margin-left: 5px;
   text-transform: uppercase;
@@ -597,7 +621,11 @@ sup {
 .page9 .form-box form .input-container label span,
 .page10 .form-box form .input-container label span,
 .page11 .form-box form .input-container label span,
-.page12 .form-box form .input-container label span {
+.page12 .form-box form .input-container label span,
+.page13 .form-box form .input-container label span,
+.page14 .form-box form .input-container label span,
+.page15 .form-box form .input-container label span,
+.page16 .form-box form .input-container label span {
   color: #FF5050;
   font-family: "Clarika Geo Bold";
 }
@@ -609,7 +637,11 @@ sup {
 .page9 .form-box form .input-container input,
 .page10 .form-box form .input-container input,
 .page11 .form-box form .input-container input,
-.page12 .form-box form .input-container input {
+.page12 .form-box form .input-container input,
+.page13 .form-box form .input-container input,
+.page14 .form-box form .input-container input,
+.page15 .form-box form .input-container input,
+.page16 .form-box form .input-container input {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -627,7 +659,11 @@ sup {
 .page9 .form-box form .input-container .select-input-container,
 .page10 .form-box form .input-container .select-input-container,
 .page11 .form-box form .input-container .select-input-container,
-.page12 .form-box form .input-container .select-input-container {
+.page12 .form-box form .input-container .select-input-container,
+.page13 .form-box form .input-container .select-input-container,
+.page14 .form-box form .input-container .select-input-container,
+.page15 .form-box form .input-container .select-input-container,
+.page16 .form-box form .input-container .select-input-container {
   display: flex;
 }
 .page4 .form-box form .input-container .select-input-container select,
@@ -638,7 +674,11 @@ sup {
 .page9 .form-box form .input-container .select-input-container select,
 .page10 .form-box form .input-container .select-input-container select,
 .page11 .form-box form .input-container .select-input-container select,
-.page12 .form-box form .input-container .select-input-container select {
+.page12 .form-box form .input-container .select-input-container select,
+.page13 .form-box form .input-container .select-input-container select,
+.page14 .form-box form .input-container .select-input-container select,
+.page15 .form-box form .input-container .select-input-container select,
+.page16 .form-box form .input-container .select-input-container select {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -657,7 +697,11 @@ sup {
 .page9 .form-box form .input-container .select-input-container select optgroup,
 .page10 .form-box form .input-container .select-input-container select optgroup,
 .page11 .form-box form .input-container .select-input-container select optgroup,
-.page12 .form-box form .input-container .select-input-container select optgroup {
+.page12 .form-box form .input-container .select-input-container select optgroup,
+.page13 .form-box form .input-container .select-input-container select optgroup,
+.page14 .form-box form .input-container .select-input-container select optgroup,
+.page15 .form-box form .input-container .select-input-container select optgroup,
+.page16 .form-box form .input-container .select-input-container select optgroup {
   font-size: 18px;
 }
 .page4 .form-box form .input-container .select-input-container input,
@@ -668,7 +712,11 @@ sup {
 .page9 .form-box form .input-container .select-input-container input,
 .page10 .form-box form .input-container .select-input-container input,
 .page11 .form-box form .input-container .select-input-container input,
-.page12 .form-box form .input-container .select-input-container input {
+.page12 .form-box form .input-container .select-input-container input,
+.page13 .form-box form .input-container .select-input-container input,
+.page14 .form-box form .input-container .select-input-container input,
+.page15 .form-box form .input-container .select-input-container input,
+.page16 .form-box form .input-container .select-input-container input {
   width: 50%;
 }
 .page4 .form-box.additional,
@@ -679,7 +727,11 @@ sup {
 .page9 .form-box.additional,
 .page10 .form-box.additional,
 .page11 .form-box.additional,
-.page12 .form-box.additional {
+.page12 .form-box.additional,
+.page13 .form-box.additional,
+.page14 .form-box.additional,
+.page15 .form-box.additional,
+.page16 .form-box.additional {
   display: none;
 }
 
@@ -898,4 +950,54 @@ sup {
 .page12 .reserve-seller .input-select-container:nth-of-type(3) {
   z-index: 97;
   min-width: 320px;
+}
+
+.page13 .radios-container {
+  flex-direction: column;
+  gap: 20px;
+}
+.page13 .radios-container p {
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.page14 h1 {
+  margin-bottom: 30px;
+}
+.page14 .radios-container {
+  flex-direction: column;
+  gap: 20px;
+}
+.page14 .radios-container p {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.page15 .ol-container {
+  padding: 0 20px;
+}
+.page15 .ol-container ol {
+  font-size: 18px;
+}
+.page15 .ol-container ol li {
+  margin: 20px;
+}
+
+.page16 .form-box form .input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.page16 .form-box form .input-container textarea {
+  width: 100%;
+  background-color: #fff;
+  min-height: 150px;
+  font-size: 20px;
+  padding: 20px;
+}
+.page16 .file-upload-double-container {
+  display: flex;
+}
+.page16 .file-upload-double-container .file-upload-container {
+  display: flex;
 }

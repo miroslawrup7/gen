@@ -491,58 +491,6 @@
 
                 <h1>7. Jaką moc urządzeń planujesz podłączyć?</h1>
 
-                <div class="summary-calculated-box">
-
-                    <div class="calc-row">
-                        <div class="label">Moc urządzeń gazowych: </div>
-                        <div class="value">
-                            <span class="digit">22,0</span>
-                            <span class="unit">kW</span>
-                        </div>
-
-                    </div>
-                    <div class="calc-row">
-                        <div class="label">Roczne zużycie gazu (przybliżone): </div>
-                        <div class="value">
-                            <span class="digit">1 200,0</span>
-                            <span class="unit">m<sup>3</sup></span>
-                        </div>
-                    </div>
-                    <div class="calc-row">
-                        <div class="label">Roczne zużycie gazu (przybliżone): </div>
-                        <div class="value">
-                            <span class="digit">13 166,4</span>
-                            <span class="unit">kWh</span>
-                        </div>
-
-                    </div>
-                    <div class="calc-row">
-                        <div class="label">Moc umowna do: </div>
-                        <div class="value">
-                            <span class="digit">110</span>
-                            <span class="unit">kWh</span>
-                        </div>
-
-                    </div>
-                    <div class="calc-row">Moc przyłączeniowa do:</div>
-                    <div class="calc-row sub">
-                        <div class="label">- dla gazu wysokometanowego (E): </div>
-                        <div class="value">
-                            <span class="digit">10</span>
-                            <span class="unit">m<sup>3</sup>/h</span>
-                        </div>
-
-                    </div>
-                    <div class="calc-row sub">
-                        <div class="label">- dla gazu zaazotowanego (Lw): </div>
-                        <div class="value">
-                            <span class="digit">25</span>
-                            <span class="unit">m<sup>3</sup>/h</span>
-                        </div>
-
-                    </div>
-                </div>
-
                 <div class="equipment-box active">
                     <div class="equipment-row">
                         <label class="toogle-switch">
@@ -658,6 +606,58 @@
                     </div>
                 </div>
 
+                <div class="summary-calculated-box">
+
+                    <div class="calc-row">
+                        <div class="label">Moc urządzeń gazowych: </div>
+                        <div class="value">
+                            <span class="digit">22,0</span>
+                            <span class="unit">kW</span>
+                        </div>
+
+                    </div>
+                    <div class="calc-row">
+                        <div class="label">Roczne zużycie gazu (przybliżone): </div>
+                        <div class="value">
+                            <span class="digit">1 200,0</span>
+                            <span class="unit">m<sup>3</sup></span>
+                        </div>
+                    </div>
+                    <div class="calc-row">
+                        <div class="label">Roczne zużycie gazu (przybliżone): </div>
+                        <div class="value">
+                            <span class="digit">13 166,4</span>
+                            <span class="unit">kWh</span>
+                        </div>
+
+                    </div>
+                    <div class="calc-row">
+                        <div class="label">Moc umowna do: </div>
+                        <div class="value">
+                            <span class="digit">110</span>
+                            <span class="unit">kWh</span>
+                        </div>
+
+                    </div>
+                    <div class="calc-row">Moc przyłączeniowa do:</div>
+                    <div class="calc-row sub">
+                        <div class="label">- dla gazu wysokometanowego (E): </div>
+                        <div class="value">
+                            <span class="digit">10</span>
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+
+                    </div>
+                    <div class="calc-row sub">
+                        <div class="label">- dla gazu zaazotowanego (Lw): </div>
+                        <div class="value">
+                            <span class="digit">25</span>
+                            <span class="unit">m<sup>3</sup>/h</span>
+                        </div>
+
+                    </div>
+                </div>
+
                 <div class="buttons">
                     <div class="button prev">
                         wstecz
@@ -768,12 +768,12 @@
                 </div>
 
                 <div class="file-upload-container">
-                    <div class="file-upload" onclick="getFile()">Załącz plik...
-                        <input id="request" type="file" value="upload" onchange="sub(this)"
+                    <div class="file-upload">Załącz plik...
+                        <input class="appendix" type="file" value="upload"
                             accept="image/jpeg,image/gif,image/png,application/pdf">
                     </div>
 
-                    <div id="uploadedFileName"></div>
+                    <div class="uploadedFileName"></div>
                 </div>
 
                 <div class="buttons">
@@ -912,9 +912,385 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <script src="./js/main.js?cache_bust=123"></script>
+            <div class="form-page page13">
+
+                <h1>11. Oświadczenia odbiorcy w związku z zawarciem umowy na odległość</h1>
+
+                <div class="radios-container">
+
+                    <p>W związku z zawarciem Umowy na odległość i art. 21 ust. 2 ustawy z dnia 30 maja 2014 r. o
+                        prawach konsumenta (tj. Dz. U. z 2020 r. poz. 287 ze zm.) żądam rozpoczęcia dostarczania Paliwa
+                        gazowego przed upływem 14 dni od dnia zawarcia Umowy. Żądanie powyższe oznacza, że w razie
+                        odstąpienia od Umowy, będę zobowiązany do zapłaty za świadczenie spełnione przez Sprzedawcę do
+                        chwili odstąpienia przeze mnie od umowy, według cen i stawek opłat wynikających z Taryfy, o
+                        której mowa w Umowie, o czym zostałem uprzednio pouczony.
+                    </p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio19" name="radiosI" value="radio19" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio19">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio20" name="radiosI" value="radio20" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio20">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page14">
+
+                <h1>12. Twoje zgody marketingowe</h1>
+
+                <div class="radios-container">
+
+                    <p>1. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w tym
+                        również po zakończeniu Umowy.</p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio21" name="radiosJ" value="radio21" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio21">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio22" name="radiosJ" value="radio22" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio22">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>2. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług podmiotów powiązanych kapitałowo z G.EN. GAZ
+                        ENERGIA Sp. z o.o., w tym również po zakończeniu Umowy.</p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio23" name="radiosK" value="radio23" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio23">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio24" name="radiosK" value="radio24" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio24">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>3. Wyrażam zgodę na otrzymywanie informacji handlowej przesyłanych przez G.EN. GAZ ENERGIA Sp. z
+                        o.o. poprzez e-mail lub konto eBOK, w tym również po zakończeniu Umowy.</p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio25" name="radiosL" value="radio25" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio25">
+                                Tak
+                            </label>
+                            <span class="help">
+                                <img src="./img/icons/question-silver.svg" alt="question">
+                            </span>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio26" name="radiosL" value="radio26" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio26">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>4. Wyrażam zgodę na marketing bezpośredni przez G.EN. GAZ ENERGIA Sp. z o.o. poprzez SMS
+                        lub telefon, w tym również po zakończeniu Umowy.</p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio27" name="radiosM" value="radio27" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio27">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio28" name="radiosM" value="radio28" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio28">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>5. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w tym
+                        również po zakończeniu Umowy.
+                    </p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio29" name="radiosN" value="radio29" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio29">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio30" name="radiosN" value="radio30" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio30">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>6. Wyrażam zgodę na marketing bezpośredni przez podmioty z grupy kapitałowej G.EN. GAZ ENERGIA
+                        Sp. z o.o. poprzez SMS lub telefon w tym również po zakończeniu Umowy.
+                    </p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio31" name="radiosO" value="radio31" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio31">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio32" name="radiosO" value="radio32" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio32">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="radios-container">
+
+                    <p>7. Wyrażam zgodę na udostepnienie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o.
+                        podmiotom z grupy kapitałowej G.EN. GAZ ENERGIA Sp. z o.o. w zakresie niezbędnym do podejmowania
+                        wobec mnie działań marketingowych.
+                    </p>
+
+                    <div class="radios">
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio33" name="radiosP" value="radio33" autocomplete="off"
+                                    checked>
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio33">
+                                Tak
+                            </label>
+                        </div>
+
+                        <div class="radio-container">
+                            <label class="radio">
+                                <input type="radio" id="radio34" name="radiosP" value="radio34" autocomplete="off">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="label-text" for="radio34">
+                                Nie
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page15">
+
+                <h1>13. Informacja o danych osobowych</h1>
+
+                <div class="ol-container">
+                    <ol>
+                        <li>Administratorem danych osobowych jest G.EN. GAZ ENERGIA Sp. z o.o. z siedzibą w Warszawie,
+                            ul. Domaniewska 37, 02-672, Warszawa. W razie pytań możecie się Państwo skontaktować z
+                            naszym Inspektorem Ochrony Danych, Maciejem Chwalińskim, za pomocą e-mail: iod@gen.com.pl
+                            lub wysyłając korespondencję na wskazany powyżej adres pocztowy z dopiskiem „ochrona danych
+                            osobowych”.</li>
+                        <li>Wypełniając Wniosek o zawarcie umowy kompleksowej dostarczania paliwa gazowego nasza firma
+                            będzie przetwarzać dotyczące Państwa dane osobowe, w celu podjęcia działań prowadzących do
+                            zawarcia umowy. Podstawę prawną przetwarzania stanowi w takim wypadku art. 6 ust. 1 lit. B.
+                        </li>
+                        <li>Podanie danych jest dobrowolne, jednak niezbędne do zawarcia i realizacji umowy.
+                            Mogą Państwo zdecydować się na zawarcie umowy z G.EN. GAZ ENERGIA Sp. z o.o. drogą online,
+                            przy wykorzystaniu dedykowanego narzędzia. Jest to całkowicie dobrowolne, jednak w takim
+                            wypadku niezbędne będzie podanie adresu e-mail oraz numeru telefonu.</li>
+                        <li>Mogą Państwo żądać od nas: uzyskania dostępu, sprostowania, usunięcia, ograniczenia
+                            przetwarzania, wniesienia sprzeciwu, przeniesienia Waszych danych osobowych, powszechnie
+                            używanym wycofania zgody wyrażonej na przetwarzanie danych osobowych. W przypadku zastrzeżeń
+                            związanych z przetwarzaniem danych osobowych mają Państwo prawo do wniesienia skargi do
+                            Prezesa Urzędu Ochrony Danych Osobowych.</li>
+                        <li>Pełne informacje na temat przetwarzania Państwa danych osobowych możecie uzyskać na naszej
+                            stronie internetowej: www.gen.com.pl w zakładce <a
+                                href="https://www.gen.com.pl/rodo">„Ochrona danych osobowych”</a>.</li>
+                    </ol>
+                </div>
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        dalej
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-page page16">
+
+                <h1>14. Twoje załączniki i pole na dodatkowe informacje</h1>
+
+                <div class="form-box">
+                    <form action="">
+                        <div class="input-container w-100">
+                            <label for="name">Dodatkowe informacje</label>
+                            <textarea name="name" id="name"></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="file-upload-double-container">
+
+                    <div class="file-upload-container">
+                        <div class="file-upload">Załącz plik...
+                            <input class="appendix" type="file" value="upload"
+                                accept="image/jpeg,image/gif,image/png,application/pdf">
+                        </div>
+
+                        <div class="uploadedFileName"></div>
+                    </div>
+
+                    <div class="file-upload-container">
+                        <div class="file-upload">Załącz plik...
+                            <input class="appendix" type="file" value="upload"
+                                accept="image/jpeg,image/gif,image/png,application/pdf">
+                        </div>
+
+                        <div class="uploadedFileName"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="buttons">
+                    <div class="button prev">
+                        wstecz
+                    </div>
+                    <div class="button next">
+                        wyślij
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="./js/main.js?cache_bust=123"></script>
 </body>
 
 </html>
