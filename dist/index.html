@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1712930282683">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1713119758938">
     <link rel="shortcut icon" href="#">
 
     <title>Formularz</title>
@@ -432,12 +432,12 @@
                     <form action="">
                         <div class="input-container">
                             <label for="name">Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
-                            <input type="text" name="name" id="name"
+                            <input class="input-text8-1" type="text" name="name" id="name"
                                 placeholder="Wpisz powierzchnię w metrach kwadratowych">
                         </div>
                         <div class="input-container">
                             <label for="name">Ile osób będzie mieszkać w domu?<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz liczbę">
+                            <input class="input-text8-2" type="text" name="name" id="name" placeholder="Wpisz liczbę">
                         </div>
 
                     </form>
@@ -523,7 +523,7 @@
                             Kocioł gazowy jednofunkcyjny (do ogrzewania domu)
                         </div>
                     </div>
-                    <div class="power-row"> </div>
+                    <div class="power-row"></div>
 
                     <div class="equipment-row">
                         <label class="toogle-switch">
@@ -611,62 +611,51 @@
                     <div class="calc-row">
                         <div class="label">Moc urządzeń gazowych: </div>
                         <div class="value">
-                            <span class="digit">22,0</span>
-                            <span class="unit">kW</span>
+                            <span class="digit units-power">0</span>
+                            <span class="unit">kW<sup></sup></span>
                         </div>
-
                     </div>
+
                     <div class="calc-row">
                         <div class="label">Roczne zużycie gazu (przybliżone): </div>
                         <div class="value">
-                            <span class="digit">1 200,0</span>
+                            <span class="digit consumption-meter">0</span>
                             <span class="unit">m<sup>3</sup></span>
                         </div>
                     </div>
+
                     <div class="calc-row">
                         <div class="label">Roczne zużycie gazu (przybliżone): </div>
                         <div class="value">
-                            <span class="digit">13 166,4</span>
-                            <span class="unit">kWh</span>
+                            <span class="digit">0</span>
+                            <span class="unit">kWh<sup></sup></span>
                         </div>
-
                     </div>
+
+                    <div class="calc-row contracted-power-low">
+                        <div class="label">Moc umowna do 110 kWh</div>
+                    </div>
+
+                    <div class="calc-row contracted-power-high">
+                        <div class="label">Moc umowna wyższa niż 110 kWh - skontaktuj się z naszym doradcą: link ???
+                        </div>
+                    </div>
+
                     <div class="calc-row">
-                        <div class="label">Moc umowna do: </div>
-                        <div class="value">
-                            <span class="digit">110</span>
-                            <span class="unit">kWh</span>
-                        </div>
-
+                        <div class="label">Moc przyłączeniowa do 10 m<sup>3</sup>/h dla gazu wysokometanowego (E) lub do
+                            25 m<sup>3</sup>/h dla gazu zaazotowanego (Lw)</div>
                     </div>
-                    <div class="calc-row">Moc przyłączeniowa do:</div>
-                    <div class="calc-row sub">
-                        <div class="label">- dla gazu wysokometanowego (E): </div>
-                        <div class="value">
-                            <span class="digit">10</span>
-                            <span class="unit">m<sup>3</sup>/h</span>
-                        </div>
 
-                    </div>
-                    <div class="calc-row sub">
-                        <div class="label">- dla gazu zaazotowanego (Lw): </div>
-                        <div class="value">
-                            <span class="digit">25</span>
-                            <span class="unit">m<sup>3</sup>/h</span>
+                    <div class="buttons">
+                        <div class="button prev">
+                            wstecz
                         </div>
-
+                        <div class="button next">
+                            dalej
+                        </div>
                     </div>
+
                 </div>
-
-                <div class="buttons">
-                    <div class="button prev">
-                        wstecz
-                    </div>
-                    <div class="button next">
-                        dalej
-                    </div>
-                </div>
-
             </div>
 
             <div class="form-page page10">
@@ -724,8 +713,10 @@
                             <label class="label-text" for="checkbox">
                                 Przyjmuję do wiadomości, że rozpoczęcie sprzedaży paliwa gazowego nastąpi w ciągu
                                 przynajmniej 21 dni od daty doręczenia do sprzedawcy podpisanego egzemplarza umowy
-                                kompleksowej dostarczania paliwa gazowego pod warunkiem spełnienia wymogów formalnych
-                                przez Wnioskującego oraz istnienia technicznej możliwości dostarczania paliwa gazowego
+                                kompleksowej dostarczania paliwa gazowego pod warunkiem spełnienia wymogów
+                                formalnych
+                                przez Wnioskującego oraz istnienia technicznej możliwości dostarczania paliwa
+                                gazowego
                                 do Obiektu Wnioskującego.
                             </label>
                         </div>
@@ -735,7 +726,8 @@
                 <div class="notice">
                     <p class="notice-header">UWAGA!</p>
                     <p class="notice-content">
-                        Informujemy, że zgodnie z obowiązującą Taryfą Operatora Systemu Dystrybucyjnego G.EN. Operator
+                        Informujemy, że zgodnie z obowiązującą Taryfą Operatora Systemu Dystrybucyjnego G.EN.
+                        Operator
                         Sp. z o.o. minimalny okres obowiązywania umowy do 110 kWh/h to 12 miesięcy - <a
                             href="https://genoperator.pl/" target="_blank">Strona
                             G.EN.Operator</a>
@@ -798,7 +790,8 @@
                             <span class="checkmark"></span>
                         </label>
                         <label class="label-text" for="radio17">
-                            Oświadczam, że <b>posiadam tytuł prawny</b> do korzystania z Obiektu wskazanego w punkcie
+                            Oświadczam, że <b>posiadam tytuł prawny</b> do korzystania z Obiektu wskazanego w
+                            punkcie
                             „Dane
                             miejsca odbioru paliwa” i w ramach tego prawa mogę pobierać paliwo gazowe do urządzeń
                             gazowych.
@@ -820,7 +813,8 @@
                     </div>
                     <p>Równocześnie przyjmuję do wiadomości, że złożenie oświadczenia niezgodnego z prawdą może
                         spowodować
-                        odpowiedzialność przewidzianą w przepisach prawa, w szczególności odpowiedzialność finansową,
+                        odpowiedzialność przewidzianą w przepisach prawa, w szczególności odpowiedzialność
+                        finansową,
                         również w przypadku roszczeń osób trzecich wobec G.EN. GAZ ENERGIA Sp. z o.o., związanych z
                         faktem
                         zawarcia Umowy kompleksowej dostarczania paliwa gazowego z osobą, która nie posiadała tytułu
@@ -857,7 +851,8 @@
                             </label>
                             <label class="label-text" for="checkbox">
                                 Oświadczam, że paliwo gazowe będzie wykorzystywane wyłącznie w celach opałowych na
-                                potrzeby gospodarstwa domowego, niezwiązanych z prowadzeniem działalności gospodarczej
+                                potrzeby gospodarstwa domowego, niezwiązanych z prowadzeniem działalności
+                                gospodarczej
                                 ani zawodowej, w ilościach paliwa gazowego wskazanych we Wniosku. 
                             </label>
                         </div>
@@ -896,8 +891,10 @@
                         </div>
                     </div>
                     jako sprzedawcę rezerwowego w rozumieniu ustawy z dnia 10 kwietnia 1997 r. – Prawo
-                    energetyczne (tj. Dz. U. z 2022 r. poz. 1385 z późn. zm. – dalej: „Prawo energetyczne”), wybranego
-                    spośród podmiotów ujętych na liście sprzedawców oferujących sprzedaż rezerwową odbiorcom końcowym
+                    energetyczne (tj. Dz. U. z 2022 r. poz. 1385 z późn. zm. – dalej: „Prawo energetyczne”),
+                    wybranego
+                    spośród podmiotów ujętych na liście sprzedawców oferujących sprzedaż rezerwową odbiorcom
+                    końcowym
                     opublikowanej przez G.EN. Operator, działającego jako OSD, zgodnie z Prawem energetycznym oraz
                     aktualnie obowiązującą Instrukcją Ruchu i Eksploatacji Sieci Dystrybucyjnej G.EN. Operator
                     („IRiESD”).
@@ -920,9 +917,11 @@
                 <div class="radios-container">
 
                     <p>W związku z zawarciem Umowy na odległość i art. 21 ust. 2 ustawy z dnia 30 maja 2014 r. o
-                        prawach konsumenta (tj. Dz. U. z 2020 r. poz. 287 ze zm.) żądam rozpoczęcia dostarczania Paliwa
+                        prawach konsumenta (tj. Dz. U. z 2020 r. poz. 287 ze zm.) żądam rozpoczęcia dostarczania
+                        Paliwa
                         gazowego przed upływem 14 dni od dnia zawarcia Umowy. Żądanie powyższe oznacza, że w razie
-                        odstąpienia od Umowy, będę zobowiązany do zapłaty za świadczenie spełnione przez Sprzedawcę do
+                        odstąpienia od Umowy, będę zobowiązany do zapłaty za świadczenie spełnione przez Sprzedawcę
+                        do
                         chwili odstąpienia przeze mnie od umowy, według cen i stawek opłat wynikających z Taryfy, o
                         której mowa w Umowie, o czym zostałem uprzednio pouczony.
                     </p>
@@ -970,7 +969,8 @@
                 <div class="radios-container">
 
                     <p>1. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
-                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w tym
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w
+                        tym
                         również po zakończeniu Umowy.</p>
 
                     <div class="radios">
@@ -1001,7 +1001,8 @@
                 <div class="radios-container">
 
                     <p>2. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
-                        celach marketingowych w zakresie produktów i usług podmiotów powiązanych kapitałowo z G.EN. GAZ
+                        celach marketingowych w zakresie produktów i usług podmiotów powiązanych kapitałowo z G.EN.
+                        GAZ
                         ENERGIA Sp. z o.o., w tym również po zakończeniu Umowy.</p>
 
                     <div class="radios">
@@ -1031,7 +1032,8 @@
 
                 <div class="radios-container">
 
-                    <p>3. Wyrażam zgodę na otrzymywanie informacji handlowej przesyłanych przez G.EN. GAZ ENERGIA Sp. z
+                    <p>3. Wyrażam zgodę na otrzymywanie informacji handlowej przesyłanych przez G.EN. GAZ ENERGIA
+                        Sp. z
                         o.o. poprzez e-mail lub konto eBOK, w tym również po zakończeniu Umowy.</p>
 
                     <div class="radios">
@@ -1095,7 +1097,8 @@
                 <div class="radios-container">
 
                     <p>5. Wyrażam zgodę na przetwarzanie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o. w
-                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w tym
+                        celach marketingowych w zakresie produktów i usług własnych G.EN. GAZ ENERGIA Sp. z o.o., w
+                        tym
                         również po zakończeniu Umowy.
                     </p>
 
@@ -1126,7 +1129,8 @@
 
                 <div class="radios-container">
 
-                    <p>6. Wyrażam zgodę na marketing bezpośredni przez podmioty z grupy kapitałowej G.EN. GAZ ENERGIA
+                    <p>6. Wyrażam zgodę na marketing bezpośredni przez podmioty z grupy kapitałowej G.EN. GAZ
+                        ENERGIA
                         Sp. z o.o. poprzez SMS lub telefon w tym również po zakończeniu Umowy.
                     </p>
 
@@ -1158,7 +1162,8 @@
                 <div class="radios-container">
 
                     <p>7. Wyrażam zgodę na udostepnienie moich danych osobowych przez G.EN. GAZ ENERGIA Sp. z o.o.
-                        podmiotom z grupy kapitałowej G.EN. GAZ ENERGIA Sp. z o.o. w zakresie niezbędnym do podejmowania
+                        podmiotom z grupy kapitałowej G.EN. GAZ ENERGIA Sp. z o.o. w zakresie niezbędnym do
+                        podejmowania
                         wobec mnie działań marketingowych.
                     </p>
 
@@ -1204,27 +1209,37 @@
 
                 <div class="ol-container">
                     <ol>
-                        <li>Administratorem danych osobowych jest G.EN. GAZ ENERGIA Sp. z o.o. z siedzibą w Warszawie,
+                        <li>Administratorem danych osobowych jest G.EN. GAZ ENERGIA Sp. z o.o. z siedzibą w
+                            Warszawie,
                             ul. Domaniewska 37, 02-672, Warszawa. W razie pytań możecie się Państwo skontaktować z
-                            naszym Inspektorem Ochrony Danych, Maciejem Chwalińskim, za pomocą e-mail: iod@gen.com.pl
-                            lub wysyłając korespondencję na wskazany powyżej adres pocztowy z dopiskiem „ochrona danych
+                            naszym Inspektorem Ochrony Danych, Maciejem Chwalińskim, za pomocą e-mail:
+                            iod@gen.com.pl
+                            lub wysyłając korespondencję na wskazany powyżej adres pocztowy z dopiskiem „ochrona
+                            danych
                             osobowych”.</li>
-                        <li>Wypełniając Wniosek o zawarcie umowy kompleksowej dostarczania paliwa gazowego nasza firma
-                            będzie przetwarzać dotyczące Państwa dane osobowe, w celu podjęcia działań prowadzących do
-                            zawarcia umowy. Podstawę prawną przetwarzania stanowi w takim wypadku art. 6 ust. 1 lit. B.
+                        <li>Wypełniając Wniosek o zawarcie umowy kompleksowej dostarczania paliwa gazowego nasza
+                            firma
+                            będzie przetwarzać dotyczące Państwa dane osobowe, w celu podjęcia działań prowadzących
+                            do
+                            zawarcia umowy. Podstawę prawną przetwarzania stanowi w takim wypadku art. 6 ust. 1 lit.
+                            B.
                         </li>
                         <li>Podanie danych jest dobrowolne, jednak niezbędne do zawarcia i realizacji umowy.
-                            Mogą Państwo zdecydować się na zawarcie umowy z G.EN. GAZ ENERGIA Sp. z o.o. drogą online,
+                            Mogą Państwo zdecydować się na zawarcie umowy z G.EN. GAZ ENERGIA Sp. z o.o. drogą
+                            online,
                             przy wykorzystaniu dedykowanego narzędzia. Jest to całkowicie dobrowolne, jednak w takim
                             wypadku niezbędne będzie podanie adresu e-mail oraz numeru telefonu.</li>
                         <li>Mogą Państwo żądać od nas: uzyskania dostępu, sprostowania, usunięcia, ograniczenia
                             przetwarzania, wniesienia sprzeciwu, przeniesienia Waszych danych osobowych, powszechnie
-                            używanym wycofania zgody wyrażonej na przetwarzanie danych osobowych. W przypadku zastrzeżeń
+                            używanym wycofania zgody wyrażonej na przetwarzanie danych osobowych. W przypadku
+                            zastrzeżeń
                             związanych z przetwarzaniem danych osobowych mają Państwo prawo do wniesienia skargi do
                             Prezesa Urzędu Ochrony Danych Osobowych.</li>
-                        <li>Pełne informacje na temat przetwarzania Państwa danych osobowych możecie uzyskać na naszej
+                        <li>Pełne informacje na temat przetwarzania Państwa danych osobowych możecie uzyskać na
+                            naszej
                             stronie internetowej: www.gen.com.pl w zakładce <a
-                                href="https://www.gen.com.pl/rodo">„Ochrona danych osobowych”</a>.</li>
+                                href="https://www.gen.com.pl/rodo">„Ochrona
+                                danych osobowych”</a>.</li>
                     </ol>
                 </div>
 
@@ -1290,7 +1305,7 @@
     </div>
     </div>
 
-    <script src="./js/main.js?cache_bust=1712930282683"></script>
+    <script src="./js/main.js?cache_bust=1713119758938"></script>
 </body>
 
 </html>

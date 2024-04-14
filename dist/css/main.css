@@ -810,6 +810,12 @@ sup {
 .page9 .summary-calculated-box .calc-row .value .unit {
   opacity: 0.7;
 }
+.page9 .summary-calculated-box .calc-row.contracted-power-low {
+  display: none;
+}
+.page9 .summary-calculated-box .calc-row.contracted-power-high {
+  display: none;
+}
 .page9 .equipment-box {
   display: none;
   border: 1px solid #E9EBED;

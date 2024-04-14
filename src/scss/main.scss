@@ -822,6 +822,15 @@ sup {
                     opacity: 0.7;
                 }
             }
+
+            &.contracted-power-low {
+                display: none;
+            }
+
+            &.contracted-power-high {
+                display: none;
+            }
+
         }
 
 
