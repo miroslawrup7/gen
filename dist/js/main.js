@@ -686,7 +686,6 @@ page10date2Loc.setAttribute("min", tommorow);
 
 page10fileUploadArrLoc.forEach((elem)=> {
     elem.addEventListener("click", ()=>{
-        console.log(elem)
         elem.querySelector(".appendix").click()
     })
 })
