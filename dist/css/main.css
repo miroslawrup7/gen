@@ -1,5 +1,6 @@
 :root {
-  --exclamation: url("") ;
+  --exclamation: url("");
+  --emptyError: "";
 }
 
 @font-face {
@@ -447,7 +448,8 @@ sup {
   align-items: center;
   width: 100%;
 }
-.file-upload-container .file-upload {
+.file-upload-container .file-upload,
+.file-upload-container .file-upload-multi {
   border: 1px solid #ccc;
   display: inline-block;
   padding: 10px 20px;
@@ -461,11 +463,13 @@ sup {
   text-align: center;
   width: 60%;
 }
-.file-upload-container .file-upload:hover {
+.file-upload-container .file-upload:hover,
+.file-upload-container .file-upload-multi:hover {
   background-color: #FFDD00;
   border: solid 1px transparent;
 }
-.file-upload-container .file-upload input[type=file] {
+.file-upload-container .file-upload input[type=file],
+.file-upload-container .file-upload-multi input[type=file] {
   display: none;
 }
 .file-upload-container #uploadedFileName {
@@ -629,19 +633,84 @@ sup {
   color: #FF5050;
   font-family: "Clarika Geo Bold";
 }
-.page4 .form-box form .input-container input,
-.page5 .form-box form .input-container input,
-.page6 .form-box form .input-container input,
-.page7 .form-box form .input-container input,
-.page8 .form-box form .input-container input,
-.page9 .form-box form .input-container input,
-.page10 .form-box form .input-container input,
-.page11 .form-box form .input-container input,
-.page12 .form-box form .input-container input,
-.page13 .form-box form .input-container input,
-.page14 .form-box form .input-container input,
-.page15 .form-box form .input-container input,
-.page16 .form-box form .input-container input {
+.page4 .form-box form .input-container label .help,
+.page5 .form-box form .input-container label .help,
+.page6 .form-box form .input-container label .help,
+.page7 .form-box form .input-container label .help,
+.page8 .form-box form .input-container label .help,
+.page9 .form-box form .input-container label .help,
+.page10 .form-box form .input-container label .help,
+.page11 .form-box form .input-container label .help,
+.page12 .form-box form .input-container label .help,
+.page13 .form-box form .input-container label .help,
+.page14 .form-box form .input-container label .help,
+.page15 .form-box form .input-container label .help,
+.page16 .form-box form .input-container label .help {
+  position: relative;
+}
+.page4 .form-box form .input-container label .help img,
+.page5 .form-box form .input-container label .help img,
+.page6 .form-box form .input-container label .help img,
+.page7 .form-box form .input-container label .help img,
+.page8 .form-box form .input-container label .help img,
+.page9 .form-box form .input-container label .help img,
+.page10 .form-box form .input-container label .help img,
+.page11 .form-box form .input-container label .help img,
+.page12 .form-box form .input-container label .help img,
+.page13 .form-box form .input-container label .help img,
+.page14 .form-box form .input-container label .help img,
+.page15 .form-box form .input-container label .help img,
+.page16 .form-box form .input-container label .help img {
+  height: 18px;
+  padding: 0 8px;
+  opacity: 0.5;
+  position: relative;
+  display: inline-block;
+}
+.page4 .form-box form .input-container label .help img:hover,
+.page5 .form-box form .input-container label .help img:hover,
+.page6 .form-box form .input-container label .help img:hover,
+.page7 .form-box form .input-container label .help img:hover,
+.page8 .form-box form .input-container label .help img:hover,
+.page9 .form-box form .input-container label .help img:hover,
+.page10 .form-box form .input-container label .help img:hover,
+.page11 .form-box form .input-container label .help img:hover,
+.page12 .form-box form .input-container label .help img:hover,
+.page13 .form-box form .input-container label .help img:hover,
+.page14 .form-box form .input-container label .help img:hover,
+.page15 .form-box form .input-container label .help img:hover,
+.page16 .form-box form .input-container label .help img:hover {
+  opacity: 1;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+.page4 .form-box form .input-container .input-wrapper,
+.page5 .form-box form .input-container .input-wrapper,
+.page6 .form-box form .input-container .input-wrapper,
+.page7 .form-box form .input-container .input-wrapper,
+.page8 .form-box form .input-container .input-wrapper,
+.page9 .form-box form .input-container .input-wrapper,
+.page10 .form-box form .input-container .input-wrapper,
+.page11 .form-box form .input-container .input-wrapper,
+.page12 .form-box form .input-container .input-wrapper,
+.page13 .form-box form .input-container .input-wrapper,
+.page14 .form-box form .input-container .input-wrapper,
+.page15 .form-box form .input-container .input-wrapper,
+.page16 .form-box form .input-container .input-wrapper {
+  position: relative;
+}
+.page4 .form-box form .input-container .input-wrapper input,
+.page5 .form-box form .input-container .input-wrapper input,
+.page6 .form-box form .input-container .input-wrapper input,
+.page7 .form-box form .input-container .input-wrapper input,
+.page8 .form-box form .input-container .input-wrapper input,
+.page9 .form-box form .input-container .input-wrapper input,
+.page10 .form-box form .input-container .input-wrapper input,
+.page11 .form-box form .input-container .input-wrapper input,
+.page12 .form-box form .input-container .input-wrapper input,
+.page13 .form-box form .input-container .input-wrapper input,
+.page14 .form-box form .input-container .input-wrapper input,
+.page15 .form-box form .input-container .input-wrapper input,
+.page16 .form-box form .input-container .input-wrapper input {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -650,6 +719,68 @@ sup {
   font-size: 20px;
   border: 1px solid rgba(88, 88, 88, 0.2);
   border-radius: 3px;
+  width: 100%;
+}
+.page4 .form-box form .input-container .input-wrapper input.error,
+.page5 .form-box form .input-container .input-wrapper input.error,
+.page6 .form-box form .input-container .input-wrapper input.error,
+.page7 .form-box form .input-container .input-wrapper input.error,
+.page8 .form-box form .input-container .input-wrapper input.error,
+.page9 .form-box form .input-container .input-wrapper input.error,
+.page10 .form-box form .input-container .input-wrapper input.error,
+.page11 .form-box form .input-container .input-wrapper input.error,
+.page12 .form-box form .input-container .input-wrapper input.error,
+.page13 .form-box form .input-container .input-wrapper input.error,
+.page14 .form-box form .input-container .input-wrapper input.error,
+.page15 .form-box form .input-container .input-wrapper input.error,
+.page16 .form-box form .input-container .input-wrapper input.error {
+  border: 1px solid #FF5050;
+  background-color: rgba(255, 80, 80, 0.0705882353);
+}
+.page4 .form-box form .input-container .input-wrapper.error::after,
+.page5 .form-box form .input-container .input-wrapper.error::after,
+.page6 .form-box form .input-container .input-wrapper.error::after,
+.page7 .form-box form .input-container .input-wrapper.error::after,
+.page8 .form-box form .input-container .input-wrapper.error::after,
+.page9 .form-box form .input-container .input-wrapper.error::after,
+.page10 .form-box form .input-container .input-wrapper.error::after,
+.page11 .form-box form .input-container .input-wrapper.error::after,
+.page12 .form-box form .input-container .input-wrapper.error::after,
+.page13 .form-box form .input-container .input-wrapper.error::after,
+.page14 .form-box form .input-container .input-wrapper.error::after,
+.page15 .form-box form .input-container .input-wrapper.error::after,
+.page16 .form-box form .input-container .input-wrapper.error::after {
+  content: url("../img/icons/exclamation.svg");
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-50%);
+}
+.page4 .form-box form .input-container .input-wrapper.error::before,
+.page5 .form-box form .input-container .input-wrapper.error::before,
+.page6 .form-box form .input-container .input-wrapper.error::before,
+.page7 .form-box form .input-container .input-wrapper.error::before,
+.page8 .form-box form .input-container .input-wrapper.error::before,
+.page9 .form-box form .input-container .input-wrapper.error::before,
+.page10 .form-box form .input-container .input-wrapper.error::before,
+.page11 .form-box form .input-container .input-wrapper.error::before,
+.page12 .form-box form .input-container .input-wrapper.error::before,
+.page13 .form-box form .input-container .input-wrapper.error::before,
+.page14 .form-box form .input-container .input-wrapper.error::before,
+.page15 .form-box form .input-container .input-wrapper.error::before,
+.page16 .form-box form .input-container .input-wrapper.error::before {
+  content: var(--emptyError);
+  position: absolute;
+  left: 5px;
+  bottom: -20px;
+  display: flex;
+  width: 100%;
+  height: 20px;
+  font-size: 12px;
+  color: #FF5050;
 }
 .page4 .form-box form .input-container .select-input-container,
 .page5 .form-box form .input-container .select-input-container,
@@ -738,19 +869,19 @@ sup {
   color: #000;
   opacity: 1;
 }
-.page4 .form-box form .input-container .select-input-container input,
-.page5 .form-box form .input-container .select-input-container input,
-.page6 .form-box form .input-container .select-input-container input,
-.page7 .form-box form .input-container .select-input-container input,
-.page8 .form-box form .input-container .select-input-container input,
-.page9 .form-box form .input-container .select-input-container input,
-.page10 .form-box form .input-container .select-input-container input,
-.page11 .form-box form .input-container .select-input-container input,
-.page12 .form-box form .input-container .select-input-container input,
-.page13 .form-box form .input-container .select-input-container input,
-.page14 .form-box form .input-container .select-input-container input,
-.page15 .form-box form .input-container .select-input-container input,
-.page16 .form-box form .input-container .select-input-container input {
+.page4 .form-box form .input-container .select-input-container .input-wrapper,
+.page5 .form-box form .input-container .select-input-container .input-wrapper,
+.page6 .form-box form .input-container .select-input-container .input-wrapper,
+.page7 .form-box form .input-container .select-input-container .input-wrapper,
+.page8 .form-box form .input-container .select-input-container .input-wrapper,
+.page9 .form-box form .input-container .select-input-container .input-wrapper,
+.page10 .form-box form .input-container .select-input-container .input-wrapper,
+.page11 .form-box form .input-container .select-input-container .input-wrapper,
+.page12 .form-box form .input-container .select-input-container .input-wrapper,
+.page13 .form-box form .input-container .select-input-container .input-wrapper,
+.page14 .form-box form .input-container .select-input-container .input-wrapper,
+.page15 .form-box form .input-container .select-input-container .input-wrapper,
+.page16 .form-box form .input-container .select-input-container .input-wrapper {
   width: 50%;
 }
 .page4 .form-box form .input-container.pesel,

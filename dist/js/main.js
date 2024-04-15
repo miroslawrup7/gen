@@ -33,6 +33,7 @@ let page10radiosG = 0
 
 const containerLoc = document.querySelector(".container")
 const formPagesLoc = document.querySelector(".form-pages")
+const formPageArrLoc = document.querySelectorAll(".form-page")
 const buttonNextArrLoc = document.querySelectorAll(".button.next")
 const buttonPrevArrLoc = document.querySelectorAll(".button.prev")
 
@@ -49,6 +50,28 @@ const page4removeApplicantBtnLoc = document.querySelector(".page4 .button.remove
 const page4additionalApplicantLoc = document.querySelector(".page4 .form-box.additional")
 const page4peselBtnArrLoc = document.querySelectorAll(".page4 .pesel-button")
 
+const page4input_fname4_1 = document.querySelector(".page4 #fname4_1")
+const page4input_sname4_2 = document.querySelector(".page4 #sname4_2")
+const page4input_ID4_3 = document.querySelector(".page4 #ID4_3")
+const page4input_address4_4 = document.querySelector(".page4 #address4_4")
+const page4input_postcode4_5 = document.querySelector(".page4 #postcode4_5")
+const page4input_locality4_6 = document.querySelector(".page4 #locality4_6")
+const page4input_email4_7 = document.querySelector(".page4 #email4_7")
+const page4input_phone4_8 = document.querySelector(".page4 #phone4_8")
+
+const page4input_fname4_9 = document.querySelector(".page4 #fname4_9")
+const page4input_sname4_10 = document.querySelector(".page4 #sname4_10")
+const page4input_ID4_11 = document.querySelector(".page4 #ID4_11")
+const page4input_address4_12 = document.querySelector(".page4 #address4_12")
+const page4input_postcode4_13 = document.querySelector(".page4 #postcode4_13")
+const page4input_locality4_14 = document.querySelector(".page4 #locality4_14")
+const page4input_email4_15 = document.querySelector(".page4 #email4_15")
+const page4input_phone4_16 = document.querySelector(".page4 #phone4_16")
+
+const inputsPage4Array1 = [page4input_fname4_1, page4input_sname4_2, page4input_ID4_3, page4input_address4_4, page4input_postcode4_5, page4input_locality4_6, page4input_email4_7, page4input_phone4_8]
+
+const inputsPage4Array2 = [page4input_fname4_9, page4input_sname4_10, page4input_ID4_11, page4input_address4_12, page4input_postcode4_13, page4input_locality4_14, page4input_email4_15, page4input_phone4_16]
+
 const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
 const page5formLoc = document.querySelector(".page5 .form-box")
 
@@ -56,9 +79,9 @@ const page6radioArrLoc = document.querySelectorAll(".page6 .radios input")
 const page6formLoc = document.querySelector(".page6 .form-box")
 const page6noticeLoc = document.querySelector(".page6 .notice")
 
-const page7radiosLoc = document.querySelector(".page7 .radios")
+// const page7radiosLoc = document.querySelector(".page7 .radios")
 const page7PPGLoc = document.querySelector(".page7 .PPG")
-const page7radioArrLoc = document.querySelectorAll(".page7 .radios input")
+// const page7radioArrLoc = document.querySelectorAll(".page7 .radios input")
 const page7formLoc = document.querySelector(".page7 .form-box")
 
 const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
@@ -84,12 +107,16 @@ const page10date1Loc = document.querySelector(".page10 #date1")
 const page10date2Loc = document.querySelector(".page10 #date2")
 const page10inputRadiosFArrLoc = document.querySelectorAll(".page10 .radiosF input")
 const page10contractPeriodFormLoc = document.querySelector(".page10 .contract-period")
-const page10inputAppendixArrLoc = document.querySelectorAll(".page10 input.appendix")
-const page10fileUploadArrLoc = document.querySelectorAll(".page10 .file-upload")
 
 const page12inputSelectContainerArrLoc = document.querySelectorAll(".page12 .input-select-container")
 const page12chevronArrLoc = document.querySelectorAll(".page12 .chevron")
 const page12customOptionArrLoc = document.querySelectorAll(".page12 .custom-select .custom-option")
+
+const singleInputAppendixArrLoc = document.querySelectorAll("input.appendix")
+const singleFileUploadArrLoc = document.querySelectorAll(".file-upload")
+const multiInputAppendixArrLoc = document.querySelectorAll("input.appendix-multi")
+const multiFileUploadArrLoc = document.querySelectorAll(".file-upload-multi")
+
 
 // przewijanie stron
 
@@ -139,7 +166,9 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page4")) {
-            allowNext = true
+            if (validatePage4()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page5")) {
@@ -149,11 +178,11 @@ buttonNextArrLoc.forEach((elem) => {
         if (actualPage.classList.contains("page6")) {
 
             if (page1radios === 1) {
-                page7radiosLoc.style.display = "none"
+                // page7radiosLoc.style.display = "none"
                 page7PPGLoc.style.display = "flex"
             }
             if (page1radios === 2) {
-                page7radiosLoc.style.display = "flex"
+                // page7radiosLoc.style.display = "flex"
                 page7PPGLoc.style.display = "none"
             }
             
@@ -198,13 +227,15 @@ buttonNextArrLoc.forEach((elem) => {
 
         if (allowNext) {
             formPagesLoc.style.left = newLeftValue + "px"
+            e.target.closest(".form-page").nextElementSibling.scrollTo(0, 0);
             allowNext = false
         }
+        
     })
 })
 
 buttonPrevArrLoc.forEach((elem) => {
-    elem.addEventListener("click", ()=> {
+    elem.addEventListener("click", (e)=> {
         const actualPosition = Number(getComputedStyle(formPagesLoc).left.slice(0, getComputedStyle(formPagesLoc).left.length-2))
         const containerWidth = Number(getComputedStyle(containerLoc).width.slice(0, getComputedStyle(containerLoc).width.length-2))
         const leftContainerBorder = Number(getComputedStyle(containerLoc).borderLeftWidth.slice(0, getComputedStyle(containerLoc).borderLeftWidth.length-2))
@@ -217,8 +248,17 @@ buttonPrevArrLoc.forEach((elem) => {
         const newLeftValue = actualPosition + containerWidthWithoutBorder
 
         formPagesLoc.style.left = newLeftValue + "px"
+
+        e.target.closest(".form-page").previousElementSibling.scrollTo(0, 0);
     })
 })
+
+// walidacje
+
+const validateEmpty = (value)=> {
+    if (!value) return [false, "To pole nie może być puste!"]
+    return [true, ""]
+}
 
 // zaznaczanie kafelków - strona 1
 
@@ -278,6 +318,11 @@ page4addApplicantBtnLoc.addEventListener("click", ()=> {
     page4addApplicantBtnLoc.style.visibility = "hidden"
     page4additionalApplicantLoc.style.display = "flex"
     page4boolean = true
+    inputsPage4Array2.forEach((elem)=>{
+        elem.parentElement.classList.remove("error")
+        elem.classList.remove("error")
+        elem.value = ""
+    })
 })
 
 page4removeApplicantBtnLoc.addEventListener("click", ()=> {
@@ -286,7 +331,7 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
     page4boolean = false
 })
 
-// posiadam / nieposiadam nr PESEL
+// posiadam / nieposiadam nr PESEL - strona 4
 page4peselBtnArrLoc.forEach((elem)=>{
     elem.addEventListener("click", ()=>{
         elem.classList.toggle("active")
@@ -304,6 +349,54 @@ page4peselBtnArrLoc.forEach((elem)=>{
     })
 })
 
+// walidacja pól formularza - strona 4
+
+const validatePage4 = ()=> {
+
+    let validatedArray
+
+    let validateSuccess = true
+
+    if (!page4boolean) {
+        validatedArray = inputsPage4Array1
+        inputsPage4Array2.forEach((elem)=>{
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            elem.value = ""
+        })
+    } else {
+        validatedArray = inputsPage4Array1.concat(inputsPage4Array2)
+    }
+
+    validatedArray.forEach((elem)=>{
+        if (!validateEmpty(elem.value)[0]) {
+            elem.parentElement.classList.add("error")
+            elem.classList.add("error")
+            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            validateSuccess = false
+        } else {
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            // document.documentElement.style.setProperty("--emptyError", `""`)
+        }
+    })
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie
+
+inputsPage4Array1.concat(inputsPage4Array2).forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage4()
+        }
+    })
+})
 
 // adres korespondencyjny inny niż zamieszkania - strona 5
 
@@ -679,13 +772,13 @@ page10date2Loc.setAttribute("min", tommorow);
 
 // działanie customowego input:file - strona 10
 
-page10fileUploadArrLoc.forEach((elem)=> {
+singleFileUploadArrLoc.forEach((elem)=> {
     elem.addEventListener("click", ()=>{
         elem.querySelector(".appendix").click()
     })
 })
 
-page10inputAppendixArrLoc.forEach((elem)=> {
+singleInputAppendixArrLoc.forEach((elem)=> {
     elem.addEventListener("change", (e)=>{
         let file = e.target.value;
         let fileName = file.split("\\");
@@ -729,7 +822,6 @@ page12chevronArrLoc.forEach((elem)=>{
             elem.previousElementSibling.style.borderBottomStyle = "solid"
         } else {
             elem.nextElementSibling.style.display = "block"
-            console.log(elem.previousElementSibling)
             elem.previousElementSibling.style.borderBottomWidth = "none"
         }
     })
@@ -745,5 +837,35 @@ page12customOptionArrLoc.forEach((elem)=> {
 page12inputSelectContainerArrLoc.forEach((elem)=>{
     elem.addEventListener("mouseleave", ()=>{
         elem.querySelector(".custom-select").style.display = "none"
+    })
+})
+
+// działanie customowego input:file - strona 16
+
+multiFileUploadArrLoc.forEach((elem)=> {
+    elem.addEventListener("click", ()=>{
+        elem.querySelector(".appendix-multi").click()
+    })
+})
+
+multiInputAppendixArrLoc.forEach((elem)=> {
+    elem.addEventListener("change", (e)=>{
+        let file = e.target.value;
+        console.log(e.target.files)
+        let info
+        if (e.target.files.length === 1) {
+            let fileName = file.split("\\")
+            info = "Załączono plik: " + fileName[fileName.length - 1]
+        }
+        if (e.target.files.length > 1 && e.target.files.length < 5) {
+            info = `Załączono ${e.target.files.length} pliki`
+        }
+
+        if (e.target.files.length >= 5) {
+            info = `Załączono ${e.target.files.length} plików`
+        }
+
+        e.target.parentElement.parentElement.querySelector(".uploadedFileName").innerHTML = info
+        
     })
 })

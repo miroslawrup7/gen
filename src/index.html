@@ -48,10 +48,10 @@
                             <li></li>
                             <li>nr PESEL (lub rodzaj serię i nr dokumentu – dotyczy obcokrajowców nieposiadających nr
                                 PESEL)</li>
-                            <li>kompletnie uzupełniony wniosek o rozpoczęcie dostarczania paliwa gazowego, jeżeli nie
-                                został jeszcze dostarczony od Operatora sieci gazowej <a
-                                    href="https://www.gen.com.pl/dla-domu/dokumenty-do-pobrania"
-                                    target="_blank">https://www.gen.com.pl/dla-domu/dokumenty-do-pobrania</a>
+                            <li><a href="https://www.gen.com.pl/dla-domu/dokumenty-do-pobrania"
+                                    target="_blank">kompletnie uzupełniony wniosek</a> o rozpoczęcie dostarczania paliwa
+                                gazowego, jeżeli nie
+                                został jeszcze dostarczony od Operatora sieci gazowej
                             </li>
                         </ul>
                     </div>
@@ -107,7 +107,7 @@
                             Podczas wizyty kuriera wymagana jest obecność wszystkich Wnioskujących. O momencie nadania
                             przesyłki zostaniesz powiadomiony za pośrednictwem wiadomości sms. Umowę podpisujesz podczas
                             wizyty Kuriera. Jeden podpisany egzemplarz zostawiasz kurierowi w bezpiecznej kopercie. Ta
-                            usługa jest dla ciebie bezpłatna i wymaga podania snumeru telefonu dla kuriera.
+                            usługa jest dla ciebie bezpłatna i wymaga podania numeru telefonu dla kuriera.
                         </p>
 
                     </div>
@@ -131,16 +131,21 @@
                 <div class="form-box">
                     <form action="">
                         <div class="input-container">
-                            <label for="name">Imię<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Imię<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fname4_1" placeholder="Wpisz">
+                            </div>
+
                         </div>
                         <div class="input-container">
-                            <label for="name">Nazwisko<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Nazwisko<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="sname4_2" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container pesel">
 
-                            <label for="name">DOKUMENT TOŻSAMOŚCI<span> *</span></label>
+                            <label>DOKUMENT TOŻSAMOŚCI<span> *</span></label>
 
                             <div class="select-input-container">
                                 <select disabled class="pesel">
@@ -152,31 +157,43 @@
                                     </optgroup>
                                 </select>
 
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <div class="input-wrapper">
+                                    <input type="text" id="ID4_3" placeholder="Wpisz">
+                                </div>
                             </div>
 
                             <div class="pesel-button">Nie posiadam PESEL</div>
 
                         </div>
                         <div class="input-container">
-                            <label for="name">Adres zamieszkania<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Adres zamieszkania<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="address4_4" placeholder="Wpisz ulicę, numer domu, numer lokalu">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Kod pocztowy<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="postcode4_5" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Miejscowość<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality4_6" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">E-mail<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>E-mail<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="email4_7" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Telefon<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Telefon<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="phone4_8" placeholder="Wpisz">
+                            </div>
                         </div>
                     </form>
                     <div class="button add"><img src="./img/icons/plus.svg" alt="plus">Dodaj wnioskodawcę
@@ -186,16 +203,21 @@
                 <div class="form-box additional">
                     <form action="">
                         <div class="input-container">
-                            <label for="name">Imię<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Imię<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="fname4_9" placeholder="Wpisz">
+                            </div>
+
                         </div>
                         <div class="input-container">
-                            <label for="name">Nazwisko<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Nazwisko<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="sname4_10" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container pesel">
 
-                            <label for="name">DOKUMENT TOŻSAMOŚCI<span> *</span></label>
+                            <label>DOKUMENT TOŻSAMOŚCI<span> *</span></label>
 
                             <div class="select-input-container">
                                 <select disabled class="pesel">
@@ -207,31 +229,43 @@
                                     </optgroup>
                                 </select>
 
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <div class="input-wrapper">
+                                    <input type="text" id="ID4_11" placeholder="Wpisz">
+                                </div>
                             </div>
 
                             <div class="pesel-button">Nie posiadam PESEL</div>
 
                         </div>
                         <div class="input-container">
-                            <label for="name">Adres zamieszkania<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Adres zamieszkania<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="address4_12" placeholder="Wpisz ulicę, numer domu, numer lokalu">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Kod pocztowy<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Kod pocztowy<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="postcode4_13" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Miejscowość<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Miejscowość<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="locality4_14" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">E-mail<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>E-mail<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="email4_15" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Telefon<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label>Telefon<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" id="phone4_16" placeholder="Wpisz">
+                            </div>
                         </div>
                     </form>
                     <div class="button remove"><img src="./img/icons/minus.svg" alt="minus">Usuń wnioskodawcę
@@ -258,7 +292,7 @@
                             <input type="radio" id="radio5" name="radiosB" value="radio5" autocomplete="off" checked>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="radio5">Taki sam jak zamieszkania</label>
+                        <label class="label-text" for="radio5">Taki sam, jak adres zamieszkania</label>
                     </div>
 
                     <div class="radio-container">
@@ -266,7 +300,7 @@
                             <input type="radio" id="radio6" name="radiosB" value="radio6" autocomplete="off">
                             <span class="checkmark"></span>
                         </label>
-                        <label class="label-text" for="radio6">Inny niż zamieszkania</label>
+                        <label class="label-text" for="radio6">Inny, niż adres zamieszkania</label>
                     </div>
                 </div>
 
@@ -274,19 +308,28 @@
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię i nazwisko lub pełna nazwa<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Adres korespondecyjny<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name"
+                                    placeholder="Wpisz ulicę, numer domu, numer lokalu">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Kod pocztowy<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Miejscowość<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -327,15 +370,21 @@
                     <form action="">
                         <div class="input-container">
                             <label for="name">Imię i nazwisko<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">PESEL<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Data pełnomocnictwa<span> *</span></label>
-                            <input type="date" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="date" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -363,7 +412,7 @@
             <div class="form-page page7">
 
                 <h1>5. Dane miejsca odbioru paliwa</h1>
-                <div class="radios">
+                <!-- <div class="radios">
                     <div class="radio-container">
                         <label class="radio">
                             <input type="radio" id="radio9" name="radiosD" value="radio9" autocomplete="off" checked>
@@ -380,39 +429,55 @@
                         </label>
                         <label class="label-text" for="radio10">Nie mam nr warunków technicznych</label>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="form-box">
                     <form action="">
                         <div class="input-container w-100">
                             <label for="name">Nr warunków technicznych przyłączenia do sieci gazowej<span>
-                                    *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                                    *</span><span class="help">
+                                    <img src="./img/icons/question-silver.svg" alt="question">
+                                </span></label>
+
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container w-100 PPG">
-                            <label for="name">Nr PPG<span>
-                                    *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <label for="name">Nr PPG<span> *</span></label>
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Miejscowość<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Kod pocztowy<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container w-50">
                             <label for="name">Ulica<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container w-25">
                             <label for="name">Nr budynku / lokalu<span> *</span></label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                         <div class="input-container w-25">
                             <label for="name">Nr działki</label>
-                            <input type="text" name="name" id="name" placeholder="Wpisz">
+                            <div class="input-wrapper">
+                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -436,12 +501,17 @@
                     <form action="">
                         <div class="input-container">
                             <label for="name">Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
-                            <input class="input-text8-1" type="text" name="name" id="name"
-                                placeholder="Wpisz powierzchnię w metrach kwadratowych">
+                            <div class="input-wrapper">
+                                <input class="input-text8-1" type="text" name="name" id="name"
+                                    placeholder="Wpisz powierzchnię w metrach kwadratowych">
+                            </div>
                         </div>
                         <div class="input-container">
                             <label for="name">Ile osób będzie mieszkać w domu?<span> *</span></label>
-                            <input class="input-text8-2" type="text" name="name" id="name" placeholder="Wpisz liczbę">
+                            <div class="input-wrapper">
+                                <input class="input-text8-2" type="text" name="name" id="name"
+                                    placeholder="Wpisz liczbę">
+                            </div>
                         </div>
 
                     </form>
@@ -692,11 +762,24 @@
                     </div>
                 </div>
 
+                <div class="notice">
+                    <p class="notice-header">UWAGA!</p>
+                    <p class="notice-content">
+                        Informujemy, że zgodnie z obowiązującą Taryfą Operatora Systemu Dystrybucyjnego G.EN.
+                        Operator
+                        Sp. z o.o. minimalny okres obowiązywania umowy do 110 kWh/h to 12 miesięcy - <a
+                            href="https://genoperator.pl/" target="_blank">Strona
+                            G.EN.Operator</a>
+                    </p>
+                </div>
+
                 <div class="form-box contract-period">
                     <form action="">
                         <div class="input-container w-100">
                             <label for="name">Okres obowiązywania umowy<span>*</span></label>
-                            <input type="date" name="name" id="date1">
+                            <div class="input-wrapper">
+                                <input type="date" name="name" id="date1">
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -706,7 +789,10 @@
                         <div class="input-container w-100">
                             <label for="name">Proponowany termin rozpoczęcia dostarczania paliwa
                                 gazowego<span>*</span></label>
-                            <input type="date" name="name" id="date2" min="2000-01-01">
+                            <div class="input-wrapper">
+
+                                <input type="date" name="name" id="date2" min="2000-01-01">
+                            </div>
                         </div>
                         <div class="checkbox-container">
                             <label class="checkbox">
@@ -725,17 +811,6 @@
                             </label>
                         </div>
                     </form>
-                </div>
-
-                <div class="notice">
-                    <p class="notice-header">UWAGA!</p>
-                    <p class="notice-content">
-                        Informujemy, że zgodnie z obowiązującą Taryfą Operatora Systemu Dystrybucyjnego G.EN.
-                        Operator
-                        Sp. z o.o. minimalny okres obowiązywania umowy do 110 kWh/h to 12 miesięcy - <a
-                            href="https://genoperator.pl/" target="_blank">Strona
-                            G.EN.Operator</a>
-                    </p>
                 </div>
 
                 <h2>Wniosek o rozpoczęcie dostarczania paliwa gazowego:</h2>
@@ -810,9 +885,9 @@
                         <label class="label-text" for="radio18">
                             Oświadczam, że <b>nie posiadam tytułu prawnego</b> do korzystania z Obiektu wskazanego w
                             punkcie „Dane miejsca odbioru paliwa”.
-                            <span class="help">
+                            <!-- <span class="help">
                                 <img src="./img/icons/question-silver.svg" alt="question">
-                            </span>
+                            </span> -->
                         </label>
                     </div>
                     <p>Równocześnie przyjmuję do wiadomości, że złożenie oświadczenia niezgodnego z prawdą może
@@ -1274,26 +1349,15 @@
                 <div class="file-upload-double-container">
 
                     <div class="file-upload-container">
-                        <div class="file-upload">Załącz plik...
-                            <input class="appendix" type="file" value="upload"
-                                accept="image/jpeg,image/gif,image/png,application/pdf">
-                        </div>
-
-                        <div class="uploadedFileName"></div>
-                    </div>
-
-                    <div class="file-upload-container">
-                        <div class="file-upload">Załącz plik...
-                            <input class="appendix" type="file" value="upload"
-                                accept="image/jpeg,image/gif,image/png,application/pdf">
+                        <div class="file-upload-multi">Załącz plik...
+                            <input class="appendix-multi" type="file" value="upload"
+                                accept="image/jpeg,image/gif,image/png,application/pdf" multiple>
                         </div>
 
                         <div class="uploadedFileName"></div>
                     </div>
 
                 </div>
-
-
 
                 <div class="buttons">
                     <div class="button prev">
