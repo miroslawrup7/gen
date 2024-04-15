@@ -47,6 +47,7 @@ const page3noticeContentArrLoc = document.querySelectorAll(".page3 .notice-conte
 const page4addApplicantBtnLoc = document.querySelector(".page4 .button.add")
 const page4removeApplicantBtnLoc = document.querySelector(".page4 .button.remove")
 const page4additionalApplicantLoc = document.querySelector(".page4 .form-box.additional")
+const page4peselBtnArrLoc = document.querySelectorAll(".page4 .pesel-button")
 
 const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
 const page5formLoc = document.querySelector(".page5 .form-box")
@@ -164,31 +165,6 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page8")) {
-
-            // const page9powerRowArrLoc = document.querySelectorAll(".page9 .power-row")
-
-            // if (page8radios === 1) {
-            //     page9powerRowArrLoc.forEach((elx)=> {
-            //         elx.innerHTML =  "Moc urządzenia: <input type='text'> kW"
-            //     })
-            // }
-
-            // if (page8radios === 2) {
-            //     page9powerRowArrLoc.forEach((elx, index)=> {
-            //         if (index === 0 || index === 4) {
-            //             elx.innerHTML =  "Średnia moc kuchenki to 7kW"
-            //         }
-            //         if (index === 1 || index === 5) {
-            //             elx.innerHTML =  "Średnia moc kotła dwufunkcyjnego to 21kW"
-            //         }
-            //         if (index === 2 || index === 6) {
-            //             elx.innerHTML =  "Średnia moc kotła jednofunkcyjnego to 21kW"
-            //         } if (index === 3 || index === 7) {
-            //             elx.innerHTML =  "Średnia moc podgrzewacza to 4kW"
-            //         }
-            //     })
-            // }
-
             allowNext = true
         }
 
@@ -309,6 +285,25 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
     page4additionalApplicantLoc.style.display = "none"
     page4boolean = false
 })
+
+// posiadam / nieposiadam nr PESEL
+page4peselBtnArrLoc.forEach((elem)=>{
+    elem.addEventListener("click", ()=>{
+        elem.classList.toggle("active")
+        const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
+        if (elem.classList.contains("active")) {
+            IDCardSelectLoc.classList.remove("pesel")
+            IDCardSelectLoc.disabled = false
+            IDCardSelectLoc.querySelector("optgroup > option").innerText = "Wybierz z listy..."
+        } else {
+            IDCardSelectLoc.classList.add("pesel")
+            IDCardSelectLoc.disabled = true
+            IDCardSelectLoc.querySelector("optgroup > option").innerText = "PESEL"
+            IDCardSelectLoc.selectedIndex = 0;
+        }
+    })
+})
+
 
 // adres korespondencyjny inny niż zamieszkania - strona 5
 

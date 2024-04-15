@@ -704,6 +704,40 @@ sup {
 .page16 .form-box form .input-container .select-input-container select optgroup {
   font-size: 18px;
 }
+.page4 .form-box form .input-container .select-input-container select.pesel,
+.page5 .form-box form .input-container .select-input-container select.pesel,
+.page6 .form-box form .input-container .select-input-container select.pesel,
+.page7 .form-box form .input-container .select-input-container select.pesel,
+.page8 .form-box form .input-container .select-input-container select.pesel,
+.page9 .form-box form .input-container .select-input-container select.pesel,
+.page10 .form-box form .input-container .select-input-container select.pesel,
+.page11 .form-box form .input-container .select-input-container select.pesel,
+.page12 .form-box form .input-container .select-input-container select.pesel,
+.page13 .form-box form .input-container .select-input-container select.pesel,
+.page14 .form-box form .input-container .select-input-container select.pesel,
+.page15 .form-box form .input-container .select-input-container select.pesel,
+.page16 .form-box form .input-container .select-input-container select.pesel {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.page4 .form-box form .input-container .select-input-container select:disabled,
+.page5 .form-box form .input-container .select-input-container select:disabled,
+.page6 .form-box form .input-container .select-input-container select:disabled,
+.page7 .form-box form .input-container .select-input-container select:disabled,
+.page8 .form-box form .input-container .select-input-container select:disabled,
+.page9 .form-box form .input-container .select-input-container select:disabled,
+.page10 .form-box form .input-container .select-input-container select:disabled,
+.page11 .form-box form .input-container .select-input-container select:disabled,
+.page12 .form-box form .input-container .select-input-container select:disabled,
+.page13 .form-box form .input-container .select-input-container select:disabled,
+.page14 .form-box form .input-container .select-input-container select:disabled,
+.page15 .form-box form .input-container .select-input-container select:disabled,
+.page16 .form-box form .input-container .select-input-container select:disabled {
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
+}
 .page4 .form-box form .input-container .select-input-container input,
 .page5 .form-box form .input-container .select-input-container input,
 .page6 .form-box form .input-container .select-input-container input,
@@ -718,6 +752,77 @@ sup {
 .page15 .form-box form .input-container .select-input-container input,
 .page16 .form-box form .input-container .select-input-container input {
   width: 50%;
+}
+.page4 .form-box form .input-container.pesel,
+.page5 .form-box form .input-container.pesel,
+.page6 .form-box form .input-container.pesel,
+.page7 .form-box form .input-container.pesel,
+.page8 .form-box form .input-container.pesel,
+.page9 .form-box form .input-container.pesel,
+.page10 .form-box form .input-container.pesel,
+.page11 .form-box form .input-container.pesel,
+.page12 .form-box form .input-container.pesel,
+.page13 .form-box form .input-container.pesel,
+.page14 .form-box form .input-container.pesel,
+.page15 .form-box form .input-container.pesel,
+.page16 .form-box form .input-container.pesel {
+  position: relative;
+}
+.page4 .form-box form .input-container.pesel .pesel-button,
+.page5 .form-box form .input-container.pesel .pesel-button,
+.page6 .form-box form .input-container.pesel .pesel-button,
+.page7 .form-box form .input-container.pesel .pesel-button,
+.page8 .form-box form .input-container.pesel .pesel-button,
+.page9 .form-box form .input-container.pesel .pesel-button,
+.page10 .form-box form .input-container.pesel .pesel-button,
+.page11 .form-box form .input-container.pesel .pesel-button,
+.page12 .form-box form .input-container.pesel .pesel-button,
+.page13 .form-box form .input-container.pesel .pesel-button,
+.page14 .form-box form .input-container.pesel .pesel-button,
+.page15 .form-box form .input-container.pesel .pesel-button,
+.page16 .form-box form .input-container.pesel .pesel-button {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  border: 1px solid rgba(88, 88, 88, 0.2);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 0px 5px 2px;
+  cursor: pointer;
+  transition: all 0.1s;
+  color: #585858;
+}
+.page4 .form-box form .input-container.pesel .pesel-button:hover,
+.page5 .form-box form .input-container.pesel .pesel-button:hover,
+.page6 .form-box form .input-container.pesel .pesel-button:hover,
+.page7 .form-box form .input-container.pesel .pesel-button:hover,
+.page8 .form-box form .input-container.pesel .pesel-button:hover,
+.page9 .form-box form .input-container.pesel .pesel-button:hover,
+.page10 .form-box form .input-container.pesel .pesel-button:hover,
+.page11 .form-box form .input-container.pesel .pesel-button:hover,
+.page12 .form-box form .input-container.pesel .pesel-button:hover,
+.page13 .form-box form .input-container.pesel .pesel-button:hover,
+.page14 .form-box form .input-container.pesel .pesel-button:hover,
+.page15 .form-box form .input-container.pesel .pesel-button:hover,
+.page16 .form-box form .input-container.pesel .pesel-button:hover {
+  background-color: #FFDD00;
+}
+.page4 .form-box form .input-container.pesel .pesel-button.active,
+.page5 .form-box form .input-container.pesel .pesel-button.active,
+.page6 .form-box form .input-container.pesel .pesel-button.active,
+.page7 .form-box form .input-container.pesel .pesel-button.active,
+.page8 .form-box form .input-container.pesel .pesel-button.active,
+.page9 .form-box form .input-container.pesel .pesel-button.active,
+.page10 .form-box form .input-container.pesel .pesel-button.active,
+.page11 .form-box form .input-container.pesel .pesel-button.active,
+.page12 .form-box form .input-container.pesel .pesel-button.active,
+.page13 .form-box form .input-container.pesel .pesel-button.active,
+.page14 .form-box form .input-container.pesel .pesel-button.active,
+.page15 .form-box form .input-container.pesel .pesel-button.active,
+.page16 .form-box form .input-container.pesel .pesel-button.active {
+  background-color: #FFDD00;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px 0px inset, rgba(0, 0, 0, 0.1) -1px -1px 2px 0px inset;
 }
 .page4 .form-box.additional,
 .page5 .form-box.additional,
