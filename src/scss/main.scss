@@ -551,6 +551,7 @@ sup {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin: 30px 0;
 
     .file-upload,
     .file-upload-multi {
@@ -885,7 +886,8 @@ sup {
         border: 3px solid $border-1;
         padding: 10px 20px;
         border-radius: 20px;
-        width: 100%;
+        // width: 100%;
+        margin: 30px 10px;
 
         .calc-row {
             font-family: "Clarika Geo Regular", sans-serif;
@@ -893,7 +895,7 @@ sup {
             margin-left: 20px;
             display: flex;
             position: relative;
-            margin-bottom: 3px;
+            margin: 10px 0;
 
             &.sub {
                 padding-left: 30px;
@@ -902,6 +904,8 @@ sup {
             .value {
                 position: absolute;
                 left: 450px;
+                display: flex;
+                gap: 10px;
 
                 .digit {
                     font-family: "Clarika Geo Medium", sans-serif;
@@ -911,6 +915,24 @@ sup {
                     min-width: 100px;
                     padding-right: 5px;
                     text-align: right;
+                }
+
+                .input-wrapper {
+                    display: flex;
+
+                    input {
+                        font-family: "Clarika Geo Medium", sans-serif;
+                        // background-color: rgba($background-1, 0.7);
+                        border: 3px solid $background-1;
+                        border-radius: 5px;
+                        display: inline-block;
+                        width: 100px;
+                        height: 40px;
+                        padding-right: 2px;
+                        text-align: right;
+                        font-size: 24px;
+                        padding-bottom: 3px;
+                    }
                 }
 
                 .unit {
@@ -936,6 +958,7 @@ sup {
         border: 1px solid $border-3;
         padding: 10px 20px;
         border-radius: 20px;
+        margin: 30px 10px;
 
         .equipment-row {
             display: flex;

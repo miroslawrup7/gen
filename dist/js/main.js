@@ -17,6 +17,7 @@ let inputText9_5 = null
 let inputText9_6 = null
 let inputText9_7 = null
 let inputText9_8 = null
+let inputText9_9 = null
 let page9checkbox1 = false
 let page9checkbox2 = false
 let page9checkbox3 = false
@@ -82,7 +83,7 @@ const page6noticeLoc = document.querySelector(".page6 .notice")
 // const page7radiosLoc = document.querySelector(".page7 .radios")
 const page7PPGLoc = document.querySelector(".page7 .PPG")
 // const page7radioArrLoc = document.querySelectorAll(".page7 .radios input")
-const page7formLoc = document.querySelector(".page7 .form-box")
+// const page7formLoc = document.querySelector(".page7 .form-box")
 
 const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
 const inputText8_1Loc = document.querySelector(".page8 .input-text8-1")
@@ -100,6 +101,7 @@ let page9inputTextArrLoc
 const page9powerRowArrLoc = document.querySelectorAll(".page9 .power-row")
 const page9unitsPowerLoc = document.querySelector(".page9 .units-power")
 const page9consumptionMeterLoc = document.querySelector(".page9 .consumption-meter")
+const page9inputText9_9Loc = document.querySelector(".page9 #input-text9-9")
 
 const page10inputRadiosGArrLoc = document.querySelectorAll(".page10 .radiosG input")
 const page10fileUploadContainerLoc = document.querySelector(".page10 .file-upload-container")
@@ -442,26 +444,26 @@ page6radioArrLoc.forEach((elem, index) => {
     })
 })
 
-// adres korespondencyjny inny niż zamieszkania - strona 7
+// mam / nie mam WT - strona 7
 
-page5radioArrLoc.forEach((elem, index) => {
+// page7radioArrLoc.forEach((elem, index) => {
 
-    if (elem.checked) {
-        page7radios = index + 1
-    }
+//     if (elem.checked) {
+//         page7radios = index + 1
+//     }
     
-    elem.addEventListener("change", (e)=> {
+//     elem.addEventListener("change", (e)=> {
 
-        if (e.target.value === "radio9") {
-            page7radios = 1
-            page7formLoc.style.visibility = "hidden"
-        }
-        if (e.target.value === "radio10") {
-            page7radios = 2
-            page7formLoc.style.visibility = "visible"
-        }
-    })
-})
+//         if (e.target.value === "radio9") {
+//             page7radios = 1
+//             page7formLoc.style.visibility = "hidden"
+//         }
+//         if (e.target.value === "radio10") {
+//             page7radios = 2
+//             page7formLoc.style.visibility = "visible"
+//         }
+//     })
+// })
 
 // form - strona 8
 
@@ -730,6 +732,7 @@ const calculatePowerAndConsumption = ()=> {
     page9consumptionMeter = elem1 + elem2 + elem3
 
     page9consumptionMeterLoc.innerText = page9consumptionMeter
+    page9inputText9_9Loc.placeholder = page9consumptionMeter
 
 }
 
