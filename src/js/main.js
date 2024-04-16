@@ -491,12 +491,14 @@ page8radioArrLoc.forEach((elem, index) => {
 
         if (e.target.value === "radio11") {
             page8radios = 1
+            page9powerRowSet()
+            addinputTextListener()
         }
         if (e.target.value === "radio12") {
             page8radios = 2
+            page9powerRowSet()
         }
 
-        page9powerRowSet()
         calculatePowerAndConsumption()
     })
 })
@@ -594,18 +596,23 @@ page9inputCheckboxArrLoc.forEach((elem, index)=> {
 
 // odczytaj wartości z inputów - jeżeli są - strona 9
 
+const addinputTextListener = ()=> {
+    page9inputTextArrLoc = document.querySelectorAll('.page9 .power-row input[type="text"]')
+        console.log(page9inputTextArrLoc)
+    if (page9inputTextArrLoc.length) {
+        page9inputTextArrLoc.forEach((elem, index)=>{
+            elem.addEventListener("input", ()=>{
+                console.log(elem)
+                readPowerValues()
+                calculatePowerAndConsumption()
+            })
+        })
+    }
+}
+
 document.addEventListener("readystatechange", (event) => {
     if (event.target.readyState === "complete") {
-        page9inputTextArrLoc = document.querySelectorAll('.page9 .power-row input[type="text"]')
-        
-        if (page9inputTextArrLoc.length) {
-            page9inputTextArrLoc.forEach((elem, index)=>{
-                elem.addEventListener("input", ()=>{
-                    readPowerValues()
-                    calculatePowerAndConsumption()
-                })
-            })
-        }
+        addinputTextListener()
     }
 })
 
