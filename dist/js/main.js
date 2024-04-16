@@ -119,6 +119,8 @@ const singleFileUploadArrLoc = document.querySelectorAll(".file-upload")
 const multiInputAppendixArrLoc = document.querySelectorAll("input.appendix-multi")
 const multiFileUploadArrLoc = document.querySelectorAll(".file-upload-multi")
 
+const navButtonsArrLoc = document.querySelectorAll(".fixed-buttons")
+
 
 // przewijanie stron
 
@@ -180,11 +182,9 @@ buttonNextArrLoc.forEach((elem) => {
         if (actualPage.classList.contains("page6")) {
 
             if (page1radios === 1) {
-                // page7radiosLoc.style.display = "none"
                 page7PPGLoc.style.display = "flex"
             }
             if (page1radios === 2) {
-                // page7radiosLoc.style.display = "flex"
                 page7PPGLoc.style.display = "none"
             }
             
@@ -230,6 +230,12 @@ buttonNextArrLoc.forEach((elem) => {
         if (allowNext) {
             formPagesLoc.style.left = newLeftValue + "px"
             e.target.closest(".form-page").nextElementSibling.scrollTo(0, 0);
+            
+            navButtonsArrLoc.forEach((el)=>{
+                el.style.display = "none"
+            })
+            actualPage.nextElementSibling.querySelector(".fixed-buttons").style.display = "flex"
+            
             allowNext = false
         }
         
@@ -252,6 +258,14 @@ buttonPrevArrLoc.forEach((elem) => {
         formPagesLoc.style.left = newLeftValue + "px"
 
         e.target.closest(".form-page").previousElementSibling.scrollTo(0, 0);
+
+        const actualPage = e.target.closest(".form-page")
+
+        navButtonsArrLoc.forEach((el)=>{
+            el.style.display = "none"
+        })
+        actualPage.previousElementSibling.querySelector(".fixed-buttons").style.display = "flex"
+        
     })
 })
 
@@ -615,6 +629,7 @@ const addinputTextListener = ()=> {
 document.addEventListener("readystatechange", (event) => {
     if (event.target.readyState === "complete") {
         addinputTextListener()
+        document.querySelector(".page1 .fixed-buttons").style.display = "flex"
     }
 })
 
