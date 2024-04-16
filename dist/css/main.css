@@ -59,11 +59,12 @@ html {
   width: 100%;
   height: 100%;
   padding-top: calc(20px + 5vh);
-  padding-bottom: calc(20px + 5vh);
+  padding-bottom: calc(100px + 5vh);
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 .form-pages .form-page .error-message-box {
   display: flex;
@@ -172,6 +173,32 @@ sup {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
+}
+
+.fixed-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  position: fixed;
+  bottom: 50px;
+  width: 1040px;
+  z-index: 99;
+}
+.fixed-buttons .button {
+  padding: 10px 50px;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-family: "Clarika Geo Bold", sans-serif;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 100px;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
 }
 
 .button {
