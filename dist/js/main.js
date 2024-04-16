@@ -76,15 +76,21 @@ const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
 const page5formLoc = document.querySelector(".page5 .form-box")
 
 const page5input_name5_1 = document.querySelector(".page5 #name5_1")
-const page5input_name5_2 = document.querySelector(".page5 #address5_2")
-const page5input_name5_3 = document.querySelector(".page5 #postcode5_3")
-const page5input_name5_4 = document.querySelector(".page5 #locality5_4")
+const page5input_address5_2 = document.querySelector(".page5 #address5_2")
+const page5input_postcode5_3 = document.querySelector(".page5 #postcode5_3")
+const page5input_locality5_4 = document.querySelector(".page5 #locality5_4")
 
-const inputsPage5 = [page5input_name5_1, page5input_name5_2, page5input_name5_3, page5input_name5_4]
+const inputsPage5Array = [page5input_name5_1, page5input_address5_2, page5input_postcode5_3, page5input_locality5_4]
 
 const page6radioArrLoc = document.querySelectorAll(".page6 .radios input")
 const page6formLoc = document.querySelector(".page6 .form-box")
 const page6noticeLoc = document.querySelector(".page6 .notice")
+
+const page6input_name6_1 = document.querySelector(".page6 #name6_1")
+const page6input_pesel6_2 = document.querySelector(".page6 #pesel6_2")
+const page6input_date6_3 = document.querySelector(".page6 #date6_3")
+
+const inputsPage6Array = [page6input_name6_1, page6input_pesel6_2, page6input_date6_3]
 
 // const page7radiosLoc = document.querySelector(".page7 .radios")
 const page7PPGLoc = document.querySelector(".page7 .PPG")
@@ -195,8 +201,11 @@ buttonNextArrLoc.forEach((elem) => {
             if (page1radios === 2) {
                 page7PPGLoc.style.display = "none"
             }
+
+            if (validatePage6()) {
+                allowNext = true
+            }
             
-            allowNext = true
         }
 
         if (actualPage.classList.contains("page7")) {
@@ -412,7 +421,7 @@ const validatePage4 = ()=> {
     }
 }
 
-// walidacja sprawdzająca po błędzie
+// walidacja sprawdzająca po błędzie - strona 4
 
 inputsPage4Array1.concat(inputsPage4Array2).forEach((elem)=>{
     elem.addEventListener("input", ()=>{
@@ -449,7 +458,7 @@ const validatePage5 = ()=> {
 
     let validateSuccess = true
 
-    let validatedArray = inputsPage5
+    let validatedArray = inputsPage5Array
 
     if (page5radios === 1) {
         validatedArray.forEach((elem)=>{
@@ -481,9 +490,9 @@ const validatePage5 = ()=> {
     }
 }
 
-// walidacja sprawdzająca po błędzie
+// walidacja sprawdzająca po błędzie - strona 5
 
-inputsPage5.forEach((elem)=>{
+inputsPage5Array.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
         if (elem.classList.contains("error")){
             validatePage5()
@@ -534,6 +543,55 @@ page6radioArrLoc.forEach((elem, index) => {
 //         }
 //     })
 // })
+
+// walidacja pól formularza - strona 6
+
+const validatePage6 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray = inputsPage6Array
+
+    if (page6radios === 1) {
+        validatedArray.forEach((elem)=>{
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            elem.value = ""
+        })
+    }
+
+    if (page6radios === 2) {
+
+        validatedArray.forEach((elem)=>{
+            if (!validateEmpty(elem.value)[0]) {
+                elem.parentElement.classList.add("error")
+                elem.classList.add("error")
+                document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+                validateSuccess = false
+            } else {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+            }
+        })
+    }
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie - strona 6
+
+inputsPage6Array.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage6()
+        }
+    })
+})
+
 
 // form - strona 8
 
@@ -670,11 +728,9 @@ page9inputCheckboxArrLoc.forEach((elem, index)=> {
 
 const addinputTextListener = ()=> {
     page9inputTextArrLoc = document.querySelectorAll('.page9 .power-row input[type="text"]')
-        console.log(page9inputTextArrLoc)
     if (page9inputTextArrLoc.length) {
         page9inputTextArrLoc.forEach((elem, index)=>{
             elem.addEventListener("input", ()=>{
-                console.log(elem)
                 readPowerValues()
                 calculatePowerAndConsumption()
             })
