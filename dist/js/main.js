@@ -70,11 +70,17 @@ const page4input_email4_15 = document.querySelector(".page4 #email4_15")
 const page4input_phone4_16 = document.querySelector(".page4 #phone4_16")
 
 const inputsPage4Array1 = [page4input_fname4_1, page4input_sname4_2, page4input_ID4_3, page4input_address4_4, page4input_postcode4_5, page4input_locality4_6, page4input_email4_7, page4input_phone4_8]
-
 const inputsPage4Array2 = [page4input_fname4_9, page4input_sname4_10, page4input_ID4_11, page4input_address4_12, page4input_postcode4_13, page4input_locality4_14, page4input_email4_15, page4input_phone4_16]
 
 const page5radioArrLoc = document.querySelectorAll(".page5 .radios input")
 const page5formLoc = document.querySelector(".page5 .form-box")
+
+const page5input_name5_1 = document.querySelector(".page5 #name5_1")
+const page5input_name5_2 = document.querySelector(".page5 #address5_2")
+const page5input_name5_3 = document.querySelector(".page5 #postcode5_3")
+const page5input_name5_4 = document.querySelector(".page5 #locality5_4")
+
+const inputsPage5 = [page5input_name5_1, page5input_name5_2, page5input_name5_3, page5input_name5_4]
 
 const page6radioArrLoc = document.querySelectorAll(".page6 .radios input")
 const page6formLoc = document.querySelector(".page6 .form-box")
@@ -176,7 +182,9 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page5")) {
-            allowNext = true
+            if (validatePage5()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page6")) {
@@ -431,6 +439,54 @@ page5radioArrLoc.forEach((elem, index) => {
         if (e.target.value === "radio6") {
             page5radios = 2
             page5formLoc.style.visibility = "visible"
+        }
+    })
+})
+
+// walidacja pól formularza - strona 5
+
+const validatePage5 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray = inputsPage5
+
+    if (page5radios === 1) {
+        validatedArray.forEach((elem)=>{
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            elem.value = ""
+        })
+    }
+
+    if (page5radios === 2) {
+
+        validatedArray.forEach((elem)=>{
+            if (!validateEmpty(elem.value)[0]) {
+                elem.parentElement.classList.add("error")
+                elem.classList.add("error")
+                document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+                validateSuccess = false
+            } else {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+            }
+        })
+    }
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie
+
+inputsPage5.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage5()
         }
     })
 })
