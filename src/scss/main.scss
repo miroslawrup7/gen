@@ -371,6 +371,22 @@ span.obligatory {
             border-radius: 8px;
             border: 1px solid $border-5;
 
+            &.error {
+                border: 1px solid $text-2;
+                background-color: #ff505012;
+                // position: relative;
+
+                &::before {
+                    content: "!";
+                    top: 43%;
+                    left: -13px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                    font-size: 30px;
+                    color: $text-2;
+                    font-weight: bold;
+                }
+            }
         }
 
         /* On mouse-over, add a background color */

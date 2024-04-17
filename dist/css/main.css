@@ -326,6 +326,20 @@ span.obligatory {
   border-radius: 8px;
   border: 1px solid rgba(88, 88, 88, 0.2);
 }
+.checkbox-container .checkbox .checkmark.error {
+  border: 1px solid #FF5050;
+  background-color: rgba(255, 80, 80, 0.0705882353);
+}
+.checkbox-container .checkbox .checkmark.error::before {
+  content: "!";
+  top: 43%;
+  left: -13px;
+  position: absolute;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #FF5050;
+  font-weight: bold;
+}
 .checkbox-container .checkbox input:checked ~ .checkmark {
   background-color: #FFDD00;
   border: 1px #FFDD00 solid;

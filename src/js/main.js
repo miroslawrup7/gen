@@ -141,6 +141,8 @@ const page10input_deliverydate10_2 = document.querySelector(".page10 #deliveryda
 const inputsPage10Array1 = [page10input_deliverydate10_2]
 const inputsPage10Array2 = [page10input_contractdate10_1, page10input_deliverydate10_2]
 
+const checkboxPage10checkbox10_1 = document.querySelector(".page10 .checbox10_1")
+
 const page12inputSelectContainerArrLoc = document.querySelectorAll(".page12 .input-select-container")
 const page12chevronArrLoc = document.querySelectorAll(".page12 .chevron")
 const page12customOptionArrLoc = document.querySelectorAll(".page12 .custom-select .custom-option")
@@ -150,6 +152,8 @@ const page12input_address12_2 = document.querySelector(".page12 #address12_2")
 const page12input_court12_3 = document.querySelector(".page12 #court12_3")
 
 const inputsPage12Array = [page12input_company12_1, page12input_address12_2, page12input_court12_3]
+
+const checkboxPage12checkbox12_1 = document.querySelector(".page12 .checbox12_1")
 
 const singleInputAppendixArrLoc = document.querySelectorAll("input.appendix")
 const singleFileUploadArrLoc = document.querySelectorAll(".file-upload")
@@ -324,6 +328,12 @@ const validateEmpty = (value)=> {
     if (!value) return [false, "To pole nie może być puste!"]
     return [true, ""]
 }
+
+const validateCheckbox = (value)=> {
+    if (!value.checked) return false
+    return true
+}
+
 
 // zaznaczanie kafelków - strona 1
 
@@ -1070,16 +1080,10 @@ page10inputRadiosGArrLoc.forEach((elem, index) => {
 const validatePage10 = ()=> {
 
     let validateSuccess = true
-
     let validatedArray
 
-    if (page10radiosF === 1) {
-        validatedArray = inputsPage10Array1
-    }
-
-    if (page10radiosF === 2) {
-        validatedArray = inputsPage10Array2
-    }
+    if (page10radiosF === 1) { validatedArray = inputsPage10Array1 }
+    if (page10radiosF === 2) { validatedArray = inputsPage10Array2 }
 
     validatedArray.forEach((elem)=>{
         if (!validateEmpty(elem.value)[0]) {
@@ -1092,7 +1096,13 @@ const validatePage10 = ()=> {
             elem.classList.remove("error")
         }
     })
-    
+
+    if (!validateCheckbox(checkboxPage10checkbox10_1)) {
+        checkboxPage10checkbox10_1.nextElementSibling.classList.add("error")
+        validateSuccess = false
+    } else {
+        checkboxPage10checkbox10_1.nextElementSibling.classList.remove("error")
+    }
 
     if (validateSuccess) {
         return true
@@ -1109,6 +1119,12 @@ inputsPage10Array2.forEach((elem)=>{
             validatePage10()
         }
     })
+})
+
+checkboxPage10checkbox10_1.addEventListener("change", ()=>{
+    if (checkboxPage10checkbox10_1.nextElementSibling.classList.contains("error")){
+        validatePage10()
+    }
 })
 
 // combo - input text or select - strona 12
@@ -1159,6 +1175,13 @@ const validatePage12 = ()=> {
         }
     })
 
+    if (!validateCheckbox(checkboxPage12checkbox12_1)) {
+        checkboxPage12checkbox12_1.nextElementSibling.classList.add("error")
+        validateSuccess = false
+    } else {
+        checkboxPage12checkbox12_1.nextElementSibling.classList.remove("error")
+    }
+
     if (validateSuccess) {
         return true
     } else {
@@ -1179,6 +1202,12 @@ inputsPage12Array.forEach((elem)=>{
             validatePage12()
         }
     })
+})
+
+checkboxPage12checkbox12_1.addEventListener("change", ()=>{
+    if (checkboxPage12checkbox12_1.nextElementSibling.classList.contains("error")){
+        validatePage12()
+    }
 })
 
 // działanie customowego input:file - strona 16
