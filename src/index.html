@@ -389,7 +389,7 @@
                         </div>
                         <div class="input-container">
                             <label>Data pełnomocnictwa<span> *</span></label>
-                            <div class="input-wrapper">
+                            <div class="input-wrapper date">
                                 <input type="date" id="date6_3" placeholder="Wpisz">
                             </div>
                         </div>
@@ -443,49 +443,51 @@
                 <div class="form-box">
                     <form action="">
                         <div class="input-container w-100">
-                            <label for="name">Nr warunków technicznych przyłączenia do sieci gazowej<span>
-                                    *</span><span class="help">
+                            <label>Nr warunków technicznych przyłączenia do sieci gazowej
+                                <span> *</span>
+                                <span class="help">
                                     <img src="./img/icons/question-silver.svg" alt="question">
-                                </span></label>
+                                </span>
+                            </label>
 
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="condition7_1" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container w-100 PPG">
-                            <label for="name">Nr PPG<span> *</span></label>
+                            <label>Nr PPG<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="ppg7_2" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Miejscowość<span> *</span></label>
+                            <label>Miejscowość<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="locality7_3" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Kod pocztowy<span> *</span></label>
+                            <label>Kod pocztowy<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="postcode7_4" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container w-50">
-                            <label for="name">Ulica<span> *</span></label>
+                            <label>Ulica<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="street7_5" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container w-25">
-                            <label for="name">Nr budynku / lokalu<span> *</span></label>
+                            <label>Nr budynku / lokalu<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="houseno7_6" placeholder="Wpisz">
                             </div>
                         </div>
                         <div class="input-container w-25">
-                            <label for="name">Nr działki</label>
+                            <label>Nr działki</label>
                             <div class="input-wrapper">
-                                <input type="text" name="name" id="name" placeholder="Wpisz">
+                                <input type="text" id="parcelno7_7" placeholder="Wpisz">
                             </div>
                         </div>
                     </form>
@@ -511,17 +513,16 @@
                 <div class="form-box">
                     <form action="">
                         <div class="input-container">
-                            <label for="name">Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
+                            <label>Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
                             <div class="input-wrapper">
-                                <input class="input-text8-1" type="text" name="name" id="name"
+                                <input class="input-text8-1" type="text" id="area8_1"
                                     placeholder="Wpisz powierzchnię w metrach kwadratowych">
                             </div>
                         </div>
                         <div class="input-container">
-                            <label for="name">Ile osób będzie mieszkać w domu?<span> *</span></label>
+                            <label>Ile osób będzie mieszkać w domu?<span> *</span></label>
                             <div class="input-wrapper">
-                                <input class="input-text8-2" type="text" name="name" id="name"
-                                    placeholder="Wpisz liczbę">
+                                <input class="input-text8-2" type="text" id="people8_2" placeholder="Wpisz liczbę">
                             </div>
                         </div>
 
@@ -793,9 +794,9 @@
                 <div class="form-box contract-period">
                     <form action="">
                         <div class="input-container w-100">
-                            <label for="name">Okres obowiązywania umowy<span>*</span></label>
-                            <div class="input-wrapper">
-                                <input type="date" name="name" id="date1">
+                            <label>Okres obowiązywania umowy<span> *</span></label>
+                            <div class="input-wrapper date">
+                                <input type="date" id="contractdate10_1">
                             </div>
                         </div>
                     </form>
@@ -804,11 +805,10 @@
                 <div class="form-box">
                     <form action="">
                         <div class="input-container w-100">
-                            <label for="name">Proponowany termin rozpoczęcia dostarczania paliwa
-                                gazowego<span>*</span></label>
-                            <div class="input-wrapper">
-
-                                <input type="date" name="name" id="date2" min="2000-01-01">
+                            <label>Proponowany termin rozpoczęcia dostarczania paliwa
+                                gazowego<span> *</span></label>
+                            <div class="input-wrapper date">
+                                <input type="date" id="deliverydate10_2" min="2000-01-01">
                             </div>
                         </div>
                         <div class="checkbox-container">
@@ -940,7 +940,8 @@
 
                 <div class="form-box">
                     <form action="">
-                        <h2>Cel zużycia paliwa gazowego na potrzeby naliczania podatku akcyzowego:
+                        <h2>Cel zużycia paliwa gazowego na potrzeby naliczania podatku akcyzowego:<span
+                                class="obligatory"> *</span>
                         </h2>
                         <div class="checkbox-container">
                             <label class="checkbox">
@@ -949,7 +950,8 @@
                                 <span class="checkmark"></span>
                             </label>
                             <label class="label-text" for="checkbox">
-                                Oświadczam, że paliwo gazowe będzie wykorzystywane wyłącznie w celach opałowych na
+                                Oświadczam, że paliwo gazowe będzie wykorzystywane wyłącznie w celach opałowych
+                                na
                                 potrzeby gospodarstwa domowego, niezwiązanych z prowadzeniem działalności
                                 gospodarczej
                                 ani zawodowej, w ilościach paliwa gazowego wskazanych we Wniosku. 
@@ -961,7 +963,7 @@
                 <div class="reserve-seller">
                     Odbiorca niniejszym wskazuje
                     <div class="input-select-container">
-                        <input type="text" name="" id="" placeholder="Wpisz lub wybierz z listy...">
+                        <input type="text" id="company12_1" placeholder="Wpisz lub wybierz z listy...">
                         <div class="chevron">
                             <img src="./img/icons/chevron-down.svg" alt="chevron-down">
                         </div>
@@ -971,7 +973,7 @@
                     </div>
                      z siedzibą w
                     <div class="input-select-container">
-                        <input type="text" name="" id="" placeholder="Wpisz lub wybierz z listy...">
+                        <input type="text" id="address12_2" placeholder="Wpisz lub wybierz z listy...">
                         <div class="chevron">
                             <img src="./img/icons/chevron-down.svg" alt="chevron-down">
                         </div>
@@ -981,7 +983,7 @@
                     </div>
                     , wpisanego do rejestru przedsiębiorców Krajowego Rejestru Sądowego prowadzonego przez 
                     <div class="input-select-container">
-                        <input type="text" name="" id="" placeholder="Wpisz lub wybierz z listy...">
+                        <input type="text" id="court12_3" placeholder="Wpisz lub wybierz z listy...">
                         <div class="chevron">
                             <img src="./img/icons/chevron-down.svg" alt="chevron-down">
                         </div>
@@ -997,7 +999,7 @@
                     końcowym
                     opublikowanej przez G.EN. Operator, działającego jako OSD, zgodnie z Prawem energetycznym oraz
                     aktualnie obowiązującą Instrukcją Ruchu i Eksploatacji Sieci Dystrybucyjnej G.EN. Operator
-                    („IRiESD”).
+                    („IRiESD”).<span class="obligatory"> *</span>
                 </div>
 
                 <div class="bottom-ghost"></div>

@@ -97,9 +97,23 @@ const page7PPGLoc = document.querySelector(".page7 .PPG")
 // const page7radioArrLoc = document.querySelectorAll(".page7 .radios input")
 // const page7formLoc = document.querySelector(".page7 .form-box")
 
+const page7input_condition7_1 = document.querySelector(".page7 #condition7_1")
+const page7input_ppg7_2 = document.querySelector(".page7 #ppg7_2")
+const page7input_locality7_3 = document.querySelector(".page7 #locality7_3")
+const page7input_postcode7_4 = document.querySelector(".page7 #postcode7_4")
+const page7input_street7_5 = document.querySelector(".page7 #street7_5")
+const page7input_houseno7_6 = document.querySelector(".page7 #houseno7_6")
+const page7input_parcelno7_7 = document.querySelector(".page7 #parcelno7_7")
+
+const inputsPage7Array1 = [page7input_condition7_1, page7input_ppg7_2, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5, page7input_houseno7_6, page7input_parcelno7_7]
+const inputsPage7Array2 = [page7input_condition7_1, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5, page7input_houseno7_6, page7input_parcelno7_7]
+
 const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
-const inputText8_1Loc = document.querySelector(".page8 .input-text8-1")
-const inputText8_2Loc = document.querySelector(".page8 .input-text8-2")
+
+const page8input_area8_1 = document.querySelector(".page8 #area8_1")
+const page8input_people8_2 = document.querySelector(".page8 #people8_2")
+
+const inputsPage8Array = [page8input_area8_1, page8input_people8_2]
 
 const page9eqBoxArrLoc = document.querySelectorAll(".page9 .equipment-box")
 const page9addBtnLoc = page9eqBoxArrLoc[0].querySelector(".page9 .equipment-box .button.add")
@@ -117,14 +131,25 @@ const page9inputText9_9Loc = document.querySelector(".page9 #input-text9-9")
 
 const page10inputRadiosGArrLoc = document.querySelectorAll(".page10 .radiosG input")
 const page10fileUploadContainerLoc = document.querySelector(".page10 .file-upload-container")
-const page10date1Loc = document.querySelector(".page10 #date1")
-const page10date2Loc = document.querySelector(".page10 #date2")
+
 const page10inputRadiosFArrLoc = document.querySelectorAll(".page10 .radiosF input")
 const page10contractPeriodFormLoc = document.querySelector(".page10 .contract-period")
+
+const page10input_contractdate10_1 = document.querySelector(".page10 #contractdate10_1")
+const page10input_deliverydate10_2 = document.querySelector(".page10 #deliverydate10_2")
+
+const inputsPage10Array1 = [page10input_deliverydate10_2]
+const inputsPage10Array2 = [page10input_contractdate10_1, page10input_deliverydate10_2]
 
 const page12inputSelectContainerArrLoc = document.querySelectorAll(".page12 .input-select-container")
 const page12chevronArrLoc = document.querySelectorAll(".page12 .chevron")
 const page12customOptionArrLoc = document.querySelectorAll(".page12 .custom-select .custom-option")
+
+const page12input_company12_1 = document.querySelector(".page12 #company12_1")
+const page12input_address12_2 = document.querySelector(".page12 #address12_2")
+const page12input_court12_3 = document.querySelector(".page12 #court12_3")
+
+const inputsPage12Array = [page12input_company12_1, page12input_address12_2, page12input_court12_3]
 
 const singleInputAppendixArrLoc = document.querySelectorAll("input.appendix")
 const singleFileUploadArrLoc = document.querySelectorAll(".file-upload")
@@ -132,7 +157,6 @@ const multiInputAppendixArrLoc = document.querySelectorAll("input.appendix-multi
 const multiFileUploadArrLoc = document.querySelectorAll(".file-upload-multi")
 
 const navButtonsArrLoc = document.querySelectorAll(".fixed-buttons")
-
 
 // przewijanie stron
 
@@ -209,11 +233,15 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page7")) {
-            allowNext = true
+            if (validatePage7()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page8")) {
-            allowNext = true
+            if (validatePage8()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page9")) {
@@ -221,7 +249,9 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page10")) {
-            allowNext = true
+            if (validatePage10()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page11")) {
@@ -229,7 +259,9 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page12")) {
-            allowNext = true
+            if (validatePage12()) {
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page13")) {
@@ -523,27 +555,6 @@ page6radioArrLoc.forEach((elem, index) => {
     })
 })
 
-// mam / nie mam WT - strona 7
-
-// page7radioArrLoc.forEach((elem, index) => {
-
-//     if (elem.checked) {
-//         page7radios = index + 1
-//     }
-    
-//     elem.addEventListener("change", (e)=> {
-
-//         if (e.target.value === "radio9") {
-//             page7radios = 1
-//             page7formLoc.style.visibility = "hidden"
-//         }
-//         if (e.target.value === "radio10") {
-//             page7radios = 2
-//             page7formLoc.style.visibility = "visible"
-//         }
-//     })
-// })
-
 // walidacja pól formularza - strona 6
 
 const validatePage6 = ()=> {
@@ -593,18 +604,85 @@ inputsPage6Array.forEach((elem)=>{
 })
 
 
+// mam / nie mam WT - strona 7
+
+// page7radioArrLoc.forEach((elem, index) => {
+
+//     if (elem.checked) {
+//         page7radios = index + 1
+//     }
+    
+//     elem.addEventListener("change", (e)=> {
+
+//         if (e.target.value === "radio9") {
+//             page7radios = 1
+//             page7formLoc.style.visibility = "hidden"
+//         }
+//         if (e.target.value === "radio10") {
+//             page7radios = 2
+//             page7formLoc.style.visibility = "visible"
+//         }
+//     })
+// })
+
+// walidacja pól formularza - strona 7
+
+const validatePage7 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray
+
+    if (page1radios === 1) {
+        validatedArray = inputsPage7Array1
+    }
+
+    if (page1radios === 2) {
+        validatedArray = inputsPage7Array2
+    }
+
+    validatedArray.forEach((elem)=>{
+        if (!validateEmpty(elem.value)[0]) {
+            elem.parentElement.classList.add("error")
+            elem.classList.add("error")
+            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            validateSuccess = false
+        } else {
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+        }
+    })
+    
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie - strona 7
+
+inputsPage7Array1.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage7()
+        }
+    })
+})
+
 // form - strona 8
 
-inputText8_1 = inputText8_1Loc.value
-inputText8_2 = inputText8_2Loc.value
+inputText8_1 = page8input_area8_1.value
+inputText8_2 = page8input_people8_2.value
 
-inputText8_1Loc.addEventListener("change", ()=>{
-    inputText8_1 = inputText8_1Loc.value
+page8input_area8_1.addEventListener("change", ()=>{
+    inputText8_1 = page8input_area8_1.value
     calculatePowerAndConsumption()
 })
 
-inputText8_2Loc.addEventListener("change", ()=>{
-    inputText8_2 = inputText8_2Loc.value
+page8input_people8_2.addEventListener("change", ()=>{
+    inputText8_2 = page8input_people8_2.value
     calculatePowerAndConsumption()
 })
 
@@ -630,6 +708,43 @@ page8radioArrLoc.forEach((elem, index) => {
         }
 
         calculatePowerAndConsumption()
+    })
+})
+
+// walidacja pól formularza - strona 8
+
+const validatePage8 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray = inputsPage8Array
+
+    validatedArray.forEach((elem)=>{
+        if (!validateEmpty(elem.value)[0]) {
+            elem.parentElement.classList.add("error")
+            elem.classList.add("error")
+            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            validateSuccess = false
+        } else {
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+        }
+    })
+    
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie - strona 8
+
+inputsPage8Array.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage8()
+        }
     })
 })
 
@@ -904,8 +1019,8 @@ let year = date.getFullYear();
 let tommorow = `${year}-${month}-${day + 1}`;
 let nextYear = `${year + 1}-${month}-${day}`;
 
-page10date1Loc.setAttribute("min", nextYear);
-page10date2Loc.setAttribute("min", tommorow);
+page10input_contractdate10_1.setAttribute("min", nextYear);
+page10input_deliverydate10_2.setAttribute("min", tommorow);
 
 // działanie customowego input:file - strona 10
 
@@ -950,7 +1065,53 @@ page10inputRadiosGArrLoc.forEach((elem, index) => {
     })
 })
 
-// combo - input text or select
+// walidacja pól formularza - strona 10
+
+const validatePage10 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray
+
+    if (page10radiosF === 1) {
+        validatedArray = inputsPage10Array1
+    }
+
+    if (page10radiosF === 2) {
+        validatedArray = inputsPage10Array2
+    }
+
+    validatedArray.forEach((elem)=>{
+        if (!validateEmpty(elem.value)[0]) {
+            elem.parentElement.classList.add("error")
+            elem.classList.add("error")
+            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            validateSuccess = false
+        } else {
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+        }
+    })
+    
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie - strona 10
+
+inputsPage10Array2.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage10()
+        }
+    })
+})
+
+// combo - input text or select - strona 12
 
 page12chevronArrLoc.forEach((elem)=>{
     elem.addEventListener("click", ()=>{
@@ -968,12 +1129,55 @@ page12customOptionArrLoc.forEach((elem)=> {
     elem.addEventListener("click", ()=>{
         elem.parentElement.parentElement.querySelector("input").value = elem.innerText
         elem.parentElement.style.display = "none"
+        validatePage12()
     })
 })
 
 page12inputSelectContainerArrLoc.forEach((elem)=>{
     elem.addEventListener("mouseleave", ()=>{
         elem.querySelector(".custom-select").style.display = "none"
+    })
+})
+
+// walidacja pól formularza - strona 12
+
+const validatePage12 = ()=> {
+
+    let validateSuccess = true
+
+    let validatedArray = inputsPage12Array
+
+    validatedArray.forEach((elem)=>{
+        if (!validateEmpty(elem.value)[0]) {
+            elem.parentElement.classList.add("error")
+            elem.classList.add("error")
+            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            validateSuccess = false
+        } else {
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+        }
+    })
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+// walidacja sprawdzająca po błędzie - strona 12
+
+inputsPage12Array.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage12()
+        }
+    })
+    elem.addEventListener("change", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage12()
+        }
     })
 })
 

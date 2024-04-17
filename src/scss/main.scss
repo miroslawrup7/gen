@@ -238,6 +238,7 @@ sup {
         transition: all 0.1s;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, .3), -2px -2px 4px rgba(0, 0, 0, .2);
         background-color: #fff;
+        user-select: none;
     }
 }
 
@@ -308,6 +309,11 @@ sup {
         }
 
     }
+}
+
+span.obligatory {
+    color: $text-2;
+    font-weight: bold;
 }
 
 .content {
@@ -774,6 +780,10 @@ sup {
                             color: $text-2;
                         }
                     }
+
+                    &.date.error::after {
+                        right: 55px;
+                    }
                 }
 
                 .select-input-container {
@@ -1109,6 +1119,11 @@ sup {
                 width: 100%;
                 padding: 3px 30px 3px 5px;
                 font-size: 18px;
+
+                &.error {
+                    border: 1px solid $text-2;
+                    background-color: #ff505012;
+                }
             }
 
             .chevron {
@@ -1156,6 +1171,20 @@ sup {
             &:nth-of-type(3) {
                 z-index: 97;
                 min-width: 320px;
+            }
+
+            &.error {
+
+                &::after {
+                    content: url("../img/icons/exclamation.svg");
+                    position: absolute;
+                    right: 30px;
+                    top: 50%;
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    transform: translateY(-50%);
+                }
             }
         }
     }
