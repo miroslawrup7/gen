@@ -105,8 +105,9 @@ const page7input_street7_5 = document.querySelector(".page7 #street7_5")
 const page7input_houseno7_6 = document.querySelector(".page7 #houseno7_6")
 const page7input_parcelno7_7 = document.querySelector(".page7 #parcelno7_7")
 
-const inputsPage7Array1 = [page7input_condition7_1, page7input_ppg7_2, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5, page7input_houseno7_6, page7input_parcelno7_7]
-const inputsPage7Array2 = [page7input_condition7_1, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5, page7input_houseno7_6, page7input_parcelno7_7]
+const inputsPage7Array1 = [page7input_condition7_1, page7input_ppg7_2, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5]
+const inputsPage7Array2 = [page7input_condition7_1, page7input_locality7_3, page7input_postcode7_4, page7input_street7_5]
+const inputsPage7Array3 = [page7input_houseno7_6, page7input_parcelno7_7]
 
 const page8radioArrLoc = document.querySelectorAll(".page8 .radios input")
 
@@ -662,6 +663,21 @@ const validatePage7 = ()=> {
             elem.classList.remove("error")
         }
     })
+
+    if (!validateEmpty(inputsPage7Array3[0].value)[0] && !validateEmpty(inputsPage7Array3[1].value)[0]) {
+        inputsPage7Array3[0].parentElement.classList.add("error")
+        inputsPage7Array3[1].parentElement.classList.add("error")
+        inputsPage7Array3[0].classList.add("error")
+        inputsPage7Array3[1].classList.add("error")
+
+        document.documentElement.style.setProperty("--emptyError", `"Nr budynku/lokalu lub nr działki muszą być wypełnione"`)
+        validateSuccess = false
+    } else {
+        inputsPage7Array3[0].parentElement.classList.remove("error")
+        inputsPage7Array3[1].parentElement.classList.remove("error")
+        inputsPage7Array3[0].classList.remove("error")
+        inputsPage7Array3[1].classList.remove("error")
+    }
     
 
     if (validateSuccess) {
@@ -674,6 +690,14 @@ const validatePage7 = ()=> {
 // walidacja sprawdzająca po błędzie - strona 7
 
 inputsPage7Array1.forEach((elem)=>{
+    elem.addEventListener("input", ()=>{
+        if (elem.classList.contains("error")){
+            validatePage7()
+        }
+    })
+})
+
+inputsPage7Array3.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
         if (elem.classList.contains("error")){
             validatePage7()
