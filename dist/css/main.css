@@ -203,6 +203,8 @@ sup {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  width: 180px;
+  justify-content: center;
 }
 
 .button {
@@ -450,6 +452,7 @@ span.obligatory {
   display: inline-block;
   width: 56px;
   height: 24px;
+  flex-shrink: 0;
 }
 .toogle-switch input {
   opacity: 0;
@@ -532,6 +535,63 @@ span.obligatory {
   font-style: italic;
 }
 
+.tooltip {
+  position: relative;
+  padding: 5px;
+  line-height: 0;
+  opacity: 0.5;
+  transition: all ease-in 0.05s;
+  display: inline-block;
+}
+.tooltip img {
+  height: 22px;
+  opacity: 0.5;
+  position: relative;
+  display: inline-block;
+}
+.tooltip:hover {
+  cursor: pointer;
+  opacity: 1;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+}
+.tooltip:hover .tooltip-text {
+  pointer-events: none;
+  opacity: 1;
+}
+.tooltip .tooltip-text {
+  pointer-events: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  background-color: #FFDD00;
+  font-size: 12px;
+  max-width: 300px;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 20px;
+  border-radius: 2px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all ease-in 0.05s;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tooltip .tooltip-text .arrow {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: #FFDD00 transparent transparent transparent;
+}
+
+.test {
+  display: flex;
+  justify-content: space-between;
+}
+
 .page3 .content {
   display: flex;
 }
@@ -563,205 +623,62 @@ span.obligatory {
   display: flex;
 }
 
-.page4,
-.page5,
-.page6,
-.page7,
-.page8,
-.page9,
-.page10,
-.page11,
-.page12,
-.page13,
-.page14,
-.page15,
-.page16 {
+.form-page {
   overflow-y: auto;
 }
-.page4 .radios,
-.page5 .radios,
-.page6 .radios,
-.page7 .radios,
-.page8 .radios,
-.page9 .radios,
-.page10 .radios,
-.page11 .radios,
-.page12 .radios,
-.page13 .radios,
-.page14 .radios,
-.page15 .radios,
-.page16 .radios {
+.form-page .radios {
   display: flex;
   justify-content: space-around;
   width: 100%;
   font-size: 24px;
+  margin: 20px 0;
 }
-.page4 .form-box,
-.page5 .form-box,
-.page6 .form-box,
-.page7 .form-box,
-.page8 .form-box,
-.page9 .form-box,
-.page10 .form-box,
-.page11 .form-box,
-.page12 .form-box,
-.page13 .form-box,
-.page14 .form-box,
-.page15 .form-box,
-.page16 .form-box {
+.form-page .form-box {
   background-color: #E9EBED;
   margin: 20px;
   display: flex;
   flex-direction: column;
 }
-.page4 .form-box form,
-.page5 .form-box form,
-.page6 .form-box form,
-.page7 .form-box form,
-.page8 .form-box form,
-.page9 .form-box form,
-.page10 .form-box form,
-.page11 .form-box form,
-.page12 .form-box form,
-.page13 .form-box form,
-.page14 .form-box form,
-.page15 .form-box form,
-.page16 .form-box form {
+.form-page .form-box form {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   padding: 30px;
 }
-.page4 .form-box form .input-container,
-.page5 .form-box form .input-container,
-.page6 .form-box form .input-container,
-.page7 .form-box form .input-container,
-.page8 .form-box form .input-container,
-.page9 .form-box form .input-container,
-.page10 .form-box form .input-container,
-.page11 .form-box form .input-container,
-.page12 .form-box form .input-container,
-.page13 .form-box form .input-container,
-.page14 .form-box form .input-container,
-.page15 .form-box form .input-container,
-.page16 .form-box form .input-container {
+.form-page .form-box form .input-container {
   display: flex;
   flex-direction: column;
   width: calc(50% - 15px);
 }
-.page4 .form-box form .input-container label,
-.page5 .form-box form .input-container label,
-.page6 .form-box form .input-container label,
-.page7 .form-box form .input-container label,
-.page8 .form-box form .input-container label,
-.page9 .form-box form .input-container label,
-.page10 .form-box form .input-container label,
-.page11 .form-box form .input-container label,
-.page12 .form-box form .input-container label,
-.page13 .form-box form .input-container label,
-.page14 .form-box form .input-container label,
-.page15 .form-box form .input-container label,
-.page16 .form-box form .input-container label {
+.form-page .form-box form .input-container label {
   margin-bottom: 10px;
   margin-left: 5px;
   text-transform: uppercase;
   font-family: "Clarika Geo Bold";
   font-size: 16px;
 }
-.page4 .form-box form .input-container label span,
-.page5 .form-box form .input-container label span,
-.page6 .form-box form .input-container label span,
-.page7 .form-box form .input-container label span,
-.page8 .form-box form .input-container label span,
-.page9 .form-box form .input-container label span,
-.page10 .form-box form .input-container label span,
-.page11 .form-box form .input-container label span,
-.page12 .form-box form .input-container label span,
-.page13 .form-box form .input-container label span,
-.page14 .form-box form .input-container label span,
-.page15 .form-box form .input-container label span,
-.page16 .form-box form .input-container label span {
+.form-page .form-box form .input-container label span {
   color: #FF5050;
   font-family: "Clarika Geo Bold";
 }
-.page4 .form-box form .input-container label .help,
-.page5 .form-box form .input-container label .help,
-.page6 .form-box form .input-container label .help,
-.page7 .form-box form .input-container label .help,
-.page8 .form-box form .input-container label .help,
-.page9 .form-box form .input-container label .help,
-.page10 .form-box form .input-container label .help,
-.page11 .form-box form .input-container label .help,
-.page12 .form-box form .input-container label .help,
-.page13 .form-box form .input-container label .help,
-.page14 .form-box form .input-container label .help,
-.page15 .form-box form .input-container label .help,
-.page16 .form-box form .input-container label .help {
+.form-page .form-box form .input-container label .help {
   position: relative;
 }
-.page4 .form-box form .input-container label .help img,
-.page5 .form-box form .input-container label .help img,
-.page6 .form-box form .input-container label .help img,
-.page7 .form-box form .input-container label .help img,
-.page8 .form-box form .input-container label .help img,
-.page9 .form-box form .input-container label .help img,
-.page10 .form-box form .input-container label .help img,
-.page11 .form-box form .input-container label .help img,
-.page12 .form-box form .input-container label .help img,
-.page13 .form-box form .input-container label .help img,
-.page14 .form-box form .input-container label .help img,
-.page15 .form-box form .input-container label .help img,
-.page16 .form-box form .input-container label .help img {
+.form-page .form-box form .input-container label .help img {
   height: 18px;
   padding: 0 8px;
   opacity: 0.5;
   position: relative;
   display: inline-block;
 }
-.page4 .form-box form .input-container label .help img:hover,
-.page5 .form-box form .input-container label .help img:hover,
-.page6 .form-box form .input-container label .help img:hover,
-.page7 .form-box form .input-container label .help img:hover,
-.page8 .form-box form .input-container label .help img:hover,
-.page9 .form-box form .input-container label .help img:hover,
-.page10 .form-box form .input-container label .help img:hover,
-.page11 .form-box form .input-container label .help img:hover,
-.page12 .form-box form .input-container label .help img:hover,
-.page13 .form-box form .input-container label .help img:hover,
-.page14 .form-box form .input-container label .help img:hover,
-.page15 .form-box form .input-container label .help img:hover,
-.page16 .form-box form .input-container label .help img:hover {
+.form-page .form-box form .input-container label .help img:hover {
   opacity: 1;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
 }
-.page4 .form-box form .input-container .input-wrapper,
-.page5 .form-box form .input-container .input-wrapper,
-.page6 .form-box form .input-container .input-wrapper,
-.page7 .form-box form .input-container .input-wrapper,
-.page8 .form-box form .input-container .input-wrapper,
-.page9 .form-box form .input-container .input-wrapper,
-.page10 .form-box form .input-container .input-wrapper,
-.page11 .form-box form .input-container .input-wrapper,
-.page12 .form-box form .input-container .input-wrapper,
-.page13 .form-box form .input-container .input-wrapper,
-.page14 .form-box form .input-container .input-wrapper,
-.page15 .form-box form .input-container .input-wrapper,
-.page16 .form-box form .input-container .input-wrapper {
+.form-page .form-box form .input-container .input-wrapper {
   position: relative;
 }
-.page4 .form-box form .input-container .input-wrapper input,
-.page5 .form-box form .input-container .input-wrapper input,
-.page6 .form-box form .input-container .input-wrapper input,
-.page7 .form-box form .input-container .input-wrapper input,
-.page8 .form-box form .input-container .input-wrapper input,
-.page9 .form-box form .input-container .input-wrapper input,
-.page10 .form-box form .input-container .input-wrapper input,
-.page11 .form-box form .input-container .input-wrapper input,
-.page12 .form-box form .input-container .input-wrapper input,
-.page13 .form-box form .input-container .input-wrapper input,
-.page14 .form-box form .input-container .input-wrapper input,
-.page15 .form-box form .input-container .input-wrapper input,
-.page16 .form-box form .input-container .input-wrapper input {
+.form-page .form-box form .input-container .input-wrapper input {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -772,35 +689,11 @@ span.obligatory {
   border-radius: 3px;
   width: 100%;
 }
-.page4 .form-box form .input-container .input-wrapper input.error,
-.page5 .form-box form .input-container .input-wrapper input.error,
-.page6 .form-box form .input-container .input-wrapper input.error,
-.page7 .form-box form .input-container .input-wrapper input.error,
-.page8 .form-box form .input-container .input-wrapper input.error,
-.page9 .form-box form .input-container .input-wrapper input.error,
-.page10 .form-box form .input-container .input-wrapper input.error,
-.page11 .form-box form .input-container .input-wrapper input.error,
-.page12 .form-box form .input-container .input-wrapper input.error,
-.page13 .form-box form .input-container .input-wrapper input.error,
-.page14 .form-box form .input-container .input-wrapper input.error,
-.page15 .form-box form .input-container .input-wrapper input.error,
-.page16 .form-box form .input-container .input-wrapper input.error {
+.form-page .form-box form .input-container .input-wrapper input.error {
   border: 1px solid #FF5050;
   background-color: rgba(255, 80, 80, 0.0705882353);
 }
-.page4 .form-box form .input-container .input-wrapper.error::after,
-.page5 .form-box form .input-container .input-wrapper.error::after,
-.page6 .form-box form .input-container .input-wrapper.error::after,
-.page7 .form-box form .input-container .input-wrapper.error::after,
-.page8 .form-box form .input-container .input-wrapper.error::after,
-.page9 .form-box form .input-container .input-wrapper.error::after,
-.page10 .form-box form .input-container .input-wrapper.error::after,
-.page11 .form-box form .input-container .input-wrapper.error::after,
-.page12 .form-box form .input-container .input-wrapper.error::after,
-.page13 .form-box form .input-container .input-wrapper.error::after,
-.page14 .form-box form .input-container .input-wrapper.error::after,
-.page15 .form-box form .input-container .input-wrapper.error::after,
-.page16 .form-box form .input-container .input-wrapper.error::after {
+.form-page .form-box form .input-container .input-wrapper.error::after {
   content: url("../img/icons/exclamation.svg");
   position: absolute;
   right: 10px;
@@ -810,19 +703,7 @@ span.obligatory {
   height: 20px;
   transform: translateY(-50%);
 }
-.page4 .form-box form .input-container .input-wrapper.error::before,
-.page5 .form-box form .input-container .input-wrapper.error::before,
-.page6 .form-box form .input-container .input-wrapper.error::before,
-.page7 .form-box form .input-container .input-wrapper.error::before,
-.page8 .form-box form .input-container .input-wrapper.error::before,
-.page9 .form-box form .input-container .input-wrapper.error::before,
-.page10 .form-box form .input-container .input-wrapper.error::before,
-.page11 .form-box form .input-container .input-wrapper.error::before,
-.page12 .form-box form .input-container .input-wrapper.error::before,
-.page13 .form-box form .input-container .input-wrapper.error::before,
-.page14 .form-box form .input-container .input-wrapper.error::before,
-.page15 .form-box form .input-container .input-wrapper.error::before,
-.page16 .form-box form .input-container .input-wrapper.error::before {
+.form-page .form-box form .input-container .input-wrapper.error::before {
   content: var(--emptyError);
   position: absolute;
   left: 5px;
@@ -833,49 +714,13 @@ span.obligatory {
   font-size: 12px;
   color: #FF5050;
 }
-.page4 .form-box form .input-container .input-wrapper.date.error::after,
-.page5 .form-box form .input-container .input-wrapper.date.error::after,
-.page6 .form-box form .input-container .input-wrapper.date.error::after,
-.page7 .form-box form .input-container .input-wrapper.date.error::after,
-.page8 .form-box form .input-container .input-wrapper.date.error::after,
-.page9 .form-box form .input-container .input-wrapper.date.error::after,
-.page10 .form-box form .input-container .input-wrapper.date.error::after,
-.page11 .form-box form .input-container .input-wrapper.date.error::after,
-.page12 .form-box form .input-container .input-wrapper.date.error::after,
-.page13 .form-box form .input-container .input-wrapper.date.error::after,
-.page14 .form-box form .input-container .input-wrapper.date.error::after,
-.page15 .form-box form .input-container .input-wrapper.date.error::after,
-.page16 .form-box form .input-container .input-wrapper.date.error::after {
+.form-page .form-box form .input-container .input-wrapper.date.error::after {
   right: 55px;
 }
-.page4 .form-box form .input-container .select-input-container,
-.page5 .form-box form .input-container .select-input-container,
-.page6 .form-box form .input-container .select-input-container,
-.page7 .form-box form .input-container .select-input-container,
-.page8 .form-box form .input-container .select-input-container,
-.page9 .form-box form .input-container .select-input-container,
-.page10 .form-box form .input-container .select-input-container,
-.page11 .form-box form .input-container .select-input-container,
-.page12 .form-box form .input-container .select-input-container,
-.page13 .form-box form .input-container .select-input-container,
-.page14 .form-box form .input-container .select-input-container,
-.page15 .form-box form .input-container .select-input-container,
-.page16 .form-box form .input-container .select-input-container {
+.form-page .form-box form .input-container .select-input-container {
   display: flex;
 }
-.page4 .form-box form .input-container .select-input-container select,
-.page5 .form-box form .input-container .select-input-container select,
-.page6 .form-box form .input-container .select-input-container select,
-.page7 .form-box form .input-container .select-input-container select,
-.page8 .form-box form .input-container .select-input-container select,
-.page9 .form-box form .input-container .select-input-container select,
-.page10 .form-box form .input-container .select-input-container select,
-.page11 .form-box form .input-container .select-input-container select,
-.page12 .form-box form .input-container .select-input-container select,
-.page13 .form-box form .input-container .select-input-container select,
-.page14 .form-box form .input-container .select-input-container select,
-.page15 .form-box form .input-container .select-input-container select,
-.page16 .form-box form .input-container .select-input-container select {
+.form-page .form-box form .input-container .select-input-container select {
   background-color: #fff;
   height: 50px;
   padding: 0 20px;
@@ -886,100 +731,32 @@ span.obligatory {
   border-radius: 3px;
   width: 50%;
 }
-.page4 .form-box form .input-container .select-input-container select optgroup,
-.page5 .form-box form .input-container .select-input-container select optgroup,
-.page6 .form-box form .input-container .select-input-container select optgroup,
-.page7 .form-box form .input-container .select-input-container select optgroup,
-.page8 .form-box form .input-container .select-input-container select optgroup,
-.page9 .form-box form .input-container .select-input-container select optgroup,
-.page10 .form-box form .input-container .select-input-container select optgroup,
-.page11 .form-box form .input-container .select-input-container select optgroup,
-.page12 .form-box form .input-container .select-input-container select optgroup,
-.page13 .form-box form .input-container .select-input-container select optgroup,
-.page14 .form-box form .input-container .select-input-container select optgroup,
-.page15 .form-box form .input-container .select-input-container select optgroup,
-.page16 .form-box form .input-container .select-input-container select optgroup {
+.form-page .form-box form .input-container .select-input-container select optgroup {
   font-size: 18px;
 }
-.page4 .form-box form .input-container .select-input-container select.pesel,
-.page5 .form-box form .input-container .select-input-container select.pesel,
-.page6 .form-box form .input-container .select-input-container select.pesel,
-.page7 .form-box form .input-container .select-input-container select.pesel,
-.page8 .form-box form .input-container .select-input-container select.pesel,
-.page9 .form-box form .input-container .select-input-container select.pesel,
-.page10 .form-box form .input-container .select-input-container select.pesel,
-.page11 .form-box form .input-container .select-input-container select.pesel,
-.page12 .form-box form .input-container .select-input-container select.pesel,
-.page13 .form-box form .input-container .select-input-container select.pesel,
-.page14 .form-box form .input-container .select-input-container select.pesel,
-.page15 .form-box form .input-container .select-input-container select.pesel,
-.page16 .form-box form .input-container .select-input-container select.pesel {
+.form-page .form-box form .input-container .select-input-container select.pesel {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
 }
-.page4 .form-box form .input-container .select-input-container select:disabled,
-.page5 .form-box form .input-container .select-input-container select:disabled,
-.page6 .form-box form .input-container .select-input-container select:disabled,
-.page7 .form-box form .input-container .select-input-container select:disabled,
-.page8 .form-box form .input-container .select-input-container select:disabled,
-.page9 .form-box form .input-container .select-input-container select:disabled,
-.page10 .form-box form .input-container .select-input-container select:disabled,
-.page11 .form-box form .input-container .select-input-container select:disabled,
-.page12 .form-box form .input-container .select-input-container select:disabled,
-.page13 .form-box form .input-container .select-input-container select:disabled,
-.page14 .form-box form .input-container .select-input-container select:disabled,
-.page15 .form-box form .input-container .select-input-container select:disabled,
-.page16 .form-box form .input-container .select-input-container select:disabled {
+.form-page .form-box form .input-container .select-input-container select:disabled {
   background-color: #fff;
   color: #000;
   opacity: 1;
 }
-.page4 .form-box form .input-container .select-input-container .input-wrapper,
-.page5 .form-box form .input-container .select-input-container .input-wrapper,
-.page6 .form-box form .input-container .select-input-container .input-wrapper,
-.page7 .form-box form .input-container .select-input-container .input-wrapper,
-.page8 .form-box form .input-container .select-input-container .input-wrapper,
-.page9 .form-box form .input-container .select-input-container .input-wrapper,
-.page10 .form-box form .input-container .select-input-container .input-wrapper,
-.page11 .form-box form .input-container .select-input-container .input-wrapper,
-.page12 .form-box form .input-container .select-input-container .input-wrapper,
-.page13 .form-box form .input-container .select-input-container .input-wrapper,
-.page14 .form-box form .input-container .select-input-container .input-wrapper,
-.page15 .form-box form .input-container .select-input-container .input-wrapper,
-.page16 .form-box form .input-container .select-input-container .input-wrapper {
+.form-page .form-box form .input-container .select-input-container select.error {
+  border: 1px solid #FF5050;
+  background-color: rgba(255, 80, 80, 0.0705882353);
+}
+.form-page .form-box form .input-container .select-input-container .input-wrapper {
   width: 50%;
 }
-.page4 .form-box form .input-container.pesel,
-.page5 .form-box form .input-container.pesel,
-.page6 .form-box form .input-container.pesel,
-.page7 .form-box form .input-container.pesel,
-.page8 .form-box form .input-container.pesel,
-.page9 .form-box form .input-container.pesel,
-.page10 .form-box form .input-container.pesel,
-.page11 .form-box form .input-container.pesel,
-.page12 .form-box form .input-container.pesel,
-.page13 .form-box form .input-container.pesel,
-.page14 .form-box form .input-container.pesel,
-.page15 .form-box form .input-container.pesel,
-.page16 .form-box form .input-container.pesel {
+.form-page .form-box form .input-container.pesel {
   position: relative;
 }
-.page4 .form-box form .input-container.pesel .pesel-button,
-.page5 .form-box form .input-container.pesel .pesel-button,
-.page6 .form-box form .input-container.pesel .pesel-button,
-.page7 .form-box form .input-container.pesel .pesel-button,
-.page8 .form-box form .input-container.pesel .pesel-button,
-.page9 .form-box form .input-container.pesel .pesel-button,
-.page10 .form-box form .input-container.pesel .pesel-button,
-.page11 .form-box form .input-container.pesel .pesel-button,
-.page12 .form-box form .input-container.pesel .pesel-button,
-.page13 .form-box form .input-container.pesel .pesel-button,
-.page14 .form-box form .input-container.pesel .pesel-button,
-.page15 .form-box form .input-container.pesel .pesel-button,
-.page16 .form-box form .input-container.pesel .pesel-button {
+.form-page .form-box form .input-container.pesel .pesel-button {
   position: absolute;
-  right: 10px;
+  right: 5px;
   top: 0;
   border: 1px solid rgba(88, 88, 88, 0.2);
   border-radius: 3px;
@@ -990,50 +767,14 @@ span.obligatory {
   transition: all 0.1s;
   color: #585858;
 }
-.page4 .form-box form .input-container.pesel .pesel-button:hover,
-.page5 .form-box form .input-container.pesel .pesel-button:hover,
-.page6 .form-box form .input-container.pesel .pesel-button:hover,
-.page7 .form-box form .input-container.pesel .pesel-button:hover,
-.page8 .form-box form .input-container.pesel .pesel-button:hover,
-.page9 .form-box form .input-container.pesel .pesel-button:hover,
-.page10 .form-box form .input-container.pesel .pesel-button:hover,
-.page11 .form-box form .input-container.pesel .pesel-button:hover,
-.page12 .form-box form .input-container.pesel .pesel-button:hover,
-.page13 .form-box form .input-container.pesel .pesel-button:hover,
-.page14 .form-box form .input-container.pesel .pesel-button:hover,
-.page15 .form-box form .input-container.pesel .pesel-button:hover,
-.page16 .form-box form .input-container.pesel .pesel-button:hover {
+.form-page .form-box form .input-container.pesel .pesel-button:hover {
   background-color: #FFDD00;
 }
-.page4 .form-box form .input-container.pesel .pesel-button.active,
-.page5 .form-box form .input-container.pesel .pesel-button.active,
-.page6 .form-box form .input-container.pesel .pesel-button.active,
-.page7 .form-box form .input-container.pesel .pesel-button.active,
-.page8 .form-box form .input-container.pesel .pesel-button.active,
-.page9 .form-box form .input-container.pesel .pesel-button.active,
-.page10 .form-box form .input-container.pesel .pesel-button.active,
-.page11 .form-box form .input-container.pesel .pesel-button.active,
-.page12 .form-box form .input-container.pesel .pesel-button.active,
-.page13 .form-box form .input-container.pesel .pesel-button.active,
-.page14 .form-box form .input-container.pesel .pesel-button.active,
-.page15 .form-box form .input-container.pesel .pesel-button.active,
-.page16 .form-box form .input-container.pesel .pesel-button.active {
+.form-page .form-box form .input-container.pesel .pesel-button.active {
   background-color: #FFDD00;
   box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 4px 0px inset, rgba(0, 0, 0, 0.1) -1px -1px 2px 0px inset;
 }
-.page4 .form-box.additional,
-.page5 .form-box.additional,
-.page6 .form-box.additional,
-.page7 .form-box.additional,
-.page8 .form-box.additional,
-.page9 .form-box.additional,
-.page10 .form-box.additional,
-.page11 .form-box.additional,
-.page12 .form-box.additional,
-.page13 .form-box.additional,
-.page14 .form-box.additional,
-.page15 .form-box.additional,
-.page16 .form-box.additional {
+.form-page .form-box.additional {
   display: none;
 }
 
@@ -1340,4 +1081,223 @@ span.obligatory {
 }
 .page16 .file-upload-double-container .file-upload-container {
   display: flex;
+}
+
+.page17 {
+  position: relative;
+}
+.page17 .thanks {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  text-align: center;
+  font-family: "Clarika Geo Medium";
+}
+.page17 .getPDFForm {
+  padding: 10px 50px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-family: "Clarika Geo Bold", sans-serif;
+  align-items: center;
+  font-size: 18px;
+  margin: 0 100px;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: #FFDD00 solid 6px;
+  margin: 0 auto;
+  display: none;
+}
+.page17 .getPDFForm:hover {
+  background-color: #FFDD00;
+  border: #585858 solid 6px;
+}
+.page17 .loading-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.form-page.form #hidden-summary-form {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+@media (max-width: 1200px) {
+  .container,
+.fixed-buttons {
+    width: 800px;
+  }
+
+  .m1-w-100 {
+    width: 100% !important;
+  }
+
+  .m1-w-50 {
+    width: calc(50% - 15px) !important;
+  }
+}
+@media (max-width: 900px) {
+  .container {
+    width: 600px;
+    margin-bottom: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .fixed-buttons {
+    width: 600px;
+    bottom: 25px;
+  }
+  .fixed-buttons .button {
+    margin: 0 20px;
+  }
+
+  .content {
+    padding: 20px 0;
+  }
+  .content .list {
+    padding: 20px 50px;
+  }
+
+  .form-pages .form-page {
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+  .form-pages .form-page .form-box {
+    margin: 20px 0;
+  }
+  .form-pages .form-page.page5 .radios, .form-pages .form-page.page6 .radios, .form-pages .form-page.page8 .radios, .form-pages .form-page.page10 .radios {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .form-pages .form-page.page9 .summary-calculated-box .calc-row {
+    flex-direction: column;
+  }
+  .form-pages .form-page.page9 .summary-calculated-box .calc-row .value {
+    position: static;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  .tiles {
+    margin: 10px;
+    gap: 20px;
+  }
+
+  .m2-w-100 {
+    width: 100% !important;
+  }
+
+  .m2-w-50 {
+    width: calc(50% - 15px) !important;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    width: 400px;
+    margin-bottom: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .fixed-buttons {
+    width: 400px;
+    bottom: 25px;
+    padding: 0 10px;
+  }
+  .fixed-buttons .button {
+    margin: 0;
+  }
+
+  .tiles {
+    flex-direction: column;
+  }
+  .tiles .tile {
+    font-size: 22px;
+  }
+
+  .content {
+    padding: 0px;
+  }
+  .content .list {
+    font-size: 20px;
+  }
+  .content .annotations {
+    margin-top: 0px;
+    padding: 0 10px;
+  }
+
+  .radios {
+    font-size: 22px !important;
+  }
+
+  .calc-row {
+    font-size: 20px !important;
+  }
+
+  .equipment-box .buttons {
+    flex-direction: column;
+  }
+
+  .fixed-buttons .button {
+    width: 140px;
+    padding: 10px;
+  }
+
+  .page3 .content .notice {
+    margin: 35px 0;
+    font-size: 18px;
+  }
+
+  .page6 .notice {
+    min-height: auto;
+  }
+
+  .page9 .equipment-box .equipment-row .equipment-name {
+    font-size: 20px;
+  }
+
+  .page13 .radios-container p {
+    padding: 20px;
+  }
+
+  .page12 .reserve-seller {
+    padding: 20px;
+  }
+
+  .form-page .form-box form .input-container .select-input-container {
+    flex-wrap: wrap;
+  }
+  .form-page .form-box form .input-container .select-input-container select {
+    width: 100%;
+  }
+  .form-page .form-box form .input-container .select-input-container .input-wrapper {
+    width: 100%;
+  }
+  .form-page .form-page {
+    padding: 20px 20px 100px 20px !important;
+  }
+  .form-page .radios {
+    padding: 10px;
+  }
+
+  .m3-w-100 {
+    width: 100% !important;
+  }
 }

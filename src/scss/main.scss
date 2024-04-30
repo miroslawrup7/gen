@@ -41,9 +41,6 @@ $text-1: #222222;
 $text-2: #FF5050;
 $text-3: #585858;
 
-$container-width: 1040px;
-
-
 // *************************
 
 * {
@@ -64,12 +61,13 @@ html {
 }
 
 .container {
-    width: $container-width;
+    width: 1040px;
     margin: 0 auto;
     min-height: fit-content;
     height: 100vh; // zmień na 100% po umieszczeniu w Wordpress
     position: relative;
     overflow: hidden;
+    // border: 1px dotted red
 }
 
 .form-pages {
@@ -91,7 +89,7 @@ html {
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        // margin-bottom: 60px;
+        // border: green 1px dotted;
 
         .error-message-box {
             display: flex;
@@ -118,12 +116,9 @@ html {
                     display: flex;
                     left: 0;
                     top: 0;
-
                 }
             }
         }
-
-
     }
 }
 
@@ -221,7 +216,7 @@ sup {
     margin-top: 60px;
     position: fixed;
     bottom: 50px;
-    width: $container-width;
+    width: 1040px;
     z-index: 99;
 
     .button {
@@ -239,6 +234,8 @@ sup {
         box-shadow: 2px 2px 4px rgba(0, 0, 0, .3), -2px -2px 4px rgba(0, 0, 0, .2);
         background-color: #fff;
         user-select: none;
+        width: 180px;
+        justify-content: center;
     }
 }
 
@@ -545,6 +542,7 @@ span.obligatory {
     display: inline-block;
     width: 56px;
     height: 24px;
+    flex-shrink: 0;
 
     input {
         opacity: 0;
@@ -642,6 +640,70 @@ span.obligatory {
     }
 }
 
+.tooltip {
+    position: relative;
+    padding: 5px;
+    line-height: 0;
+    opacity: 0.5;
+
+    transition: all ease-in 0.05s;
+    // border: 1px dotted blue;
+    display: inline-block;
+
+    img {
+        height: 22px;
+        opacity: 0.5;
+        position: relative;
+        display: inline-block;
+    }
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+        filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
+    }
+
+    &:hover .tooltip-text {
+        pointer-events: none;
+        opacity: 1;
+    }
+
+    .tooltip-text {
+        pointer-events: none;
+        display: inline-block;
+        position: absolute;
+        opacity: 0;
+        background-color: $background-1;
+        font-size: 12px;
+        max-width: 300px;
+        width: max-content;
+        padding: 20px;
+        border-radius: 2px;
+        text-align: center;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+        transition: all ease-in 0.05s;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .arrow {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(calc(-50%));
+            border-width: 8px;
+            border-style: solid;
+            border-color: $background-1 transparent transparent transparent;
+        }
+    }
+}
+
+.test {
+    display: flex;
+    justify-content: space-between;
+    // margin: 0 20px;
+}
+
 .page3 {
     .content {
         display: flex;
@@ -680,19 +742,7 @@ span.obligatory {
     }
 }
 
-.page4,
-.page5,
-.page6,
-.page7,
-.page8,
-.page9,
-.page10,
-.page11,
-.page12,
-.page13,
-.page14,
-.page15,
-.page16 {
+.form-page {
     overflow-y: auto;
 
     .radios {
@@ -700,6 +750,7 @@ span.obligatory {
         justify-content: space-around;
         width: 100%;
         font-size: 24px;
+        margin: 20px 0;
     }
 
     .form-box {
@@ -829,6 +880,11 @@ span.obligatory {
                             color: #000;
                             opacity: 1;
                         }
+
+                        &.error {
+                            border: 1px solid $text-2;
+                            background-color: #ff505012;
+                        }
                     }
 
                     .input-wrapper {
@@ -843,7 +899,7 @@ span.obligatory {
 
                     .pesel-button {
                         position: absolute;
-                        right: 10px;
+                        right: 5px;
                         top: 0;
                         border: 1px solid $border-5;
                         border-radius: 3px;
@@ -1273,5 +1329,297 @@ span.obligatory {
         .file-upload-container {
             display: flex;
         }
+    }
+}
+
+.page17 {
+    position: relative;
+
+    .thanks {
+        // display: flex;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        text-align: center;
+        font-family: "Clarika Geo Medium";
+    }
+
+    .getPDFForm {
+        padding: 10px 50px;
+        // display: flex;
+        width: fit-content;
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-family: "Clarika Geo Bold", sans-serif;
+        align-items: center;
+        font-size: 18px;
+        margin: 0 100px;
+        cursor: pointer;
+        transition: all 0.1s;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        user-select: none;
+        border: #FFDD00 solid 6px;
+        margin: 0 auto;
+        display: none;
+
+        &:hover {
+            background-color: #FFDD00;
+            border: #585858 solid 6px;
+        }
+    }
+
+    .loading-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 99;
+    }
+}
+
+.form-page.form {
+    #hidden-summary-form {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .container,
+    .fixed-buttons {
+        width: 800px;
+    }
+
+    .m1-w-100 {
+        width: 100% !important;
+    }
+
+    .m1-w-50 {
+        width: calc(50% - 15px) !important;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 600px;
+        margin-bottom: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .fixed-buttons {
+        width: 600px;
+        bottom: 25px;
+
+        .button {
+            margin: 0 20px;
+        }
+    }
+
+    .content {
+        padding: 20px 0;
+
+        .list {
+            padding: 20px 50px;
+        }
+    }
+
+    .form-pages {
+        .form-page {
+
+            padding-top: 20px;
+            padding-bottom: 100px;
+
+            .form-box {
+                margin: 20px 0;
+            }
+
+            &.page5,
+            &.page6,
+            &.page8,
+            &.page10 {
+                .radios {
+                    flex-direction: column;
+                    gap: 50px;
+                }
+            }
+
+            &.page9 {
+                .summary-calculated-box {
+                    .calc-row {
+                        flex-direction: column;
+
+                        .value {
+                            position: static;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin-bottom: 15px;
+    }
+
+    .tiles {
+        margin: 10px;
+        gap: 20px;
+    }
+
+    .m2-w-100 {
+        width: 100% !important;
+    }
+
+    .m2-w-50 {
+        width: calc(50% - 15px) !important;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 400px;
+        margin-bottom: 60px;
+        height: calc(100vh - 60px);
+    }
+
+    .fixed-buttons {
+        width: 400px;
+        bottom: 25px;
+        padding: 0 10px;
+
+        .button {
+            margin: 0;
+        }
+    }
+
+    .tiles {
+        flex-direction: column;
+
+        .tile {
+            font-size: 22px;
+        }
+    }
+
+    .content {
+        padding: 0px;
+
+        .list {
+            font-size: 20px;
+        }
+
+        .annotations {
+            margin-top: 0px;
+            padding: 0 10px;
+        }
+
+    }
+
+    .radios {
+        font-size: 22px !important;
+    }
+
+    .calc-row {
+        font-size: 20px !important;
+    }
+
+    .equipment-box {
+        .buttons {
+            flex-direction: column;
+        }
+    }
+
+
+    .fixed-buttons {
+        .button {
+            width: 140px;
+            padding: 10px;
+        }
+    }
+
+    .page3 {
+        .content {
+            .notice {
+                margin: 35px 0;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .page6 {
+        .notice {
+            min-height: auto;
+        }
+    }
+
+    .page9 {
+        .equipment-box {
+            .equipment-row {
+                .equipment-name {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .page13 {
+
+        .radios-container {
+
+            p {
+                padding: 20px;
+            }
+        }
+    }
+
+    .page12 {
+        .reserve-seller {
+            padding: 20px;
+        }
+
+    }
+
+    .form-page {
+        .form-box {
+            form {
+                .input-container {
+                    .select-input-container {
+                        flex-wrap: wrap;
+
+                        select {
+                            width: 100%;
+                        }
+
+                        .input-wrapper {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .form-page {
+            padding: 20px 20px 100px 20px !important;
+        }
+
+        .radios {
+            padding: 10px;
+        }
+    }
+
+    .m3-w-100 {
+        width: 100% !important;
     }
 }
