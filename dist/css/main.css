@@ -69,12 +69,12 @@ html {
 .form-pages .form-page .error-message-box {
   display: flex;
   justify-content: center;
-  min-height: 40px;
   align-items: center;
+  margin: 30px 20px;
 }
 .form-pages .form-page .error-message-box .error-message {
   position: relative;
-  padding-left: 40px;
+  padding-left: 60px;
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -92,6 +92,9 @@ html {
   display: flex;
   left: 0;
   top: 0;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
 }
 
 h1 {
@@ -1232,6 +1235,11 @@ span.obligatory {
     font-size: 22px;
   }
 
+  h1,
+h2 {
+    padding: 0 20px;
+  }
+
   .content {
     padding: 0px;
   }
@@ -1265,20 +1273,30 @@ span.obligatory {
     font-size: 18px;
   }
 
-  .page6 .notice {
+  .page6 .notice,
+.page10 .notice {
     min-height: auto;
+    font-size: 18px;
   }
 
   .page9 .equipment-box .equipment-row .equipment-name {
     font-size: 20px;
   }
 
-  .page13 .radios-container p {
-    padding: 20px;
+  .page11 .radios p {
+    font-size: 20px;
   }
 
   .page12 .reserve-seller {
     padding: 20px;
+  }
+
+  .page13 .radios-container p {
+    padding: 20px;
+  }
+
+  .page14 .radios-container {
+    padding: 0 20px;
   }
 
   .form-page .form-box form .input-container .select-input-container {

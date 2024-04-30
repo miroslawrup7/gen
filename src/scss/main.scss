@@ -94,12 +94,14 @@ html {
         .error-message-box {
             display: flex;
             justify-content: center;
-            min-height: 40px;
+            // min-height: 40px;
             align-items: center;
+            // border: blue 1px dotted;
+            margin: 30px 20px;
 
             .error-message {
                 position: relative;
-                padding-left: 40px;
+                padding-left: 60px;
                 line-height: 1.5;
                 display: flex;
                 align-items: center;
@@ -107,6 +109,7 @@ html {
                 font-size: 18px;
                 justify-content: center;
                 width: fit-content;
+                // border: red 1px dotted;
 
                 &::before {
                     content: var(--exclamation);
@@ -116,6 +119,10 @@ html {
                     display: flex;
                     left: 0;
                     top: 0;
+                    // border: green 1px dotted;
+                    align-items: center;
+                    height: 100%;
+                    padding-left: 10px;
                 }
             }
         }
@@ -1513,6 +1520,11 @@ span.obligatory {
         }
     }
 
+    h1,
+    h2 {
+        padding: 0 20px;
+    }
+
     .content {
         padding: 0px;
 
@@ -1558,9 +1570,11 @@ span.obligatory {
         }
     }
 
-    .page6 {
+    .page6,
+    .page10 {
         .notice {
             min-height: auto;
+            font-size: 18px;
         }
     }
 
@@ -1574,12 +1588,10 @@ span.obligatory {
         }
     }
 
-    .page13 {
-
-        .radios-container {
-
+    .page11 {
+        .radios {
             p {
-                padding: 20px;
+                font-size: 20px;
             }
         }
     }
@@ -1589,6 +1601,21 @@ span.obligatory {
             padding: 20px;
         }
 
+    }
+
+    .page13 {
+        .radios-container {
+
+            p {
+                padding: 20px;
+            }
+        }
+    }
+
+    .page14 {
+        .radios-container {
+            padding: 0 20px;
+        }
     }
 
     .form-page {
