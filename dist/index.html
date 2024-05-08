@@ -6,7 +6,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1714490460874">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1715108313336">
     <link rel="shortcut icon" href="#">
 
     <title>Formularz</title>
@@ -138,6 +138,7 @@
                             <label>Imię<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="fname4_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
 
                         </div>
@@ -145,6 +146,7 @@
                             <label>Nazwisko<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="sname4_2" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container pesel m2-w-100">
@@ -162,7 +164,8 @@
                                 </select>
 
                                 <div class="input-wrapper">
-                                    <input type="text" id="ID4_3" placeholder="Wpisz">
+                                    <input name="pesel" type="text" id="ID4_3" placeholder="Wpisz">
+                                    <div class="error-box"></div>
                                 </div>
                             </div>
 
@@ -173,30 +176,35 @@
                             <label>Adres zamieszkania<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="address4_4" placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Kod pocztowy<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="postcode4_5" placeholder="Wpisz">
+                                <input name="postcode" type="text" id="postcode4_5" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Miejscowość<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="locality4_6" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>E-mail<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="email4_7" placeholder="Wpisz">
+                                <input name="email" type="text" id="email4_7" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Telefon<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="phone4_8" placeholder="Wpisz">
+                                <input name="phone" type="text" id="phone4_8" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -210,6 +218,7 @@
                             <label>Imię<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="fname4_9" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
 
                         </div>
@@ -217,6 +226,7 @@
                             <label>Nazwisko<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="sname4_10" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container pesel m2-w-100">
@@ -234,41 +244,47 @@
                                 </select>
 
                                 <div class="input-wrapper">
-                                    <input type="text" id="ID4_11" placeholder="Wpisz">
+                                    <input name="pesel" type="text" id="ID4_11" placeholder="Wpisz">
+                                    <div class="error-box"></div>
                                 </div>
                             </div>
 
-                            <div class="pesel-button">Nie posiadam PESEL</div>
+                            <div class="pesel-button">Nie mam PESEL</div>
 
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Adres zamieszkania<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="address4_12" placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Kod pocztowy<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="postcode4_13" placeholder="Wpisz">
+                                <input name="postcode" type="text" id="postcode4_13" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Miejscowość<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="locality4_14" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>E-mail<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="email4_15" placeholder="Wpisz">
+                                <input name="email" type="text" id="email4_15" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Telefon<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="phone4_16" placeholder="Wpisz">
+                                <input name="phone" type="text" id="phone4_16" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -316,24 +332,28 @@
                             <label>Imię i nazwisko lub pełna nazwa<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="name5_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Adres korespondecyjny<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="address5_2" placeholder="Wpisz ulicę, nr domu lub lokalu">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Kod pocztowy<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="postcode5_3" placeholder="Wpisz">
+                                <input name="postcode" type="text" id="postcode5_3" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-100">
                             <label>Miejscowość<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="locality5_4" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -379,18 +399,21 @@
                             <label>Imię i nazwisko<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="name6_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-50 m3-w-100">
                             <label>PESEL<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="pesel6_2" placeholder="Wpisz">
+                                <input name="pesel" type="text" id="pesel6_2" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m2-w-50 m3-w-100">
                             <label>Data pełnomocnictwa<span> *</span></label>
                             <div class="input-wrapper date">
                                 <input type="date" id="date6_3" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -431,42 +454,49 @@
 
                             <div class="input-wrapper">
                                 <input type="text" id="condition7_1" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-100 PPG">
                             <label>Nr PPG<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="ppg7_2" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m3-w-100">
                             <label>Miejscowość<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="locality7_3" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m3-w-100">
                             <label>Kod pocztowy<span> *</span></label>
                             <div class="input-wrapper">
-                                <input type="text" id="postcode7_4" placeholder="Wpisz">
+                                <input name="postcode" type="text" id="postcode7_4" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-50 m1-w-100">
                             <label>Ulica<span> *</span></label>
                             <div class="input-wrapper">
                                 <input type="text" id="street7_5" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-25 m1-w-50 m3-w-100">
                             <label>Nr budynku / lokalu<span> *</span></label>
                             <div class=" input-wrapper">
                                 <input type="text" id="houseno7_6" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container w-25 m1-w-50 m3-w-100">
                             <label>Nr działki</label>
                             <div class="input-wrapper">
                                 <input type="text" id="parcelno7_7" placeholder="Wpisz">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -494,14 +524,17 @@
                         <div class="input-container m1-w-100">
                             <label>Jaką powierzchnię będziesz ogrzewał?<span> *</span></label>
                             <div class="input-wrapper">
-                                <input class="input-text8-1 " type="text" id="area8_1"
+                                <input name="digit" class="input-text8-1" type="text" id="area8_1"
                                     placeholder="Wpisz powierzchnię w metrach kwadratowych">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="input-container m1-w-100">
                             <label>Ile osób będzie mieszkać w domu?<span> *</span></label>
                             <div class="input-wrapper">
-                                <input class="input-text8-2" type="text" id="people8_2" placeholder="Wpisz liczbę">
+                                <input name="digit" class="input-text8-2" type="text" id="people8_2"
+                                    placeholder="Wpisz liczbę">
+                                <div class="error-box"></div>
                             </div>
                         </div>
 
@@ -522,7 +555,7 @@
                             <label class="label-text" for="radio11">
                                 Wiem, jaka jest moc urządzeń, które chcę podłączyć
                                 <span class="tooltip">
-                                    <img src="./img/icons/question-silver.svg" alt="baloon">
+                                    <img src="./img/icons/question.png" alt="baloon">
                                     <span class="tooltip-text bottom">Podanie rzeczywistej wartości mocy podłączonych
                                         urządzeń pozwoli na dokładniejsze wyliczenie Twojego rocznego zużycia i
                                         dopasowanie zaliczek miesięcznych. Rzeczywistą moc urządzeń pomoże określić Ci
@@ -541,7 +574,7 @@
                             <label class="label-text" for="radio12">
                                 Nie znam mocy urządzeń do podłączenia
                                 <span class="tooltip">
-                                    <img src="./img/icons/question-silver.svg" alt="baloon">
+                                    <img src="./img/icons/question.png" alt="baloon">
                                     <span class="tooltip-text bottom">Podpowiemy Ci średnie wartości mocy podłączonych
                                         urządzeń. Może to spowodować różnice w obliczeniu Twojego zapotrzebowania oraz
                                         miesięcznych zaliczek.
@@ -706,9 +739,10 @@
                         <div class="label">Twoje deklarowane roczne zużycie gazu: </div>
                         <div class="value">
                             <div class="input-wrapper">
-                                <input type="text" id="input-text9_9" placeholder="0">
+                                <input name="digit" type="text" id="input-text9_9" placeholder="0">
                             </div>
                             <span class="unit">m<sup>3</sup></span>
+                            <div class="error-box"></div>
                         </div>
                     </div>
 
@@ -764,7 +798,7 @@
                         <label class="label-text" for="radio14">
                             Oznaczony
                             <span class="tooltip">
-                                <img src="./img/icons/question-silver.svg" alt="baloon">
+                                <img src="./img/icons/question.png" alt="baloon">
                                 <span class="tooltip-text bottom">Okres obowiązywania umowy musi być minimum:
                                     <span id="min-contract-term"></span>
                                     <span class="arrow"></span>
@@ -791,6 +825,7 @@
                             <label>Okres obowiązywania umowy<span> *</span></label>
                             <div class="input-wrapper date">
                                 <input type="date" id="contractdate10_1">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                     </form>
@@ -803,6 +838,7 @@
                                 gazowego<span> *</span></label>
                             <div class="input-wrapper date">
                                 <input type="date" id="deliverydate10_2" min="2000-01-01">
+                                <div class="error-box"></div>
                             </div>
                         </div>
                         <div class="checkbox-container">
@@ -899,7 +935,7 @@
                             Oświadczam, że <b>nie posiadam tytułu prawnego</b> do korzystania z Obiektu wskazanego w
                             punkcie „Dane miejsca odbioru paliwa”.
                             <span class="tooltip">
-                                <img src="./img/icons/question-silver.svg" alt="baloon">
+                                <img src="./img/icons/question.png" alt="baloon">
                                 <span class="tooltip-text bottom">W tym przypadku umowa jest zawierana maksymalnie na
                                     rok.
                                     <span class="arrow"></span>
@@ -956,7 +992,7 @@
                                 gospodarczej
                                 ani zawodowej, w ilościach paliwa gazowego wskazanych we Wniosku. 
                                 <span class="tooltip">
-                                    <img src="./img/icons/question-silver.svg" alt="baloon">
+                                    <img src="./img/icons/question.png" alt="baloon">
                                     <span class="tooltip-text bottom">Za gospodarstwo domowe nie uznaje się
                                         nieruchomości w całości wykorzystywanej na potrzeby prowadzonej działalności
                                         gospodarczej.
@@ -1151,7 +1187,7 @@
                         Sp. z
                         o.o. poprzez e-mail lub konto eBOK, w tym również po zakończeniu Umowy.<span class="obligatory">
                             *</span><span class="tooltip">
-                            <img src="./img/icons/question-silver.svg" alt="baloon">
+                            <img src="./img/icons/question.png" alt="baloon">
                             <span class="tooltip-text bottom">W rozumieniu art. 2 pkt 2 ustawy z dnia 18 lipca 2002 roku
                                 o świadczeniu usług drogą elektroniczną.
                                 <span class="arrow"></span>
@@ -1169,9 +1205,6 @@
                             <label class="label-text" for="radio25">
                                 Tak
                             </label>
-                            <span class="help">
-                                <img src="./img/icons/question-silver.svg" alt="question">
-                            </span>
                         </div>
 
                         <div class="radio-container">
@@ -1191,7 +1224,7 @@
                     <p>4. Wyrażam zgodę na marketing bezpośredni przez G.EN. GAZ ENERGIA Sp. z o.o. poprzez SMS
                         lub telefon, w tym również po zakończeniu Umowy.<span class="obligatory"> *</span><span
                             class="tooltip">
-                            <img src="./img/icons/question-silver.svg" alt="baloon">
+                            <img src="./img/icons/question.png" alt="baloon">
                             <span class="tooltip-text bottom">Przy użyciu automatycznych systemów wywołujących i
                                 telekomunikacyjnych urządzeń końcowych zgodnie z art. 172 ustawy z dnia 16 lipca 2004 r.
                                 Prawa telekomunikacyjnego.
@@ -1231,7 +1264,7 @@
                         tym
                         również po zakończeniu Umowy.
                         <span class="obligatory"> *</span><span class="tooltip">
-                            <img src="./img/icons/question-silver.svg" alt="baloon">
+                            <img src="./img/icons/question.png" alt="baloon">
                             <span class="tooltip-text bottom">W rozumieniu art. 2 pkt 2 ustawy z dnia 18 lipca 2002 roku
                                 o świadczeniu usług drogą elektroniczną.
                                 <span class="arrow"></span>
@@ -1271,7 +1304,7 @@
                         Sp. z o.o. poprzez SMS lub telefon w tym również po zakończeniu Umowy.
                         <span class="obligatory"> *</span>
                         <span class="tooltip">
-                            <img src="./img/icons/question-silver.svg" alt="baloon">
+                            <img src="./img/icons/question.png" alt="baloon">
                             <span class="tooltip-text">Przy użyciu automatycznych systemów wywołujących i
                                 telekomunikacyjnych urządzeń końcowych zgodnie z art. 172 ustawy z dnia 16 lipca 2004 r.
                                 Prawa telekomunikacyjnego.
@@ -1569,11 +1602,10 @@
             </div>
         </div>
     </div>
-    </div>
 
     <script src="https://www.google.com/recaptcha/api.js?render=6Lf2hcIpAAAAAO1sgP7bkMbS_dHflAHZV8bG8eFO"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="./js/main.js?cache_bust=1714490460874"></script>
+    <script src="./js/main.js?cache_bust=1715108313336"></script>
 </body>
 
 </html>

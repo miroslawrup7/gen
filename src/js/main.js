@@ -100,6 +100,14 @@ let page14radiosP = 0
 
 let textarea16_1 = ""
 
+let page4formValidatePerformed = false
+let page5formValidatePerformed = false
+let page6formValidatePerformed = false
+let page7formValidatePerformed = false
+let page8formValidatePerformed = false
+let page9formValidatePerformed = false
+let page12formValidatePerformed = false
+
 
 const containerLoc = document.querySelector(".container")
 const formPagesLoc = document.querySelector(".form-pages")
@@ -315,6 +323,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page4")) {
+            page4formValidatePerformed = true
             if (validatePage4()) {
                 readValuesPage4()
                 allowNext = true
@@ -322,6 +331,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page5")) {
+            page5formValidatePerformed = true
             if (validatePage5()) {
                 readValuesPage5()
                 allowNext = true
@@ -337,6 +347,8 @@ buttonNextArrLoc.forEach((elem) => {
                 page7PPGLoc.style.display = "none"
             }
 
+            page6formValidatePerformed = true
+
             if (validatePage6()) {
                 readValuesPage6()
                 allowNext = true
@@ -344,6 +356,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page7")) {
+            page7formValidatePerformed = true
             if (validatePage7()) {
                 readValuesPage7()
                 allowNext = true
@@ -351,6 +364,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page8")) {
+            page8formValidatePerformed = true
             if (validatePage8()) {
                 readValuesPage8()
                 allowNext = true
@@ -358,8 +372,11 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page9")) {
-            readValuesPage9()
-            allowNext = true
+            page9formValidatePerformed = true
+            if (validatePage9()) {
+                readValuesPage9()
+                allowNext = true
+            }
         }
 
         if (actualPage.classList.contains("page10")) {
@@ -375,6 +392,7 @@ buttonNextArrLoc.forEach((elem) => {
         }
 
         if (actualPage.classList.contains("page12")) {
+            page12formValidatePerformed = true
             if (validatePage12()) {
                 readValuesPage12()
                 allowNext = true
@@ -537,9 +555,45 @@ buttonPrevArrLoc.forEach((elem) => {
 
 // walidacje
 
-const validateEmpty = (value)=> {
+const validateEmpty = (value) => {
     if (!value) return [false, "To pole nie może być puste!"]
     return [true, ""]
+}
+
+const validateEmail = (value) => {
+    if (!String(value).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+       return [false, "Adres email jest nieprawidłowy!"]
+    }
+    return [true, ""]
+}
+
+const validatePhone = (value) => {
+    value = value.replace(/\s|\-/g, '')
+    if (!String(value).toLowerCase().match(/(?<!.)((\+48)?[ ]?\d{9})(?!.)/)){
+        return [false, "Nr telefonu jest nieprawidłowy!"]
+     }
+     return [true, ""]
+}
+
+const validatePostCode = (value) => {
+    if (!String(value).toLowerCase().match(/(?<!.)((\d{2})?[-]\d{3})(?!.)/)){
+        return [false, "Kod pocztowy jest nieprawidłowy!"]
+     }
+     return [true, ""]
+}
+
+const validatePesel = (value) => {
+    if (!String(value).toLowerCase().match(/^([0-9]{11})?$/)){
+        return [false, "PESEL jest nieprawidłowy!"]
+     }
+     return [true, ""]
+}
+
+const validateDigits = (value) => {
+    if (!String(value).toLowerCase().match(/(?<!.)(\d+)(?!.)/)){
+        return [false, "Dopuszczalne tylko wartości liczbowe!"]
+     }
+     return [true, ""]
 }
 
 const validateCheckbox = (value)=> {
@@ -617,6 +671,9 @@ page4addApplicantBtnLoc.addEventListener("click", ()=> {
     page4select_IDType4_2.disabled = true
     page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
     page4select_IDType4_2.selectedIndex = 0;
+    if (page4formValidatePerformed){
+        validatePage4()
+    }
 })
 
 page4removeApplicantBtnLoc.addEventListener("click", ()=> {
@@ -635,6 +692,9 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
     page4select_IDType4_2.disabled = true
     page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
     page4select_IDType4_2.selectedIndex = 0;
+    if (page4formValidatePerformed){
+        validatePage4()
+    }
 
 })
 
@@ -647,11 +707,17 @@ page4peselBtnArrLoc.forEach((elem)=>{
             IDCardSelectLoc.classList.remove("pesel")
             IDCardSelectLoc.disabled = false
             IDCardSelectLoc.querySelector("optgroup > option").innerText = "Wybierz z listy..."
+            if (page4formValidatePerformed){
+                validatePage4()
+            }
         } else {
             IDCardSelectLoc.classList.add("pesel")
             IDCardSelectLoc.disabled = true
             IDCardSelectLoc.querySelector("optgroup > option").innerText = "PESEL"
             IDCardSelectLoc.selectedIndex = 0;
+            if (page4formValidatePerformed){
+                validatePage4()
+            }
         }
     })
 })
@@ -676,14 +742,73 @@ const validatePage4 = ()=> {
     }
 
     validatedArray.forEach((elem)=>{
+
+        let errorValidationFlag = true
+
         if (!validateEmpty(elem.value)[0]) {
             elem.parentElement.classList.add("error")
             elem.classList.add("error")
-            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
             validateSuccess = false
+            errorValidationFlag = false
         } else {
-            elem.parentElement.classList.remove("error")
-            elem.classList.remove("error")
+            if (elem.name === "email") {
+                if (!validateEmail(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validateEmail(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            } 
+            if (elem.name === "phone") {
+                if (!validatePhone(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validatePhone(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (elem.name === "postcode") {
+                if (!validatePostCode(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validatePostCode(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (elem.name === "pesel" && elem.parentElement.previousElementSibling.value === "PESEL") {
+                if (!validatePesel(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validatePesel(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (errorValidationFlag) {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.nextElementSibling.innerText = ""
+            }
         }
     })
 
@@ -706,23 +831,23 @@ const validatePage4 = ()=> {
 // walidacja sprawdzająca po błędzie - strona 4
 
 inputsPage4Array1.concat(inputsPage4Array2).forEach((elem)=>{
-    elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+    elem.addEventListener("input", () => {
+        if (page4formValidatePerformed){
             validatePage4()
         }
     })
 })
 
 inputsPage4Array3.forEach((elem)=>{
-    elem.addEventListener("change", ()=>{
-        if (elem.classList.contains("error")){
+    elem.addEventListener("change", () => {
+        if (page4formValidatePerformed){
             validatePage4()
         }
     })
 })
 
 
-const readValuesPage4 = ()=> {
+const readValuesPage4 = () => {
     if (!page4boolean) {
         inputText4_1 = page4input_fname4_1.value
         inputText4_2 = page4input_sname4_2.value
@@ -796,15 +921,34 @@ const validatePage5 = ()=> {
 
     if (page5radios === 2) {
 
+        let errorValidationFlag = true
+
         validatedArray.forEach((elem)=>{
             if (!validateEmpty(elem.value)[0]) {
                 elem.parentElement.classList.add("error")
                 elem.classList.add("error")
-                document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+                elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
                 validateSuccess = false
+                errorValidationFlag = false
             } else {
-                elem.parentElement.classList.remove("error")
-                elem.classList.remove("error")
+                if (elem.name === "postcode") {
+                    if (!validatePostCode(elem.value)[0]) {
+                        elem.parentElement.classList.add("error")
+                        elem.classList.add("error")
+                        elem.nextElementSibling.innerText = validatePostCode(elem.value)[1]
+                        validateSuccess = false
+                        errorValidationFlag = false
+                    } else {
+                        elem.parentElement.classList.remove("error")
+                        elem.classList.remove("error")
+                        elem.nextElementSibling.innerText = ""
+                    }
+                }
+                if (errorValidationFlag) {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
             }
         })
     }
@@ -820,7 +964,7 @@ const validatePage5 = ()=> {
 
 inputsPage5Array.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page5formValidatePerformed){
             validatePage5()
         }
     })
@@ -885,14 +1029,34 @@ const validatePage6 = ()=> {
     if (page6radios === 2) {
 
         validatedArray.forEach((elem)=>{
+
+            let errorValidationFlag = true
+
             if (!validateEmpty(elem.value)[0]) {
                 elem.parentElement.classList.add("error")
                 elem.classList.add("error")
-                document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+                elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
                 validateSuccess = false
+                errorValidationFlag = false
             } else {
-                elem.parentElement.classList.remove("error")
-                elem.classList.remove("error")
+                if (elem.name === "pesel") {
+                    if (!validatePesel(elem.value)[0]) {
+                        elem.parentElement.classList.add("error")
+                        elem.classList.add("error")
+                        elem.nextElementSibling.innerText = validatePesel(elem.value)[1]
+                        validateSuccess = false
+                        errorValidationFlag = false
+                    } else {
+                        elem.parentElement.classList.remove("error")
+                        elem.classList.remove("error")
+                        elem.nextElementSibling.innerText = ""
+                    }
+                }
+                if (errorValidationFlag) {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
             }
         })
     }
@@ -908,7 +1072,7 @@ const validatePage6 = ()=> {
 
 inputsPage6Array.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page6formValidatePerformed){
             validatePage6()
         }
     })
@@ -965,14 +1129,34 @@ const validatePage7 = ()=> {
     }
 
     validatedArray.forEach((elem)=>{
+
+        let errorValidationFlag = true
+
         if (!validateEmpty(elem.value)[0]) {
             elem.parentElement.classList.add("error")
             elem.classList.add("error")
-            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
             validateSuccess = false
+            errorValidationFlag = false
         } else {
-            elem.parentElement.classList.remove("error")
-            elem.classList.remove("error")
+            if (elem.name === "postcode") {
+                if (!validatePostCode(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validatePostCode(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (errorValidationFlag) {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.nextElementSibling.innerText = ""
+            }
         }
     })
 
@@ -981,16 +1165,18 @@ const validatePage7 = ()=> {
         inputsPage7Array3[1].parentElement.classList.add("error")
         inputsPage7Array3[0].classList.add("error")
         inputsPage7Array3[1].classList.add("error")
+        inputsPage7Array3[0].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
+        inputsPage7Array3[1].nextElementSibling.innerText = "Nr budynku/lokalu lub nr działki muszą być wypełnione"
 
-        document.documentElement.style.setProperty("--emptyError", `"Nr budynku/lokalu lub nr działki muszą być wypełnione"`)
         validateSuccess = false
     } else {
         inputsPage7Array3[0].parentElement.classList.remove("error")
         inputsPage7Array3[1].parentElement.classList.remove("error")
         inputsPage7Array3[0].classList.remove("error")
         inputsPage7Array3[1].classList.remove("error")
+        inputsPage7Array3[0].nextElementSibling.innerText = ""
+        inputsPage7Array3[1].nextElementSibling.innerText = ""
     }
-    
 
     if (validateSuccess) {
         return true
@@ -1003,7 +1189,7 @@ const validatePage7 = ()=> {
 
 inputsPage7Array1.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page7formValidatePerformed){
             validatePage7()
         }
     })
@@ -1011,7 +1197,7 @@ inputsPage7Array1.forEach((elem)=>{
 
 inputsPage7Array3.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page7formValidatePerformed){
             validatePage7()
         }
     })
@@ -1087,14 +1273,34 @@ const validatePage8 = ()=> {
     let validatedArray = inputsPage8Array
 
     validatedArray.forEach((elem)=>{
+
+        let errorValidationFlag = true
+
         if (!validateEmpty(elem.value)[0]) {
             elem.parentElement.classList.add("error")
             elem.classList.add("error")
-            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
             validateSuccess = false
+            errorValidationFlag = false
         } else {
-            elem.parentElement.classList.remove("error")
-            elem.classList.remove("error")
+            if (elem.name === "digit") {
+                if (!validateDigits(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validateDigits(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    elem.parentElement.classList.remove("error")
+                    elem.classList.remove("error")
+                    elem.nextElementSibling.innerText = ""
+                }
+            }
+            if (errorValidationFlag) {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.nextElementSibling.innerText = ""
+            }
         }
     })
     
@@ -1109,7 +1315,7 @@ const validatePage8 = ()=> {
 
 inputsPage8Array.forEach((elem)=>{
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page8formValidatePerformed){
             validatePage8()
         }
     })
@@ -1119,6 +1325,8 @@ const readValuesPage8 = ()=> {
     inputText8_1 = page8input_area8_1.value
     inputText8_2 = page8input_people8_2.value
 }
+
+// =========================================
 
 const readPowerValues = ()=> {
     if (page9inputTextArrLoc) {
@@ -1153,7 +1361,8 @@ const page9powerRowSet = ()=> {
 
     if (page8radios === 1) {
         page9powerRowArrLoc.forEach((elx)=> {
-            elx.innerHTML =  "Moc urządzenia: <input type='text'> kW"
+            elx.innerHTML =  "Moc urządzenia: <input name='digit' type='text'> kW"
+            elx.insertAdjacentHTML("beforeend", '<div class="error-box"></div>')
         })
     }
     
@@ -1211,15 +1420,104 @@ page9inputCheckboxArrLoc.forEach((elem, index)=> {
     })
 })
 
+const validatePage9 = () => {
+    let validatedArray
+
+    let validateSuccess = true
+
+    page9inputTextArrLoc = document.querySelectorAll('.page9 .power-row input[type="text"]')
+
+    if (page9inputTextArrLoc.length) {
+        
+        validatedArray = page9inputTextArrLoc
+
+        validatedArray.forEach((elem)=>{
+
+            if (elem.parentElement.previousElementSibling.querySelector("input").checked) {
+
+                let errorValidationFlag = true
+    
+                if (!validateEmpty(elem.value)[0]) {
+                    elem.parentElement.classList.add("error")
+                    elem.classList.add("error")
+                    elem.nextElementSibling.innerText = validateEmpty(elem.value)[1]
+                    validateSuccess = false
+                    errorValidationFlag = false
+                } else {
+                    if (elem.name === "digit") {
+                        if (!validateDigits(elem.value)[0]) {
+                            elem.parentElement.classList.add("error")
+                            elem.classList.add("error")
+                            elem.nextElementSibling.innerText = validateDigits(elem.value)[1]
+                            validateSuccess = false
+                            errorValidationFlag = false
+                        } else {
+                            elem.parentElement.classList.remove("error")
+                            elem.classList.remove("error")
+                            elem.nextElementSibling.innerText = ""
+                        }
+                    }
+                    if (errorValidationFlag) {
+                        elem.parentElement.classList.remove("error")
+                        elem.classList.remove("error")
+                        elem.nextElementSibling.innerText = ""
+                    }
+                }
+            }
+        })
+    }
+
+    const page9inputText9_9Loc = document.querySelector('.page9 #input-text9_9')
+
+    let errorValidationFlag = true
+
+    if (page9inputText9_9Loc.value != "") {
+        if (page9inputText9_9Loc.name === "digit") {
+            if (!validateDigits(page9inputText9_9Loc.value)[0]) {
+                page9inputText9_9Loc.parentElement.classList.add("error")
+                page9inputText9_9Loc.classList.add("error")
+                page9inputText9_9Loc.parentElement.parentElement.querySelector(".error-box").innerText = validateDigits(page9inputText9_9Loc.value)[1]
+                validateSuccess = false
+                errorValidationFlag = false
+            } else {
+                page9inputText9_9Loc.parentElement.classList.remove("error")
+                page9inputText9_9Loc.classList.remove("error")
+                page9inputText9_9Loc.parentElement.parentElement.querySelector(".error-box").innerText = ""
+            }
+        }
+        if (errorValidationFlag) {
+            page9inputText9_9Loc.parentElement.classList.remove("error")
+            page9inputText9_9Loc.classList.remove("error")
+            page9inputText9_9Loc.parentElement.parentElement.querySelector(".error-box").innerText = ""
+        }
+    }
+
+    if (validateSuccess) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+page9inputText9_9Loc.addEventListener("input", ()=>{
+    if (page9formValidatePerformed){
+        validatePage9()
+    }
+})
+
 // odczytaj wartości z inputów - jeżeli są - strona 9
 
-const addinputTextListener = ()=> {
+const addinputTextListener = () => {
     page9inputTextArrLoc = document.querySelectorAll('.page9 .power-row input[type="text"]')
     if (page9inputTextArrLoc.length) {
-        page9inputTextArrLoc.forEach((elem, index)=>{
+        page9inputTextArrLoc.forEach((elem)=>{
             elem.addEventListener("input", ()=>{
                 readPowerValues()
                 calculatePowerAndConsumption()
+                if (page9formValidatePerformed){
+                    validatePage9()
+                }
             })
         })
     }
@@ -1350,6 +1648,8 @@ const readValuesPage9 = ()=> {
     inputText9_9 = page9inputText9_9Loc.value
 }
 
+// ===============================
+
 // okres obowiązywania umowy - strona 10
 
 page10inputRadiosFArrLoc.forEach((elem, index) => {
@@ -1451,7 +1751,7 @@ const validatePage10 = ()=> {
         if (!validateEmpty(elem.value)[0]) {
             elem.parentElement.classList.add("error")
             elem.classList.add("error")
-            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
+            document.documentElement.style.setProperty("--validationError", `"${validateEmpty(elem.value)[1]}"`)
             validateSuccess = false
         } else {
             elem.parentElement.classList.remove("error")
@@ -1529,7 +1829,9 @@ page12customOptionArrLoc.forEach((elem)=> {
     elem.addEventListener("click", ()=>{
         elem.parentElement.parentElement.querySelector("input").value = elem.innerText
         elem.parentElement.style.display = "none"
-        validatePage12()
+        if (page12formValidatePerformed){
+            validatePage12()
+        }
     })
 })
 
@@ -1548,14 +1850,19 @@ const validatePage12 = ()=> {
     let validatedArray = inputsPage12Array
 
     validatedArray.forEach((elem)=>{
+
+        let errorValidationFlag = true
+
         if (!validateEmpty(elem.value)[0]) {
             elem.parentElement.classList.add("error")
             elem.classList.add("error")
-            document.documentElement.style.setProperty("--emptyError", `"${validateEmpty(elem.value)[1]}"`)
             validateSuccess = false
+            errorValidationFlag = false
         } else {
-            elem.parentElement.classList.remove("error")
-            elem.classList.remove("error")
+            if (errorValidationFlag) {
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+            }
         }
     })
 
@@ -1576,13 +1883,14 @@ const validatePage12 = ()=> {
 // walidacja sprawdzająca po błędzie - strona 12
 
 inputsPage12Array.forEach((elem)=>{
+    
     elem.addEventListener("input", ()=>{
-        if (elem.classList.contains("error")){
+        if (page12formValidatePerformed){
             validatePage12()
         }
     })
     elem.addEventListener("change", ()=>{
-        if (elem.classList.contains("error")){
+        if (page12formValidatePerformed){
             validatePage12()
         }
     })
