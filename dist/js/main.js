@@ -608,21 +608,24 @@ page1radioArrLoc.forEach((elem) => {
         if (e.target.classList.contains("active")) {
             e.target.classList.remove("active")
             page1radios = 0
+            addToLocalStorageObject("page1radios", page1radios)
         } else {
             page1radioArrLoc.forEach((el) => {
                 el.classList.remove("active")
-                page1radios = 0
+                // page1radios = 0
             })
-
+          
             e.target.classList.add("active")
             page1errorMessageLoc.innerText = ""
             document.documentElement.style.setProperty("--exclamation", "")
 
             if (e.target.classList.contains("radio1")) {
                 page1radios = 1
+                addToLocalStorageObject("page1radios", page1radios)
             }
             if (e.target.classList.contains("radio2")) {
                 page1radios = 2
+                addToLocalStorageObject("page1radios", page1radios)
             }
         }
     })
@@ -645,10 +648,12 @@ page3radioArrLoc.forEach((elem, index) => {
         if (e.target.value === "radio3") {
             page3radios = 1
             page3noticeContentArrLoc[0].classList.add("active")
+            addToLocalStorageObject("page3radios", page3radios)
         }
         if (e.target.value === "radio4") {
             page3radios = 2
             page3noticeContentArrLoc[1].classList.add("active")
+            addToLocalStorageObject("page3radios", page3radios)
         }
     })
 })
@@ -2621,8 +2626,58 @@ document.addEventListener("readystatechange", (event) => {
                 arrowForThisToolTip.style.left = currentArrowRight + movingDist + "px" 
             }
         })
+
+        // odczytaj dane formularza z LocalStorage
+
+        readAndPlaceLocalStorageData()
+
     }
 })
 
 
 
+// LocalStorage
+
+// RESET DB
+// localStorage.clear();
+    
+// GET FROM DB
+// JSON.parse(window.localStorage.getItem("??????"))
+    
+// SAVE IN DB
+// window.localStorage.setItem("??????", JSON.stringify("zmienna-z-JS"))
+
+const addToLocalStorageObject = (key, value) => {
+	let existing = localStorage.getItem("gen-form")
+	existing = existing ? JSON.parse(existing) : {};
+	existing[key] = value;
+	localStorage.setItem("gen-form", JSON.stringify(existing));
+}
+
+const readAndPlaceLocalStorageData = ()=> {
+
+    const LSdata = JSON.parse(localStorage.getItem("gen-form"))
+
+    if (LSdata.page1radios) {page1radios = LSdata.page1radios}
+    if (LSdata.page1radios === 1) {
+        page1radioArrLoc[0].classList.add("active")
+        page1radioArrLoc[1].classList.remove("active")
+    }
+    if (LSdata.page1radios === 2) {
+        page1radioArrLoc[0].classList.remove("active")
+        page1radioArrLoc[1].classList.add("active")
+    }
+
+    if (LSdata.page3radios) {page1radios = LSdata.page3radios}
+    if (LSdata.page3radios === 1) {
+        page3radioArrLoc[0].checked = true
+        page3noticeContentArrLoc[0].classList.add("active")
+        page3noticeContentArrLoc[1].classList.remove("active")
+    }
+    if (LSdata.page3radios === 2) {
+        page3radioArrLoc[1].checked = true
+        page3noticeContentArrLoc[0].classList.remove("active")
+        page3noticeContentArrLoc[1].classList.add("active")
+    }
+    
+}
