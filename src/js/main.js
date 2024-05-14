@@ -6,6 +6,7 @@ let page3radios = 0
 
 let inputText4_1 = ""
 let inputText4_2 = ""
+let button4_1 = false
 let select4_1 = ""
 let inputText4_3 = ""
 let inputText4_4 = ""
@@ -16,6 +17,7 @@ let inputText4_8 = ""
 let page4boolean = false
 let inputText4_9 = ""
 let inputText4_10 = ""
+let button4_2 = false
 let select4_2 = ""
 let inputText4_11 = ""
 let inputText4_12 = ""
@@ -23,6 +25,8 @@ let inputText4_13 = ""
 let inputText4_14 = ""
 let inputText4_15 = ""
 let inputText4_16 = ""
+
+const body = document.querySelector("body")
 
 let page5radios = 0
 let inputText5_1 = ""
@@ -664,6 +668,7 @@ page4addApplicantBtnLoc.addEventListener("click", ()=> {
     page4addApplicantBtnLoc.style.visibility = "hidden"
     page4additionalApplicantLoc.style.display = "flex"
     page4boolean = true
+    addToLocalStorageObject("page4boolean", page4boolean)
     inputsPage4Array2.forEach((elem)=>{
         elem.parentElement.classList.remove("error")
         elem.classList.remove("error")
@@ -685,6 +690,7 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
     page4addApplicantBtnLoc.style.visibility = "visible"
     page4additionalApplicantLoc.style.display = "none"
     page4boolean = false
+    addToLocalStorageObject("page4boolean", page4boolean)
     inputsPage4Array2.forEach((elem)=>{
         elem.parentElement.classList.remove("error")
         elem.classList.remove("error")
@@ -704,7 +710,7 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
 })
 
 // posiadam / nieposiadam nr PESEL - strona 4
-page4peselBtnArrLoc.forEach((elem)=>{
+page4peselBtnArrLoc.forEach((elem, index)=>{
     elem.addEventListener("click", ()=>{
         elem.classList.toggle("active")
         const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
@@ -712,6 +718,14 @@ page4peselBtnArrLoc.forEach((elem)=>{
             IDCardSelectLoc.classList.remove("pesel")
             IDCardSelectLoc.disabled = false
             IDCardSelectLoc.querySelector("optgroup > option").innerText = "Wybierz z listy..."
+            if (index === 0) {
+                button4_1 = true
+                addToLocalStorageObject("button4_1", button4_1)
+            }
+            if (index === 1) {
+                button4_2 = true
+                addToLocalStorageObject("button4_2", button4_2)
+            }
             if (page4formValidatePerformed){
                 validatePage4()
             }
@@ -719,7 +733,15 @@ page4peselBtnArrLoc.forEach((elem)=>{
             IDCardSelectLoc.classList.add("pesel")
             IDCardSelectLoc.disabled = true
             IDCardSelectLoc.querySelector("optgroup > option").innerText = "PESEL"
-            IDCardSelectLoc.selectedIndex = 0;
+            IDCardSelectLoc.selectedIndex = 0
+            if (index === 0) {
+                button4_1 = false
+                addToLocalStorageObject("button4_1", button4_1)
+            }
+            if (index === 1) {
+                button4_2 = false
+                addToLocalStorageObject("button4_2", button4_2)
+            }
             if (page4formValidatePerformed){
                 validatePage4()
             }
@@ -2658,6 +2680,8 @@ const readAndPlaceLocalStorageData = ()=> {
 
     const LSdata = JSON.parse(localStorage.getItem("gen-form"))
 
+    // page 1
+
     if (LSdata.page1radios) {page1radios = LSdata.page1radios}
     if (LSdata.page1radios === 1) {
         page1radioArrLoc[0].classList.add("active")
@@ -2667,6 +2691,8 @@ const readAndPlaceLocalStorageData = ()=> {
         page1radioArrLoc[0].classList.remove("active")
         page1radioArrLoc[1].classList.add("active")
     }
+
+    // page 3
 
     if (LSdata.page3radios) {page1radios = LSdata.page3radios}
     if (LSdata.page3radios === 1) {
@@ -2679,5 +2705,76 @@ const readAndPlaceLocalStorageData = ()=> {
         page3noticeContentArrLoc[0].classList.remove("active")
         page3noticeContentArrLoc[1].classList.add("active")
     }
+
+    // page 4
+
+    if (LSdata.page4boolean) {page4boolean = LSdata.page4boolean}
+
+    if (LSdata.page4boolean) {
+        page4addApplicantBtnLoc.style.visibility = "hidden"
+        page4additionalApplicantLoc.style.display = "flex"
+        inputsPage4Array2.forEach((elem)=>{
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            elem.value = ""
+        })
+        page4select_IDType4_2.options.selectedIndex = 0
+        page4peselBtnArrLoc[1].classList.remove("active")
     
+        page4select_IDType4_2.classList.add("pesel")
+        page4select_IDType4_2.disabled = true
+        page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
+        page4select_IDType4_2.selectedIndex = 0;
+    } else {
+        page4addApplicantBtnLoc.style.visibility = "visible"
+        page4additionalApplicantLoc.style.display = "none"
+        inputsPage4Array2.forEach((elem)=>{
+            elem.parentElement.classList.remove("error")
+            elem.classList.remove("error")
+            elem.value = ""
+        })
+        page4select_IDType4_2.options.selectedIndex = 0
+        page4peselBtnArrLoc[1].classList.remove("active")
+    
+        page4select_IDType4_2.classList.add("pesel")
+        page4select_IDType4_2.disabled = true
+        page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
+        page4select_IDType4_2.selectedIndex = 0;
+    }
+
+    if (LSdata.button4_1) {button4_1 = LSdata.button4_1}
+    if (LSdata.button4_2) {button4_2 = LSdata.button4_2}
+
+    page4peselBtnArrLoc.forEach((elem, index)=>{
+        if (index === 0) {
+            const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
+
+            if (button4_1) {
+                elem.classList.add("active")
+                IDCardSelectLoc.classList.remove("pesel")
+                IDCardSelectLoc.disabled = false
+                IDCardSelectLoc.querySelector("optgroup > option").innerText = "Wybierz z listy..."
+            } else {
+                elem.classList.remove("active")
+                IDCardSelectLoc.disabled = true
+                IDCardSelectLoc.querySelector("optgroup > option").innerText = "PESEL"
+                IDCardSelectLoc.selectedIndex = 0
+            }
+        }
+        if (index === 1) {
+            const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
+
+            if (button4_2) {
+                elem.classList.add("active")
+                IDCardSelectLoc.classList.remove("pesel")
+                IDCardSelectLoc.disabled = false
+                IDCardSelectLoc.querySelector("optgroup > option").innerText = "Wybierz z listy..."
+            } else {
+                elem.classList.remove("active")
+                IDCardSelectLoc.disabled = true
+                IDCardSelectLoc.querySelector("optgroup > option").innerText = "PESEL"
+                IDCardSelectLoc.selectedIndex = 0
+            }
+        }
+    })
 }
