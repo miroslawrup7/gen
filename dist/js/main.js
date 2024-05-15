@@ -707,6 +707,16 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
         validatePage4()
     }
 
+    inputsPage4Array2.forEach((elem)=>{
+        addToLocalStorageObject(elem.dataset.var, "")
+    })
+    
+    inputsPage4Array3.forEach((elem)=>{
+        addToLocalStorageObject(elem.dataset.var, "PESEL")
+    })
+
+    addToLocalStorageObject("button4_2", false)
+
 })
 
 // posiadam / nieposiadam nr PESEL - strona 4
@@ -862,6 +872,7 @@ inputsPage4Array1.concat(inputsPage4Array2).forEach((elem)=>{
         if (page4formValidatePerformed){
             validatePage4()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
@@ -870,9 +881,9 @@ inputsPage4Array3.forEach((elem)=>{
         if (page4formValidatePerformed){
             validatePage4()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
-
 
 const readValuesPage4 = () => {
     if (!page4boolean) {
@@ -2682,7 +2693,8 @@ const readAndPlaceLocalStorageData = ()=> {
 
     // page 1
 
-    if (LSdata.page1radios) {page1radios = LSdata.page1radios}
+    if (LSdata.page1radios !== undefined) {page1radios = LSdata.page1radios}
+
     if (LSdata.page1radios === 1) {
         page1radioArrLoc[0].classList.add("active")
         page1radioArrLoc[1].classList.remove("active")
@@ -2694,7 +2706,8 @@ const readAndPlaceLocalStorageData = ()=> {
 
     // page 3
 
-    if (LSdata.page3radios) {page1radios = LSdata.page3radios}
+    if (LSdata.page3radios !== undefined) {page1radios = LSdata.page3radios}
+
     if (LSdata.page3radios === 1) {
         page3radioArrLoc[0].checked = true
         page3noticeContentArrLoc[0].classList.add("active")
@@ -2708,9 +2721,9 @@ const readAndPlaceLocalStorageData = ()=> {
 
     // page 4
 
-    if (LSdata.page4boolean) {page4boolean = LSdata.page4boolean}
+    if (LSdata.page4boolean  !== undefined) {page4boolean = LSdata.page4boolean}
 
-    if (LSdata.page4boolean) {
+    if (LSdata.page4boolean === true) {
         page4addApplicantBtnLoc.style.visibility = "hidden"
         page4additionalApplicantLoc.style.display = "flex"
         inputsPage4Array2.forEach((elem)=>{
@@ -2742,14 +2755,14 @@ const readAndPlaceLocalStorageData = ()=> {
         page4select_IDType4_2.selectedIndex = 0;
     }
 
-    if (LSdata.button4_1) {button4_1 = LSdata.button4_1}
-    if (LSdata.button4_2) {button4_2 = LSdata.button4_2}
+    if (LSdata.button4_1 !== undefined) {button4_1 = LSdata.button4_1}
+    if (LSdata.button4_2 !== undefined) {button4_2 = LSdata.button4_2}
 
     page4peselBtnArrLoc.forEach((elem, index)=>{
         if (index === 0) {
             const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
 
-            if (button4_1) {
+            if (button4_1 === true) {
                 elem.classList.add("active")
                 IDCardSelectLoc.classList.remove("pesel")
                 IDCardSelectLoc.disabled = false
@@ -2764,7 +2777,7 @@ const readAndPlaceLocalStorageData = ()=> {
         if (index === 1) {
             const IDCardSelectLoc = elem.previousElementSibling.querySelector("select")
 
-            if (button4_2) {
+            if (button4_2 === true) {
                 elem.classList.add("active")
                 IDCardSelectLoc.classList.remove("pesel")
                 IDCardSelectLoc.disabled = false
@@ -2777,4 +2790,80 @@ const readAndPlaceLocalStorageData = ()=> {
             }
         }
     })
+
+    if (LSdata.inputText4_1 !== undefined) {
+        inputText4_1 = LSdata.inputText4_1
+        page4input_fname4_1.value = inputText4_1
+    }
+    if (LSdata.inputText4_2 !== undefined) {
+        inputText4_2 = LSdata.inputText4_2
+        page4input_sname4_2.value = inputText4_2
+    }
+    if (LSdata.select4_1 !== undefined) {
+        select4_1 = LSdata.select4_1
+        page4select_IDType4_1.value = select4_1
+    }
+    if (LSdata.inputText4_3 !== undefined) {
+        inputText4_3 = LSdata.inputText4_3
+        page4input_ID4_3.value = inputText4_3
+    }
+    if (LSdata.inputText4_4 !== undefined) {
+        inputText4_4 = LSdata.inputText4_4
+        page4input_address4_4.value = inputText4_4
+    }
+    if (LSdata.inputText4_5 !== undefined) {
+        inputText4_5 = LSdata.inputText4_5
+        page4input_postcode4_5.value = inputText4_5
+    }
+    if (LSdata.inputText4_6 !== undefined) {
+        inputText4_6 = LSdata.inputText4_6
+        page4input_locality4_6.value = inputText4_6
+    }
+    if (LSdata.inputText4_7 !== undefined) {
+        inputText4_7 = LSdata.inputText4_7
+        page4input_email4_7.value = inputText4_7
+    }
+    if (LSdata.inputText4_8 !== undefined) {
+        inputText4_8 = LSdata.inputText4_8
+        page4input_phone4_8.value = inputText4_8
+    }
+
+
+    if (LSdata.inputText4_9 !== undefined) {
+        inputText4_9 = LSdata.inputText4_9
+        page4input_fname4_9.value = inputText4_9
+    }
+    if (LSdata.inputText4_10 !== undefined) {
+        inputText4_10 = LSdata.inputText4_10
+        page4input_sname4_10.value = inputText4_10
+    }
+    if (LSdata.select4_2 !== undefined) {
+        select4_2 = LSdata.select4_2
+        page4select_IDType4_2.value = select4_2
+    }
+    if (LSdata.inputText4_11 !== undefined) {
+        inputText4_11 = LSdata.inputText4_11
+        page4input_ID4_11.value = inputText4_11
+    }
+    if (LSdata.inputText4_12 !== undefined) {
+        inputText4_12 = LSdata.inputText4_12
+        page4input_address4_12.value = inputText4_12
+    }
+    if (LSdata.inputText4_13 !== undefined) {
+        inputText4_13 = LSdata.inputText4_13
+        page4input_postcode4_13.value = inputText4_13
+    }
+    if (LSdata.inputText4_14 !== undefined) {
+        inputText4_14 = LSdata.inputText4_14
+        page4input_locality4_14.value = inputText4_14
+    }
+    if (LSdata.inputText4_15 !== undefined) {
+        inputText4_15 = LSdata.inputText4_15
+        page4input_email4_15.value = inputText4_15
+    }
+    if (LSdata.inputText4_16 !== undefined) {
+        inputText4_16 = LSdata.inputText4_16
+        page4input_phone4_16.value = inputText4_16
+    }
+
 }
