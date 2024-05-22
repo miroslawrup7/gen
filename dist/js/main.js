@@ -200,6 +200,9 @@ const page8input_people8_2 = document.querySelector(".page8 #people8_2")
 
 const inputsPage8Array = [page8input_area8_1, page8input_people8_2]
 
+
+
+
 const page9eqBoxArrLoc = document.querySelectorAll(".page9 .equipment-box")
 const page9addBtnLoc = page9eqBoxArrLoc[0].querySelector(".page9 .equipment-box .button.add")
 const page9removeBtnLoc = page9eqBoxArrLoc[1].querySelector(".page9 .equipment-box .button.remove")
@@ -214,6 +217,11 @@ const page9powerRowArrLoc = document.querySelectorAll(".page9 .power-row")
 const page9unitsPowerLoc = document.querySelector(".page9 .units-power")
 const page9consumptionMeterLoc = document.querySelector(".page9 .consumption-meter")
 const page9inputText9_9Loc = document.querySelector(".page9 #input-text9_9")
+
+
+
+
+
 
 const page10inputRadiosGArrLoc = document.querySelectorAll(".page10 .radiosG input")
 const page10fileUploadContainerLoc = document.querySelector(".page10 .file-upload-container")
@@ -673,6 +681,7 @@ page4addApplicantBtnLoc.addEventListener("click", ()=> {
         elem.parentElement.classList.remove("error")
         elem.classList.remove("error")
         elem.value = ""
+        elem.nextElementSibling.innerText = ""
     })
     page4select_IDType4_2.options.selectedIndex = 0
     page4peselBtnArrLoc[1].classList.remove("active")
@@ -681,9 +690,9 @@ page4addApplicantBtnLoc.addEventListener("click", ()=> {
     page4select_IDType4_2.disabled = true
     page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
     page4select_IDType4_2.selectedIndex = 0;
-    if (page4formValidatePerformed){
-        validatePage4()
-    }
+    // if (page4formValidatePerformed){
+    //     validatePage4()
+    // }
 })
 
 page4removeApplicantBtnLoc.addEventListener("click", ()=> {
@@ -695,6 +704,7 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
         elem.parentElement.classList.remove("error")
         elem.classList.remove("error")
         elem.value = ""
+        elem.nextElementSibling.innerText = ""
     })
     page4select_IDType4_2.options.selectedIndex = 0
     page4peselBtnArrLoc[1].classList.remove("active")
@@ -703,9 +713,9 @@ page4removeApplicantBtnLoc.addEventListener("click", ()=> {
     page4select_IDType4_2.disabled = true
     page4select_IDType4_2.querySelector("optgroup > option").innerText = "PESEL"
     page4select_IDType4_2.selectedIndex = 0;
-    if (page4formValidatePerformed){
-        validatePage4()
-    }
+    // if (page4formValidatePerformed){
+    //     validatePage4()
+    // }
 
     inputsPage4Array2.forEach((elem)=>{
         addToLocalStorageObject(elem.dataset.var, "")
@@ -933,10 +943,26 @@ page5radioArrLoc.forEach((elem, index) => {
         if (e.target.value === "radio5") {
             page5radios = 1
             page5formLoc.style.visibility = "hidden"
+            addToLocalStorageObject("page5radios", page5radios)
+            inputsPage5Array.forEach((elem)=>{
+                addToLocalStorageObject(elem.dataset.var, "")
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.value = ""
+                elem.nextElementSibling.innerText = ""
+            })
         }
         if (e.target.value === "radio6") {
             page5radios = 2
             page5formLoc.style.visibility = "visible"
+            addToLocalStorageObject("page5radios", page5radios)
+            inputsPage5Array.forEach((elem)=>{
+                addToLocalStorageObject(elem.dataset.var, "")
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.value = ""
+                elem.nextElementSibling.innerText = ""
+            })
         }
     })
 })
@@ -1005,23 +1031,21 @@ inputsPage5Array.forEach((elem)=>{
         if (page5formValidatePerformed){
             validatePage5()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
 const readValuesPage5 = ()=> {
     if (page5radios === 2) {
-
         inputText5_1 = page5input_name5_1.value
         inputText5_2 = page5input_address5_2.value
         inputText5_3 = page5input_postcode5_3.value
         inputText5_4 = page5input_locality5_4.value
-        
     } else {
         inputText5_1 = ""
         inputText5_2 = ""
         inputText5_3 = ""
         inputText5_4 = ""
-    
     }
 }
 
@@ -1039,11 +1063,27 @@ page6radioArrLoc.forEach((elem, index) => {
             page6radios = 1
             page6formLoc.style.visibility = "hidden"
             page6noticeLoc.style.visibility = "hidden"
+            addToLocalStorageObject("page6radios", page6radios)
+            inputsPage6Array.forEach((elem)=>{
+                addToLocalStorageObject(elem.dataset.var, "")
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.value = ""
+                elem.nextElementSibling.innerText = ""
+            })
         }
         if (e.target.value === "radio8") {
             page6radios = 2
             page6formLoc.style.visibility = "visible"
             page6noticeLoc.style.visibility = "visible"
+            addToLocalStorageObject("page6radios", page6radios)
+            inputsPage6Array.forEach((elem)=>{
+                addToLocalStorageObject(elem.dataset.var, "")
+                elem.parentElement.classList.remove("error")
+                elem.classList.remove("error")
+                elem.value = ""
+                elem.nextElementSibling.innerText = ""
+            })
         }
     })
 })
@@ -1113,6 +1153,7 @@ inputsPage6Array.forEach((elem)=>{
         if (page6formValidatePerformed){
             validatePage6()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
@@ -1127,28 +1168,6 @@ const readValuesPage6 = ()=> {
         date6_1 = ""
     }
 }
-
-
-// mam / nie mam WT - strona 7
-
-// page7radioArrLoc.forEach((elem, index) => {
-
-//     if (elem.checked) {
-//         page7radios = index + 1
-//     }
-    
-//     elem.addEventListener("change", (e)=> {
-
-//         if (e.target.value === "radio9") {
-//             page7radios = 1
-//             page7formLoc.style.visibility = "hidden"
-//         }
-//         if (e.target.value === "radio10") {
-//             page7radios = 2
-//             page7formLoc.style.visibility = "visible"
-//         }
-//     })
-// })
 
 // walidacja pól formularza - strona 7
 
@@ -1230,6 +1249,7 @@ inputsPage7Array1.forEach((elem)=>{
         if (page7formValidatePerformed){
             validatePage7()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
@@ -1238,6 +1258,7 @@ inputsPage7Array3.forEach((elem)=>{
         if (page7formValidatePerformed){
             validatePage7()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
@@ -1292,10 +1313,12 @@ page8radioArrLoc.forEach((elem, index) => {
             page8radios = 1
             page9powerRowSet()
             addinputTextListener()
+            addToLocalStorageObject("page8radios", page8radios)
         }
         if (e.target.value === "radio12") {
             page8radios = 2
             page9powerRowSet()
+            addToLocalStorageObject("page8radios", page8radios)
         }
 
         calculatePowerAndConsumption()
@@ -1356,6 +1379,7 @@ inputsPage8Array.forEach((elem)=>{
         if (page8formValidatePerformed){
             validatePage8()
         }
+        addToLocalStorageObject(elem.dataset.var, elem.value)
     })
 })
 
@@ -1398,8 +1422,8 @@ const readPowerValues = ()=> {
 const page9powerRowSet = ()=> {
 
     if (page8radios === 1) {
-        page9powerRowArrLoc.forEach((elx)=> {
-            elx.innerHTML =  "Moc urządzenia: <input name='digit' type='text'> kW"
+        page9powerRowArrLoc.forEach((elx, index)=> {
+            elx.innerHTML =  `Moc urządzenia: <input name='digit' type='text' data-var='inputText9_${index+1}'> kW`
             elx.insertAdjacentHTML("beforeend", '<div class="error-box"></div>')
         })
     }
@@ -1542,6 +1566,7 @@ page9inputText9_9Loc.addEventListener("input", ()=>{
     if (page9formValidatePerformed){
         validatePage9()
     }
+    addToLocalStorageObject("inputText9_9", page9inputText9_9Loc.value)
 })
 
 // odczytaj wartości z inputów - jeżeli są - strona 9
@@ -1556,6 +1581,7 @@ const addinputTextListener = () => {
                 if (page9formValidatePerformed){
                     validatePage9()
                 }
+                addToLocalStorageObject(elem.dataset.var, elem.value)
             })
         })
     }
@@ -2706,7 +2732,7 @@ const readAndPlaceLocalStorageData = ()=> {
 
     // page 3
 
-    if (LSdata.page3radios !== undefined) {page1radios = LSdata.page3radios}
+    if (LSdata.page3radios !== undefined) {page3radios = LSdata.page3radios}
 
     if (LSdata.page3radios === 1) {
         page3radioArrLoc[0].checked = true
@@ -2866,4 +2892,159 @@ const readAndPlaceLocalStorageData = ()=> {
         page4input_phone4_16.value = inputText4_16
     }
 
+    // page 5
+
+    if (LSdata.page5radios !== undefined) {page5radios = LSdata.page5radios}
+
+    if (LSdata.page5radios === 1) {
+        page5radioArrLoc[0].checked = true
+        page5formLoc.style.visibility = "hidden"
+    }
+    if (LSdata.page5radios === 2) {
+        page5radioArrLoc[1].checked = true
+        page5formLoc.style.visibility = "visible"
+    }
+
+    if (LSdata.inputText5_1 !== undefined) {
+        inputText5_1 = LSdata.inputText5_1
+        page5input_name5_1.value = inputText5_1
+    }
+    if (LSdata.inputText5_2 !== undefined) {
+        inputText5_2 = LSdata.inputText5_2
+        page5input_address5_2.value = inputText5_2
+    }
+    if (LSdata.inputText5_3 !== undefined) {
+        inputText5_3 = LSdata.inputText5_3
+        page5input_postcode5_3.value = inputText5_3
+    }
+    if (LSdata.inputText5_4 !== undefined) {
+        inputText5_4 = LSdata.inputText5_4
+        page5input_locality5_4.value = inputText5_4
+    }
+
+    // page 6
+
+    if (LSdata.page6radios !== undefined) {page6radios = LSdata.page6radios}
+
+    if (LSdata.page6radios === 1) {
+        page6radioArrLoc[0].checked = true
+        page6formLoc.style.visibility = "hidden"
+        page6noticeLoc.style.visibility = "hidden"
+    }
+    if (LSdata.page6radios === 2) {
+        page6radioArrLoc[1].checked = true
+        page6formLoc.style.visibility = "visible"
+        page6noticeLoc.style.visibility = "visible"
+    }
+
+    if (LSdata.inputText6_1 !== undefined) {
+        inputText6_1 = LSdata.inputText6_1
+        page6input_name6_1.value = inputText6_1
+    }
+    if (LSdata.inputText6_2 !== undefined) {
+        inputText6_2 = LSdata.inputText6_2
+        page6input_pesel6_2.value = inputText6_2
+    }
+    if (LSdata.date6_1 !== undefined) {
+        date6_1 = LSdata.date6_1
+        page6input_date6_3.value = date6_1
+    }
+
+    // page 7
+
+    if (LSdata.page7radios !== undefined) {page7radios = LSdata.page7radios}
+ 
+    if (LSdata.inputText7_1 !== undefined) {
+         inputText7_1 = LSdata.inputText7_1
+         page7input_condition7_1.value = inputText7_1
+    }
+    if (LSdata.inputText7_2 !== undefined) {
+         inputText7_2 = LSdata.inputText7_2
+         page7input_ppg7_2.value = inputText7_2
+    }
+    if (LSdata.inputText7_3 !== undefined) {
+        inputText7_3 = LSdata.inputText7_3
+        page7input_locality7_3.value = inputText7_3
+    }
+    if (LSdata.inputText7_4 !== undefined) {
+        inputText7_4 = LSdata.inputText7_4
+        page7input_postcode7_4.value = inputText7_4
+    }
+    if (LSdata.inputText7_5 !== undefined) {
+        inputText7_5 = LSdata.inputText7_5
+        page7input_street7_5.value = inputText7_5
+    }
+    if (LSdata.inputText7_6 !== undefined) {
+        inputText7_6 = LSdata.inputText7_6
+        page7input_houseno7_6.value = inputText7_6
+    }
+    if (LSdata.inputText7_7 !== undefined) {
+        inputText7_7 = LSdata.inputText7_7
+        page7input_parcelno7_7.value = inputText7_7
+    }
+
+    
+    // page 8
+
+    if (LSdata.page8radios !== undefined) {page8radios = LSdata.page8radios}
+ 
+    if (LSdata.inputText8_1 !== undefined) {
+         inputText8_1 = LSdata.inputText8_1
+         page8input_area8_1.value = inputText8_1
+    }
+    if (LSdata.inputText8_2 !== undefined) {
+         inputText8_2 = LSdata.inputText8_2
+         page8input_people8_2.value = inputText8_2
+    }
+
+    if (LSdata.page8radios === 1) {
+        page8radioArrLoc[0].checked = true
+        page9powerRowSet()
+        addinputTextListener()
+    }
+    if (LSdata.page8radios === 2) {
+        page9powerRowSet()
+        page8radioArrLoc[1].checked = true
+    }
+
+        
+    // page 9
+ 
+    if (LSdata.inputText9_1 !== undefined) {
+        inputText9_1 = LSdata.inputText9_1
+        page9powerRowArrLoc[0].querySelector("input").value = inputText9_1
+    }
+    if (LSdata.inputText9_2 !== undefined) {
+        inputText9_2 = LSdata.inputText9_2
+        page9powerRowArrLoc[1].querySelector("input").value = inputText9_2
+    }
+    if (LSdata.inputText9_3 !== undefined) {
+        inputText9_3 = LSdata.inputText9_3
+        page9powerRowArrLoc[2].querySelector("input").value = inputText9_3
+    }
+    if (LSdata.inputText9_4 !== undefined) {
+        inputText9_4 = LSdata.inputText9_4
+        page9powerRowArrLoc[3].querySelector("input").value = inputText9_4
+    }
+    if (LSdata.inputText9_5 !== undefined) {
+        inputText9_5 = LSdata.inputText9_5
+        page9powerRowArrLoc[4].querySelector("input").value = inputText9_5
+    }
+    if (LSdata.inputText9_6 !== undefined) {
+        inputText9_6 = LSdata.inputText9_6
+        page9powerRowArrLoc[5].querySelector("input").value = inputText9_6
+    }
+    if (LSdata.inputText9_7 !== undefined) {
+        inputText9_7 = LSdata.inputText9_7
+        page9powerRowArrLoc[6].querySelector("input").value = inputText9_7
+    }
+    if (LSdata.inputText9_8 !== undefined) {
+        inputText9_8 = LSdata.inputText9_8
+        page9powerRowArrLoc[7].querySelector("input").value = inputText9_8
+    }
+
+    if (LSdata.inputText9_9 !== undefined) {
+        inputText9_9 = LSdata.inputText9_9
+        page9inputText9_9Loc.value = inputText9_9
+    }
 }
